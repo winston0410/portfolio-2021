@@ -27,8 +27,10 @@ COPY ./ ./
 
 RUN ["cargo", "build", "--release", "--bin", "backend"]
 
-FROM scratch as runtime
-#  FROM rust:1.54.0 as runtime
+#  https://github.com/GoogleContainerTools/distroless/blob/main/cc/README.md
+FROM gcr.io/distroless/cc-debian10 as runtime
+#  base and static doesn't work
+#  FROM gcr.io/distroless/base as runtime
 
 WORKDIR /usr/app
 
