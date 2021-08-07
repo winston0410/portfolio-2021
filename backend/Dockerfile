@@ -36,6 +36,8 @@ WORKDIR /usr/app
 
 COPY --from=build /usr/app/target/release/backend ./backend
 
+RUN ["chmod", "+x", "./backend"]
+
 CMD [ "./backend" ]
 
 EXPOSE 8080
