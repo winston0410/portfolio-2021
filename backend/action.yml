@@ -1,6 +1,0 @@
-name: "Rust backend"
-description: "Deploy rust backend"
-
-runs:
-  using: "docker"
-  image: "Dockerfile"
