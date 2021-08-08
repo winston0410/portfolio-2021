@@ -1,5 +1,6 @@
 name: Portfolio
-
+env:
+  DOCKER_BUILDKIT: 1
 on:
   push:
     branches: [ master ]
