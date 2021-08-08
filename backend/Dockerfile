@@ -36,6 +36,7 @@ WORKDIR /usr/app
 
 COPY --from=build /usr/app/target/release/backend ./backend
 
-CMD [ "./backend" ]
+#  Use absolute path as Github Action manipulate the working directory
+CMD [ "/usr/app/backend" ]
 
 EXPOSE 8080
