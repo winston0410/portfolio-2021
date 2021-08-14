@@ -1,7 +1,8 @@
 import { EndpointOutput, Output } from '@sveltejs/kit'
 
 const getGithubApi = async () => {
-   return fetch('https://api.github.com/users/winston0410/repos?sort=updated&per_page=100')
+   //  return fetch('https://api.github.com/users/winston0410/repos?sort=updated&per_page=100')
+   return fetch('https://swapi.dev/api/people/1')
   .then(response => response.json())
 }
 
