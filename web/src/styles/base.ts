@@ -1,33 +1,26 @@
-//  I don't want to extend class but it is typescript. Forgive me for not using constructor function
-interface IFont {
-    fontSize:string;
-    fontFamily:string;
-    fontWeight:string;
-}
+const fontScale = {
+	xs: 1,
+	sm: 1.618,
+	md: 3.236,
+	lg: 5.236
+};
 
-export class Font implements IFont{
-    public fontSize:string
-    public fontFamily:string
-    public fontWeight:string
-}
+const getFont = (scale: number) => {
+	const baseValue = 16;
+	return {
+		fontSize: `${scale * baseValue}px`,
+		fontWeight: 'normal',
+		fontFamily: ''
+	};
+};
 
-export class H1 extends Font {
+export const xsFont = getFont(fontScale.xs);
+export const smFont = getFont(fontScale.sm);
+export const mdFont = getFont(fontScale.md);
+export const lgFont = getFont(fontScale.lg);
 
-}
-
-export class H2 extends Font {
-
-}
-
-//  const h1 = {
-    //  fontSize:
-//  }
-
-//  const h2 = {
-    //  fontSize:
-//  }
-
-
-//  const h3 = {
-    //  fontSize:
+//  const getMargin = (scale: number) => {
+    //  return {
+        
+    //  }
 //  }
