@@ -4,3 +4,8 @@
 	src: local('VT323'), url('/VT323.woff2') format('woff2'), url('/VT323.ttf') format('truetype');
 	font-display: swap;
 }
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
