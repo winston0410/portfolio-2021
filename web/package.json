@@ -31,6 +31,7 @@
   },
   "type": "module",
   "dependencies": {
-    "glory": "^2.0.5"
+    "glory": "^2.0.5",
+    "modern-normalize": "^1.1.0"
   }
 }
