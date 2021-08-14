@@ -4,12 +4,13 @@
 
   import { getProps } from "/src/helper"
   import glory from "/src/cssRenderer"
+  import { xsFont, smFont } from "/src/styles/base"
 
-  const style = glory.virtual({
-    fontFamily: "VT323",
-    fontSize: "160px",
-    fontWeight: "400"
-  })
+  //  const style = glory.virtual({
+    //  fontFamily: "VT323",
+    //  fontSize: "160px",
+    //  fontWeight: "400"
+  //  })
 
   import NavBar from "/src/components/NavBar.svelte"
   
@@ -28,15 +29,20 @@
     alignItems: "center",
     flexDirection: "column"
 })}>
-<h1 class={style}>Hugo Sum</h1>
-<span>Fullstack developer from Hong Kong</span>
+<h1 class={glory.virtual({
+    fontSize: "80px",
+    fontFamily: "VT323",
+    fontWeight: "normal",
+    "@media (min-width: 768px)": {
+      fontSize: "120px"
+    }
+})}>Hugo Sum</h1>
+<span class={glory.virtual({...smFont, textAlign: "center"})}>Fullstack developer from Hong Kong</span>
 </div>
 
 <nav>
     <ul class={glory.virtual({
     display: "flex",
-    //  justifyContent: "center",
-    //  alignItems: "center"
         flexDirection: "column"
     })}>
 	{#each pages as { name, url }}
@@ -48,7 +54,7 @@
             display: "flex",
             justifyContent: "center"
         })} href={url}>
-            <span>{name}</span>
+            <span class={glory.virtual(xsFont)}>{name}</span>
 		</a>
         </li>
 	{/each}
