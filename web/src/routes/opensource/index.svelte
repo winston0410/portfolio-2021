@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
- import { getProps } from '../../helper'
+import { getProps } from '/src/helper'
  //  console.log('check get Props', getProps);
  //  export async function load({ fetch }) {
     //  const res = await fetch('/api/github');
@@ -10,7 +10,7 @@
     //  error: new Error()
    //  };
   //  }
- export const load = getProps({ projects: '/api/github'});
+export const load = getProps({ projects: '/api/github'});
 
 </script>
 
