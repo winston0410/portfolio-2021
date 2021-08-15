@@ -8,11 +8,13 @@ interface PromiseTable<T> {
 
 interface ResolvedResponse<T> {
     ok: true,
+    status: number,
     value: T
 }
 
 interface RejectedResponse {
     ok: false,
+    status: number,
     reason: string
 }
 
@@ -26,11 +28,11 @@ const allPromiseSettled = <T>(t: PromiseTable<T>): Promise<UnwrappedTable<T>> =>
     return new Promise(resolve => {
         for (const key in t) {
             Promise.resolve(t[key])
-            .then(res => {
-                result[key] = { ok: true, value: res }
+            .then(async (res) => {
+                result[key] = { ok: true, status: res.status, value: await res.json() }
                 index ++
-            }).catch(err => {
-                result[key] = { ok: false, reason: err }
+            }).catch(async (err) => {
+                result[key] = { ok: false, status: err.status, reason: await err.json() }
                 index ++
             }).finally(() => {
                 if (index === Object.keys(t).length) {
@@ -41,13 +43,13 @@ const allPromiseSettled = <T>(t: PromiseTable<T>): Promise<UnwrappedTable<T>> =>
     })
 }
 
-const getProps = (props :Props) => async ({ fetch }) => {
+const getProps = <T>(props :Props) => async ({ fetch }) => {
     const wrapped = {}
     for (const key in props) {
-        wrapped[key] = fetch(props[key]).then(res => res.json())
+        wrapped[key] = fetch(props[key])
     }
     
-    const unwrapped = await allPromiseSettled(wrapped as unknown as PromiseTable<string>)
+    const unwrapped = await allPromiseSettled<T>(wrapped)
 
     return { props: unwrapped };
 }
