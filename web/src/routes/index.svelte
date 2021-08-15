@@ -24,7 +24,7 @@
 <script lang="ts">
   export let pages;
   //  pages = pages.value
-  //  console.log(pages)
+  console.log(pages)
   pages = [{ name: "dumy", url: "/"}, {name: "ste", url: "/"}]
 </script>
 
