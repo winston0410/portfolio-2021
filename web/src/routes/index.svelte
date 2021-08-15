@@ -1,10 +1,13 @@
 <script context="module" lang="ts">
+  console.log('check once')
   import "/src/modern-normalize.css"
   import "/src/app.css"
 
   import { getProps } from "/src/helper"
   import glory from "/src/cssRenderer"
   import { xsFont, smFont } from "/src/styles/base"
+
+  console.log('check glory', glory.raw)
 
   //  const style = glory.virtual({
     //  fontFamily: "VT323",

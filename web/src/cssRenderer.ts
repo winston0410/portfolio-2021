@@ -1,10 +1,10 @@
-import { create, prefixer, virtual, keyframes, hydrate } from "glory"
+import { create, prefixer, virtual, keyframes, hydration } from "glory"
 
 const glory = create({})
 
 virtual(glory);
 prefixer(glory)
 keyframes(glory)
-hydrate(glory)
+hydration(glory)
 
 export default glory
