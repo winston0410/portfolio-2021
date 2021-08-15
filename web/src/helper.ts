@@ -7,12 +7,12 @@ interface PromiseTable<T> {
 }
 
 interface ResolvedResponse<T> {
-    status: "fulfilled",
+    ok: true,
     value: T
 }
 
 interface RejectedResponse {
-    status: "rejected",
+    ok: false,
     reason: string
 }
 
@@ -27,10 +27,10 @@ const allPromiseSettled = <T>(t: PromiseTable<T>): Promise<UnwrappedTable<T>> =>
         for (const key in t) {
             Promise.resolve(t[key])
             .then(res => {
-                result[key] = { status: "fulfilled", value: res }
+                result[key] = { ok: true, value: res }
                 index ++
             }).catch(err => {
-                result[key] = { status: "rejected", reason: err }
+                result[key] = { ok: false, reason: err }
                 index ++
             }).finally(() => {
                 if (index === Object.keys(t).length) {
