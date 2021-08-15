@@ -23,7 +23,7 @@
 
 <script lang="ts">
   export let pages;
-  pages = pages.value
+  export const { ok, value } = pages;
 </script>
 
 <div class={glory.virtual({
@@ -47,7 +47,7 @@
     display: "flex",
         flexDirection: "column"
     })}>
-	{#each pages as { name, url }}
+	{#each value as { name, url }}
 		<li class={glory.virtual({
         ...smMb
         })}>
