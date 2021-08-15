@@ -1,7 +1,27 @@
-<script lang="ts">
-  //  import glory from "/src/cssRenderer"
+<script context="module" lang="ts">
+  import glory from "/src/cssRenderer";
+  import color from "/src/styles/color";
+  console.log('check glory in layout', glory)
 </script>
 
-<main>
+<header class={glory.virtual({
+      position: "fixed",
+      top: "0px",
+      left: "0px",
+      right: "0px"
+    })}>
+    <div class={glory.virtual({
+      display: "flex",
+      justifyContent: "center",
+      color: "#ffffff"
+    })}>
+    This is the top bar
+    </div>
+</header>
+
+<main class={glory.virtual({
+    background: color.base,
+    color: color.baseContrast
+})}>
 	<slot />
 </main>

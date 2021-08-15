@@ -5,8 +5,9 @@ const fontScale = {
 	lg: 5.236
 };
 
+const baseValue = 16;
+
 const getFont = (scale: number) => {
-	const baseValue = 16;
 	return {
 		fontSize: `${scale * baseValue}px`,
 		fontWeight: 'normal',
@@ -19,8 +20,19 @@ export const smFont = getFont(fontScale.sm);
 export const mdFont = getFont(fontScale.md);
 export const lgFont = getFont(fontScale.lg);
 
-//  const getMargin = (scale: number) => {
-    //  return {
-        
-    //  }
-//  }
+const getMarginBottom = (scale: number) => {
+    return {
+        marginBottom: `${scale * baseValue / 2}px`,
+    }
+}
+
+export const xsMb = getMarginBottom(fontScale.xs);
+export const smMb = getMarginBottom(fontScale.sm);
+export const mdMb = getMarginBottom(fontScale.md);
+export const lgMb = getMarginBottom(fontScale.lg);
+
+const getPadding = (scale: number) => {
+    return {
+
+    }
+}
