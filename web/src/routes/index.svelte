@@ -5,7 +5,8 @@
 
   import { getProps } from "/src/helper"
   import glory from "/src/cssRenderer"
-  import { xsFont, smFont } from "/src/styles/base"
+  import { xsFont, smFont, smMb } from "/src/styles/base"
+  import color from "/src/styles/color"
 
   console.log('check glory', glory.raw)
 
@@ -24,7 +25,7 @@
   export let pages;
   //  pages = pages.value
   //  console.log(pages)
-  pages = [{ name: "dumy", url: "test"}, {name: "ste", url: "sdf"}]
+  pages = [{ name: "dumy", url: "/"}, {name: "ste", url: "/"}]
 </script>
 
 <div class={glory.virtual({
@@ -50,12 +51,13 @@
     })}>
 	{#each pages as { name, url }}
 		<li class={glory.virtual({
-                marginBottom: "12px"
+        ...smMb
         })}>
         <a class={glory.virtual({
             width: "100%",
             display: "flex",
-            justifyContent: "center"
+            justifyContent: "center",
+            color: color.highlight
         })} href={url}>
             <span class={glory.virtual(xsFont)}>{name}</span>
 		</a>
