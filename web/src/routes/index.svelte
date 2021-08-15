@@ -23,9 +23,7 @@
 
 <script lang="ts">
   export let pages;
-  //  pages = pages.value
-  console.log(pages)
-  pages = [{ name: "dumy", url: "/"}, {name: "ste", url: "/"}]
+  pages = pages.value
 </script>
 
 <div class={glory.virtual({
