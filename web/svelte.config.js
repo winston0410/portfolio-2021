@@ -6,20 +6,14 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess(),
+	preprocess: preprocess({
+        replace: [[ 'process.env.NODE_ENV', "production" ]],
+    }),
 
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-        adapter: adapter({
-            async esbuild(opts) {
-                return {
-                    ...opts,
-                    define: { "process.env.NODE_ENV": "production"},
-                }
-            }
-        })
-        //  adapter: adapter()
+        adapter: adapter()
 	}
 };
 
