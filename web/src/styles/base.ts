@@ -31,8 +31,14 @@ export const smMb = getMarginBottom(fontScale.sm);
 export const mdMb = getMarginBottom(fontScale.md);
 export const lgMb = getMarginBottom(fontScale.lg);
 
-const getPadding = (scale: number) => {
+const getPaddingX = (scale: number) => {
     return {
-
+        paddingBottom: `${scale * baseValue / 2}px`,
+        paddingTop: `${scale * baseValue / 2}px`
     }
 }
+
+export const xsPx = getPaddingX(fontScale.xs);
+export const smPx = getPaddingX(fontScale.sm);
+export const mdPx = getPaddingX(fontScale.md);
+export const lgPx = getPaddingX(fontScale.lg);
