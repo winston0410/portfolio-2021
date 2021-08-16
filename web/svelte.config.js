@@ -1,5 +1,6 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-vercel';
+//  import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 //  import glory from './src/cssRenderer';
 //  console.log('check glory in config.js', glory.raw)
 
