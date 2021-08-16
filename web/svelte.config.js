@@ -5,12 +5,12 @@ import adapter from '@sveltejs/adapter-vercel';
 const config = {
 	preprocess: [
 		sveltePreprocess({
-			defaults: {
+            defaults: {
 				style: 'postcss'
 			},
-			replace: [['process.env.NODE_ENV', 'production']],
-			postcss: true
-		})
+            replace: [['process.env.NODE_ENV', 'production']],
+            postcss: true,
+        })
 	],
 
 	kit: {
