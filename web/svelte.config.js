@@ -1,18 +1,21 @@
-import preprocess from 'svelte-preprocess';
-//  import adapter from '@sveltejs/adapter-vercel';
-import adapter from '@sveltejs/adapter-static';
-//  import glory from './src/cssRenderer';
-//  console.log('check glory in config.js', glory.raw)
+import sveltePreprocess from 'svelte-preprocess';
+import adapter from '@sveltejs/adapter-vercel';
+//  import adapter from '@sveltejs/adapter-static';
 
 const config = {
-	preprocess: preprocess({
-        replace: [[ 'process.env.NODE_ENV', "production" ]],
-    }),
+	preprocess: [
+		sveltePreprocess({
+			defaults: {
+				style: 'postcss'
+			},
+			replace: [['process.env.NODE_ENV', 'production']],
+			postcss: true
+		})
+	],
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-        adapter: adapter()
+		adapter: adapter()
 	}
 };
 
