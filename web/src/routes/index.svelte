@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import "/src/modern-normalize.css"
-  import "/src/app.css"
+  //  import "/src/app.css"
 
   import { getProps } from "/src/helper"
   import NavBar from "/src/components/NavBar.svelte"
@@ -23,7 +23,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-bottom: var(--sm-mb);
+        margin-bottom: var(--sm-space);
     }
 
     .navbar-item-link{
@@ -33,7 +33,7 @@
     }
 
     .navbar-item-link-text{
-        font-size: var(--xs-font-size);
+        font-size: var(--sm-font);
     }
 
     .title{
@@ -44,7 +44,7 @@
 
     .title-heading{
     font-size: 80px;
-    font-family: VT323;
+    font-family: var(--display-font);
     font-weight: normal;
     color: var(--highlight);
     }
@@ -57,6 +57,7 @@
 
     .title-subheading{
         text-align: center;
+        font-size: var(--md-font);
     }
 </style>
 
