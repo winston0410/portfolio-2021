@@ -2,7 +2,9 @@
   import glory from "/src/cssRenderer";
   import color from "/src/styles/color";
   import { xsPx } from "/src/styles/base";
-  console.log('check glory in layout', glory)
+  import { amp, browser, dev, mode, prerendering } from '$app/env';
+  
+  console.log('check glory in layout', glory.raw, 'is node server', browser)
 </script>
 
 <header class={glory.virtual({
