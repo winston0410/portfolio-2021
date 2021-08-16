@@ -13,3 +13,25 @@ ul {
     list-style: none;
     padding: 0px;
 }
+
+:root{
+    --xs: 1;
+    --sm: 1.618;
+    --md: 2.618;
+    --lg: 4.236;
+}
+
+:root{
+    --base-value: 12px;
+}
+
+@media (min: 768px) {
+  :root {
+    --base-value: 16px;
+  }
+}
+
+:root{
+    --xs-mb: calc(var(--xs) * var(--mb-base-value));
+    --sm-mb: calc(var(--sm) * var(--mb-base-value));
+}
