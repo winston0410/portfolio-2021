@@ -5,8 +5,6 @@ import adapter from '@sveltejs/adapter-static';
 //  console.log('check glory in config.js', glory.raw)
 
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
 	preprocess: preprocess({
         replace: [[ 'process.env.NODE_ENV', "production" ]],
     }),
