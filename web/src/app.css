@@ -13,6 +13,11 @@
     --xl: 4.236;
 }
 
+/* container-width */
+:root{
+    --container-width: 1024px;
+}
+
 /* space */
 :root{
     --space-base-value: 8px;

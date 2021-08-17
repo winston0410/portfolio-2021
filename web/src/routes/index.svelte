@@ -1,7 +1,4 @@
 <script context="module" lang="ts">
-  import "/src/modern-normalize.css"
-  //  import "/src/app.css"
-
   import { getProps } from "/src/helper"
   import NavBar from "/src/components/NavBar.svelte"
   
@@ -14,6 +11,16 @@
 </script>
 
 <style>
+    .mainpage {
+      max-width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
+      height: 100vh;
+      display: flex;
+    justify-content: center;
+        align-items: center;
+    }
+
     .navbar{
     display: flex;
     flex-direction: column;
@@ -61,6 +68,8 @@
     }
 </style>
 
+<div class="mainpage">
+<div> 
 <div class={"title"}>
 <h1 class={"title-heading"}>Hugo Sum</h1>
 <span class={"title-subheading"}>Fullstack developer from Hong Kong</span>
@@ -77,3 +86,5 @@
 	{/each}
     </ul>
 </nav>
+</div>
+</div>
