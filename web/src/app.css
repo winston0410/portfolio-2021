@@ -61,3 +61,18 @@
     --highlight-color: hsla(45, 98%, 50%, 1);
     --highlight-tint1-color: hsla(45, 98%, 75%, 1);
 }
+
+/* animation delay */
+:root{
+    --time-base-value: 500ms;
+    --time-1: var(--time-base-value);
+    --time-2: calc(2 * var(--time-base-value));
+    --time-3: calc(3 * var(--time-base-value));
+    --time-4: calc(4 * var(--time-base-value));
+    --time-5: calc(5 * var(--time-base-value));
+    --time-6: calc(6 * var(--time-base-value));
+    --time-7: calc(7 * var(--time-base-value));
+    --time-8: calc(8 * var(--time-base-value));
+    --time-9: calc(9 * var(--time-base-value));
+}
+
