@@ -1,3 +1,5 @@
+@import 'modern-css-reset';
+
 @font-face {
 	font-family: 'VT323';
 	font-weight: 400;
@@ -5,12 +7,20 @@
 	font-display: swap;
 }
 
+/* :root{ */
+    /* --xs: 0.618; */
+    /* --sm: 1; */
+    /* --md: 1.618; */
+    /* --lg: 2.618; */
+    /* --xl: 4.236; */
+/* } */
+
 :root{
-    --xs: 0.618;
+    --xs: 0.714;
     --sm: 1;
-    --md: 1.618;
-    --lg: 2.618;
-    --xl: 4.236;
+    --md: 1.4;
+    --lg: 1.96;
+    --xl: 2.744;
 }
 
 /* container-width */
@@ -20,7 +30,7 @@
 
 /* space */
 :root{
-    --space-base-value: 8px;
+    --space-base-value: calc(var(--font-base-value) / 2);
     --xs-space: calc(var(--xs) * var(--space-base-value));
     --sm-space: calc(var(--sm) * var(--space-base-value));
     --md-space: calc(var(--md) * var(--space-base-value));
@@ -36,7 +46,7 @@
 
 /* font-size */
 :root{
-    --font-base-value: 16px;
+    --font-base-value: 20px;
     --xs-font: calc(var(--xs) * var(--font-base-value));
     --sm-font: calc(var(--sm) * var(--font-base-value));
     --md-font: calc(var(--md) * var(--font-base-value));
@@ -50,14 +60,4 @@
     --base-contrast-color: hsla(50, 5%, 90%, 1);
     --highlight-color: hsla(45, 98%, 50%, 1);
     --highlight-tint1-color: hsla(45, 98%, 75%, 1);
-}
-
-a {
-   color: var(--highlight-color);
-   text-decoration: none;
-}
-
-ul {
-    list-style: none;
-    padding: 0px;
 }
