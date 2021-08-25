@@ -16,6 +16,7 @@
 
     :global(body) {
         background: var(--base-color);
+        font-family: var(--content-font);
     }
 
     .topbar {
@@ -31,7 +32,6 @@
     .topbar-inner{
         display: flex;
         justify-content: center;
-        font-family: var(--content-font);
      }
 
     .main{
