@@ -12,9 +12,6 @@
 
 <style>
     .mainpage {
-      max-width: var(--container-width);
-      margin-left: auto;
-      margin-right: auto;
       height: 100vh;
       display: flex;
     justify-content: center;
@@ -47,6 +44,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-bottom: var(--md-space);
     }
 
     .title-heading{
@@ -65,6 +63,26 @@
     .title-subheading{
         text-align: center;
         font-size: var(--md-font);
+    }
+        
+    @keyframes fade-in-from-left {
+        0%{
+            transform: translateX(-10px);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+    .fade-in-order-0{
+        animation: fade-in-from-left var(--time-3);
+    }
+    
+    .fade-in-order-1{
+        animation: fade-in-from-left var(--time-6);
     }
 </style>
 

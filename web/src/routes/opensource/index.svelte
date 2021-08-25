@@ -18,6 +18,19 @@ export const load = getProps({ projects: '/api/github'});
     .list{
         display: grid;
         grid-row-gap: var(--sm-space);
+        grid-column-gap: var(--sm-space);
+    }
+        
+    @media (min-width: 768px){
+      .list{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+        
+    @media (min-width: 1200px){
+      .list{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
 </style>
 

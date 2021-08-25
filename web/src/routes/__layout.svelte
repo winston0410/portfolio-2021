@@ -14,6 +14,10 @@
        margin: 0px;
     }
 
+    :global(body) {
+        background: var(--base-color);
+    }
+
     .topbar {
       position: fixed;
       top: 0px;
@@ -33,7 +37,10 @@
     .main{
       color: var(--base-contrast-color);
       background: var(--base-color);
-      padding: 0 var(--sm-space);
+      padding: 0 var(--md-space);
+      max-width: var(--container-width);
+      margin-left: auto;
+      margin-right: auto;
     }
 </style>
 
