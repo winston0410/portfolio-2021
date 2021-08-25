@@ -76,9 +76,9 @@
 </div>
 
 <nav>
-    <ul class="navbar">
-	{#each value as { name, url }}
-		<li class="navbar-item">
+    <ul class="navbar" role="list">
+	{#each value as { name, url }, index}
+		<li class={`navbar-item fade-in-order-${index}`}>
         <a class="navbar-item-link" href={url}>
             <span class="navbar-item-link-text">{name}</span>
 		</a>

@@ -14,9 +14,16 @@ export const load = getProps({ projects: '/api/github'});
 	<title>Opensource</title>
 </svelte:head>
 
+<style>
+    .list{
+        display: grid;
+        grid-row-gap: var(--sm-space);
+    }
+</style>
+
 <main>
 <h1>Opensource</h1>
-    <ul>
+    <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
 	{#each value as { name, description, html_url, language }}
 		<li>

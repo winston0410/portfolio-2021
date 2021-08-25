@@ -1,11 +1,19 @@
 <script context="module" lang="ts">
   import { amp, browser, dev, mode, prerendering } from '$app/env';
   import "/src/app.css"
-  import "/src/modern-normalize.css"
-
 </script>
 
 <style>
+    :global(a) {
+       color: var(--highlight-color);
+       text-decoration: none;
+    }
+
+    :global(ul) {
+       padding: 0px;
+       margin: 0px;
+    }
+
     .topbar {
       position: fixed;
       top: 0px;
@@ -13,7 +21,7 @@
       right: 0px;
       color: var(--base-contrast-color);
       background: var(--base-color);
-      padding: var(--sm-space) 0;
+      padding: var(--md-space) 0;
     }
 
     .topbar-inner{
@@ -25,14 +33,15 @@
     .main{
       color: var(--base-contrast-color);
       background: var(--base-color);
+      padding: 0 var(--sm-space);
     }
 </style>
 
-<header class="topbar">
-    <div class="topbar-inner">
-    This is the top bar
-    </div>
-</header>
+<!--  <header class="topbar">  -->
+    <!--  <div class="topbar-inner">  -->
+    <!--  This is the top bar  -->
+    <!--  </div>  -->
+<!--  </header>  -->
 <main class="main">
 	<slot></slot>
 </main>
