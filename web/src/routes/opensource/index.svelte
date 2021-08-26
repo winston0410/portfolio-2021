@@ -38,7 +38,7 @@ export const load = getProps({ projects: '/api/github'});
 <h1>Opensource</h1>
     <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
-	{#each value as { name, description, html_url, language }}
+	{#each value as { name, description, html_url, languages }}
 		<li>
         <a href={html_url}>
             <span>{name}</span>
