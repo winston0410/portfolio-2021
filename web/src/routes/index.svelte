@@ -59,7 +59,7 @@
       font-size: 120px;
       }
     }
-
+        
     .title-subheading{
         text-align: center;
         font-size: var(--md-font);
@@ -67,7 +67,7 @@
         
     @keyframes fade-in-from-left {
         0%{
-            transform: translateX(-10px);
+            transform: translateX(-20px);
             opacity: 0;
         }
 

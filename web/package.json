@@ -40,6 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"glory": "^2.0.5",
+		"glory-svelte-preprocess": "^0.2.2",
 		"modern-css-reset": "^1.4.0"
 	}
 }
