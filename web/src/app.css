@@ -1,4 +1,5 @@
 @import 'modern-css-reset';
+@import 'language-colors/language-colors.css';
 
 @font-face {
 	font-family: 'VT323';
@@ -46,7 +47,7 @@
 
 /* font-size */
 :root{
-    --font-base-value: 20px;
+    --font-base-value: 16px;
     --xs-font: calc(var(--xs) * var(--font-base-value));
     --sm-font: calc(var(--sm) * var(--font-base-value));
     --md-font: calc(var(--md) * var(--font-base-value));
@@ -60,6 +61,16 @@
     --base-contrast-color: hsla(50, 5%, 90%, 1);
     --highlight-color: hsla(45, 98%, 50%, 1);
     --highlight-tint1-color: hsla(45, 98%, 75%, 1);
+}
+
+/* border-radius */
+:root{
+    --radius-base-value: 5px;
+    --xs-radius: calc(var(--xs) * var(--radius-base-value));
+    --sm-radius: calc(var(--sm) * var(--radius-base-value));
+    --md-radius: calc(var(--md) * var(--radius-base-value));
+    --lg-radius: calc(var(--lg) * var(--radius-base-value));
+    --xl-radius: calc(var(--xl) * var(--radius-base-value));
 }
 
 /* animation delay */
@@ -76,3 +87,19 @@
     --time-9: calc(9 * var(--time-base-value));
 }
 
+/* Patching language-color */
+.bg-color-svelte { background-color: #ff3e00 !important; }
+.bg-color-purescript { border: 0.7px solid #fff; }
+
+/* Specific to the current theme */
+.font-color-javascript{
+    color: #000;
+}
+
+.font-color-shell{
+    color: #000;
+}
+
+.font-color-dhall{
+    color: #000;
+}

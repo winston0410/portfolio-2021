@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
-import { getProps } from '/src/helper'
+import { getProps, getLangColorName } from '/src/helper'
 
-export const load = getProps({ projects: '/api/github'});
+export const load = getProps({ _projects: '/api/github'});
 
 </script>
 
 <script lang="ts">
-  export let projects;
-  export const { ok, value } = projects;
+  export let _projects;
+  export const { ok, value: projects } = _projects;
 </script>
 
 <svelte:head>
@@ -32,18 +32,48 @@ export const load = getProps({ projects: '/api/github'});
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
+
+    .list-item-link {
+        font-size: var(--md-font);
+    }
+        
+    .list-item-description {
+        font-size: var(--sm-font);
+    }
+
+    .language-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+        
+    .language-list-item{
+padding: var(--xs-space);
+margin-right: var(--sm-space);
+margin-bottom: var(--sm-space);
+border-radius: var(--md-radius);
+    font-size: var(--xs-font);
+    }
 </style>
 
 <main>
-<h1>Opensource</h1>
+<h1 class="title">Opensource</h1>
     <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
-	{#each value as { name, description, html_url, languages }}
-		<li>
-        <a href={html_url}>
+	{#each projects as { name, description, html_url, languages }}
+		<li class="list-item">
+        <a class="list-item-link" href={html_url}>
             <span>{name}</span>
 		</a>
-        <p>{description}</p>
+        <div>
+            <ul class="language-list" role="list">
+                    {#each Object.keys(languages) as language }
+                        <li class={`language-list-item bg-color-${getLangColorName(language)}`}>
+                           <span class={`font-color-${getLangColorName(language)}`}>{language}</span>
+                        </li>
+                    {/each}
+            </ul>
+        </div>
+        <p class="list-item-description">{description}</p>
         </li>
 	{/each}
     </ul>

@@ -19,6 +19,11 @@
         font-family: var(--content-font);
     }
 
+    :global(h1){
+        font-size: var(--lg-font);
+        margin: var(--md-space) 0;
+    }
+
     .topbar {
       position: fixed;
       top: 0px;
