@@ -43,7 +43,7 @@ const allPromiseSettled = <T>(t: PromiseTable<T>): Promise<UnwrappedTable<T>> =>
     })
 }
 
-const getProps = <T>(props :Props) => async ({ fetch }) => {
+export const getProps = <T>(props :Props) => async ({ fetch }) => {
     const wrapped = {}
     for (const key in props) {
         wrapped[key] = fetch(props[key])
@@ -54,4 +54,11 @@ const getProps = <T>(props :Props) => async ({ fetch }) => {
     return { props: unwrapped };
 }
 
-export { getProps }
+export const getLangColorName = (lang:string):string => {
+    const langHash = {
+        "C++": "cpp",
+        "Vim script": "vim_script"
+    }
+    
+    return langHash[lang] ?? lang.toLowerCase()
+}
