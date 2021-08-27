@@ -23,6 +23,11 @@
         font-size: var(--lg-font);
         margin: var(--md-space) 0;
     }
+        
+    :global(code){
+        background: var(--highlight-tint2-color);
+        color: #000;
+    }
 
     .topbar {
       position: fixed;
