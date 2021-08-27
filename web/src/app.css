@@ -89,10 +89,14 @@
 
 /* Patching language-color */
 .bg-color-svelte { background-color: #ff3e00 !important; }
-.bg-color-purescript { border: 0.7px solid #fff; }
+.bg-color-purescript { background-color: #fff !important; }
 
 /* Specific to the current theme */
 .font-color-javascript{
+    color: #000;
+}
+
+.font-color-purescript{
     color: #000;
 }
 
