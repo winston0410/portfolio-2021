@@ -42,7 +42,6 @@ export const get: RequestHandler<Locals> = async () => {
 			)
 			.map((item: IGithubRepo) => {
 				item.description = processMarkdown(item.description);
-                console.log('check value', item.description)
 				return item;
 			});
 
