@@ -61,6 +61,7 @@
     --base-contrast-color: hsla(50, 5%, 90%, 1);
     --highlight-color: hsla(45, 98%, 50%, 1);
     --highlight-tint1-color: hsla(45, 98%, 75%, 1);
+    --highlight-tint2-color: hsla(45, 98%, 85%, 1);
 }
 
 /* border-radius */

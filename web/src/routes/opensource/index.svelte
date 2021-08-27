@@ -73,7 +73,7 @@ border-radius: var(--md-radius);
                     {/each}
             </ul>
         </div>
-        <p class="list-item-description">{description}</p>
+        <p class="list-item-description">{@html description}</p>
         </li>
 	{/each}
     </ul>
