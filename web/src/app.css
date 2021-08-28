@@ -22,11 +22,12 @@
     --md: 1.4;
     --lg: 1.96;
     --xl: 2.744;
+    --xxl: 3.842;
 }
 
 /* container-width */
 :root{
-    --container-width: 1024px;
+    --container-width: 2048px;
 }
 
 /* space */
@@ -37,6 +38,7 @@
     --md-space: calc(var(--md) * var(--space-base-value));
     --lg-space: calc(var(--lg) * var(--space-base-value));
     --xl-space: calc(var(--xl) * var(--space-base-value));
+    --xxl-space: calc(var(--xxl) * var(--space-base-value));
 }
 
 /* font-family */
@@ -86,6 +88,13 @@
     --time-7: calc(7 * var(--time-base-value));
     --time-8: calc(8 * var(--time-base-value));
     --time-9: calc(9 * var(--time-base-value));
+}
+
+/* layout related */
+:root{
+    --sidebar: 30%;
+    --main: 70%;
+    --sectionYpadding: var(--xxl-space);
 }
 
 /* Patching language-color */

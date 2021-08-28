@@ -1,13 +1,9 @@
 <script context="module" lang="ts">
   import { getProps } from "/src/helper"
-  import NavBar from "/src/components/NavBar.svelte"
-  
-  export const load = getProps({ pages: '/api/states/nav-bar'});
 </script>
 
 <script lang="ts">
-  export let pages;
-  export const { ok, value } = pages;
+import { pageList } from "/src/store"
 </script>
 
 <style>
@@ -95,9 +91,9 @@
 
 <nav>
     <ul class="navbar" role="list">
-	{#each value as { name, url }, index}
+	{#each $pageList as { name, url }, index}
 		<li class={`navbar-item fade-in-order-${index}`}>
-        <a class="navbar-item-link" href={url}>
+        <a sveltekit:prefetch class="navbar-item-link" href={url}>
             <span class="navbar-item-link-text">{name}</span>
 		</a>
         </li>

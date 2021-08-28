@@ -1,6 +1,14 @@
 <script context="module" lang="ts">
-  import { amp, browser, dev, mode, prerendering } from '$app/env';
+  import { getProps } from "/src/helper"
+  import { pageList } from "/src/store"
+  export const load = getProps({ _pages: '/api/states/nav-bar'});
   import "/src/app.css"
+</script>
+
+<script lang="ts">
+export let _pages
+export const pages = _pages.value
+pageList.set(pages)
 </script>
 
 <style>
@@ -21,7 +29,11 @@
 
     :global(h1){
         font-size: var(--lg-font);
-        margin: var(--md-space) 0;
+        margin-bottom: var(--xl-space);
+    }
+
+    :global(h1,h2,h3,h4,h5,h6){
+        line-height: 1;
     }
         
     :global(code){
@@ -49,8 +61,8 @@
       background: var(--base-color);
       padding: 0 var(--md-space);
       max-width: var(--container-width);
-      margin-left: auto;
       margin-right: auto;
+      margin-left: auto;
     }
 </style>
 
