@@ -1,14 +1,11 @@
 <script context="module" lang="ts">
 import { getProps } from '/src/helper'
 
-//  export const load = getProps({ projects: '/api/cv'});
+export const load = getProps({ cv: '/api/linkedin'});
 
 </script>
 
 <script lang="ts">
-  export let projects;
-  export const { ok, value } = projects;
-  console.log('check value', value)
 </script>
 
 <svelte:head>
