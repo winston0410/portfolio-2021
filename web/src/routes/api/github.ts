@@ -1,5 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import type { Locals } from '$lib/types';
+import { handleFetchError, catched } from '$lib/fetch'
 import env from '../../env';
 import MarkDownIt from 'markdown-it';
 import emoji from 'markdown-it-emoji';
@@ -20,7 +21,7 @@ const getGithubApi = async () => {
 	return fetch(
 		'https://api.github.com/users/winston0410/repos?sort=updated&per_page=100',
 		fetchOptions
-	).then((res) => res.json());
+	).then(handleFetchError).then((res) => res.json())
 };
 
 interface IGithubRepo {
@@ -34,7 +35,7 @@ interface IGithubRepo {
 }
 
 export const get: RequestHandler<Locals> = async () => {
-	try {
+    return await catched(async () => {
 		const githubRes = await getGithubApi();
 		const filtered = githubRes
 			.filter(
@@ -47,24 +48,12 @@ export const get: RequestHandler<Locals> = async () => {
 
 		for (const repo of filtered) {
 			repo.languages = await fetch(repo.languages_url, fetchOptions)
-				.then((res) => {
-					if (!res.ok) {
-						throw Error(res.statusText);
-					}
-					return res;
-				})
+				.then(handleFetchError)
 				.then((res) => res.json())
-				.catch((err) => {
-					return {};
-				});
 		}
 
 		return {
 			body: filtered
 		};
-	} catch (error) {
-		return {
-			body: error
-		};
-	}
+    })
 };
