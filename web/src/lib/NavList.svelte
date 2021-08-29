@@ -12,13 +12,12 @@
 
 <style>
 nav{
-    position: absolute;
+    display: none;
+    width: 100%;
 }
     
 @media (min-width: 1200px){
-    nav{
-        position: static;
-    }
+    
 }
     
 .navlist-item{

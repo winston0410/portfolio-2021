@@ -37,7 +37,7 @@ pageList.set(pages)
     }
         
     :global(code){
-        background: var(--highlight-tint2-color);
+        background: var(--highlight-color-tint2);
         color: #000;
     }
 
@@ -59,7 +59,6 @@ pageList.set(pages)
     .main{
       color: var(--base-contrast-color);
       background: var(--base-color);
-      padding: 0 var(--md-space);
       max-width: var(--container-width);
       margin-right: auto;
       margin-left: auto;

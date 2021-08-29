@@ -20,13 +20,19 @@ const handleClick = () => {
     justify-content: space-between;
     padding-top: var(--sm-space);
     padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
-    position: sticky;
-    top: var(--sectionYpadding);
-    align-self: start;
+    flex-wrap: wrap;
+    background: var(--base-color-shade1);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 @media (min-width: 1200px){
     .sidebar{
+        position: sticky;
+        top: var(--sectionYpadding);
+        align-self: start;
       flex-direction: column;
     }
 
