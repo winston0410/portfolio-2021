@@ -7,7 +7,7 @@
     console.log('chekc page', $page)
   export let pages
   export let isActive = false
-  console.log('check page', pages)
+  console.log('check page', pages, $page.path)
 </script>
 
 <style>
@@ -34,9 +34,13 @@ nav{
     <ul role="list">
 	{#each pages as { name, url }}
 		<li class="navlist-item">
-        <a href={url} aria-current=true>
-            <span>{name}</span>
-		</a>
+        {#if url === $page.path}
+            <span aria-current="page">{name}</span>
+        {:else}
+            <a href={url}>
+                <span>{name}</span>
+            </a>
+        {/if}
             </li>
 	{/each}
     </ul>
