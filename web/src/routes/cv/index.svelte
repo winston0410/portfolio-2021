@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 import { getProps } from '/src/helper'
 
-export const load = getProps({ cv: '/api/linkedin'});
+//  export const load = getProps({ cv: '/api/linkedin'});
 
 </script>
 
