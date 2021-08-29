@@ -2,7 +2,7 @@
 import NavList from '$lib/NavList.svelte'
 import { onMount } from 'svelte';
 import { pageList } from "/src/store"
-import resizeObserver from '$lib/resizeObserver'
+import resizeObserver from 'svelte-use-resize-observer'
 const handleResize = (e) => {
     const elem = e.detail.entries[0]
     const cr = elem.contentRect
