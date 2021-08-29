@@ -7,7 +7,6 @@ export const load = getProps({ _projects: '/api/github'});
 
 <script lang="ts">
   export let _projects;
-  console.log('check', _projects)
   export const { ok, value: projects } = _projects;
 </script>
 
