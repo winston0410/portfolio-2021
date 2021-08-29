@@ -18,7 +18,8 @@ const handleClick = () => {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding: var(--sm-space) 0;
+    padding-top: var(--sm-space);
+    padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
     position: sticky;
     top: var(--sectionYpadding);
     align-self: start;

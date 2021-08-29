@@ -36,6 +36,12 @@ import { pageList } from "/src/store"
         font-size: var(--sm-font);
     }
 
+    @media (min-width: 1200px){
+        .navbar-item-link-text{
+            font-size: var(--md-font);
+        }
+    }
+
     .title{
     display: flex;
     align-items: center;
@@ -59,6 +65,12 @@ import { pageList } from "/src/store"
     .title-subheading{
         text-align: center;
         font-size: var(--md-font);
+    }
+        
+    @media (min-width: 1200px){
+        .title-subheading{
+            font-size: var(--lg-font);
+        }
     }
         
     @keyframes fade-in-from-left {

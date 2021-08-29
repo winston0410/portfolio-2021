@@ -1,4 +1,10 @@
-<script>
+<script context="module" lang="ts">
+</script>
+
+<script lang="ts">
+    //  TODO: Handle current page and disable link
+    import { page } from '$app/stores';
+    console.log('chekc page', $page)
   export let pages
   export let isActive = false
   console.log('check page', pages)
@@ -8,6 +14,16 @@
 nav{
     position: absolute;
 }
+    
+@media (min-width: 1200px){
+    nav{
+        position: static;
+    }
+}
+    
+.navlist-item{
+    font-size: var(--md-font);
+}  
 
 .active{
     display: block;
@@ -17,8 +33,8 @@ nav{
 <nav class={isActive ? "active" : ""}>
     <ul role="list">
 	{#each pages as { name, url }}
-		<li>
-        <a href={url}>
+		<li class="navlist-item">
+        <a href={url} aria-current=true>
             <span>{name}</span>
 		</a>
             </li>
