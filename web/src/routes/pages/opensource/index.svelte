@@ -16,6 +16,10 @@ export const load = getProps({ _projects: '/api/github'});
 </svelte:head>
 
 <style>
+    .container{
+        padding: var(--sectionYpadding) var(--md-space);
+    }
+        
     .list{
         display: grid;
         grid-row-gap: var(--sm-space);
@@ -56,7 +60,7 @@ border-radius: var(--md-radius);
     }
 </style>
 
-<main>
+<section class="container">
 <h1 class="title">Opensource</h1>
     <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
@@ -78,5 +82,5 @@ border-radius: var(--md-radius);
         </li>
 	{/each}
     </ul>
-</main>
+</section>
 

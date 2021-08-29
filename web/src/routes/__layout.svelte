@@ -70,6 +70,6 @@ pageList.set(pages)
     <!--  This is the top bar  -->
     <!--  </div>  -->
 <!--  </header>  -->
-<main class="main">
-	<slot></slot>
-</main>
+<div class="main">
+    <slot></slot>
+</div>

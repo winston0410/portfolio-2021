@@ -17,7 +17,9 @@ nav{
 }
     
 @media (min-width: 1200px){
-    
+    nav{
+        display: block;
+    }
 }
     
 .navlist-item{

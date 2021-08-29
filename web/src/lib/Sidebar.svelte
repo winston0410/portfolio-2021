@@ -18,8 +18,7 @@ const handleClick = () => {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: var(--sm-space);
-    padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
+    padding: var(--sm-space) var(--md-space);
     flex-wrap: wrap;
     background: var(--base-color-shade1);
     position: fixed;
@@ -31,9 +30,11 @@ const handleClick = () => {
 @media (min-width: 1200px){
     .sidebar{
         position: sticky;
-        top: var(--sectionYpadding);
+        top: 0px;
         align-self: start;
-      flex-direction: column;
+        flex-direction: column;
+        padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
+        height: 100vh;
     }
 
     .menu-button{

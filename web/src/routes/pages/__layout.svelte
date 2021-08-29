@@ -10,7 +10,6 @@
         .container{
         display: grid;
         grid-template-columns: var(--sidebar) var(--main);
-        padding: var(--sectionYpadding) 0;
         }
     }
 </style>
