@@ -10,6 +10,7 @@ export const load = getProps({ cv: '/api/linkedin'});
 
 <svelte:head>
 	<title>CV</title>
+    <meta name="description" content="" />
 </svelte:head>
 
 <style>

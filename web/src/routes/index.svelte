@@ -1,13 +1,9 @@
 <script context="module" lang="ts">
   import { getProps } from "/src/helper"
-  import NavBar from "/src/components/NavBar.svelte"
-  
-  export const load = getProps({ pages: '/api/states/nav-bar'});
 </script>
 
 <script lang="ts">
-  export let pages;
-  export const { ok, value } = pages;
+import { pageList } from "/src/store"
 </script>
 
 <style>
@@ -40,6 +36,12 @@
         font-size: var(--sm-font);
     }
 
+    @media (min-width: 1200px){
+        .navbar-item-link-text{
+            font-size: var(--md-font);
+        }
+    }
+
     .title{
     display: flex;
     align-items: center;
@@ -65,6 +67,12 @@
         font-size: var(--md-font);
     }
         
+    @media (min-width: 1200px){
+        .title-subheading{
+            font-size: var(--lg-font);
+        }
+    }
+        
     @keyframes fade-in-from-left {
         0%{
             transform: translateX(-20px);
@@ -86,6 +94,11 @@
     }
 </style>
 
+<svelte:head>
+    <title>Hugo Sum</title>
+    <meta name="description" content="" />
+</svelte:head>
+
 <div class="mainpage">
 <div> 
 <div class={"title"}>
@@ -95,9 +108,9 @@
 
 <nav>
     <ul class="navbar" role="list">
-	{#each value as { name, url }, index}
+	{#each $pageList as { name, url }, index}
 		<li class={`navbar-item fade-in-order-${index}`}>
-        <a class="navbar-item-link" href={url}>
+        <a sveltekit:prefetch class="navbar-item-link" href={url}>
             <span class="navbar-item-link-text">{name}</span>
 		</a>
         </li>
