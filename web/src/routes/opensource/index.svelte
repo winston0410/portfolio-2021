@@ -13,6 +13,7 @@ export const load = getProps({ _projects: '/api/github'});
 
 <svelte:head>
 	<title>Opensource</title>
+    <meta name="description" content="" />
 </svelte:head>
 
 <style>

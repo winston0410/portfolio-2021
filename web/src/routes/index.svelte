@@ -94,6 +94,11 @@ import { pageList } from "/src/store"
     }
 </style>
 
+<svelte:head>
+    <title>Hugo Sum</title>
+    <meta name="description" content="" />
+</svelte:head>
+
 <div class="mainpage">
 <div> 
 <div class={"title"}>
