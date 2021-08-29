@@ -1,10 +1,24 @@
 <script context="module" lang="ts">
 import NavList from '$lib/NavList.svelte'
+import { onMount } from 'svelte';
 import { pageList } from "/src/store"
+import resizeObserver from '$lib/resizeObserver'
+const handleResize = (e) => {
+    const elem = e.detail.entries[0]
+    const cr = elem.contentRect
+    document.documentElement.style.setProperty('--headerOffset', `${cr.height}px`);
+}
 </script>
 
 <script lang="ts">
 export let active = false
+let sidebar, height
+
+onMount(() => {
+    return () => {
+
+    }
+})
 
 const handleClick = () => {
     console.log('clicking', active)
@@ -43,7 +57,7 @@ const handleClick = () => {
 }
 </style>
 
-<aside class="sidebar">
+<aside use:resizeObserver on:resize={handleResize} class="sidebar">
     <span>Hugo Sum</span>
     <button class="menu-button" type="button" on:click={handleClick}>Menu</button>
     <NavList pages={$pageList} isActive={active}/>
