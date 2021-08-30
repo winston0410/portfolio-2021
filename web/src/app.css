@@ -59,7 +59,7 @@
 
 /* color */
 :root{
-    --base-color-shade1: hsla(50, 10%, 9%, 1);
+    --base-color-shade1: hsla(50, 10%, 10%, 1);
     --base-color: hsla(50, 10%, 11%, 1);
     --base-contrast-color: hsla(50, 5%, 90%, 1);
     --highlight-color: hsla(45, 98%, 50%, 1);

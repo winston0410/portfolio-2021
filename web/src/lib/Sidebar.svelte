@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 import NavList from '$lib/NavList.svelte'
-import { onMount } from 'svelte';
 import { pageList } from "/src/store"
 import resizeObserver from 'svelte-use-resize-observer'
 const handleResize = (e) => {
@@ -14,14 +13,7 @@ const handleResize = (e) => {
 export let active = false
 let sidebar, height
 
-onMount(() => {
-    return () => {
-
-    }
-})
-
 const handleClick = () => {
-    console.log('clicking', active)
     active = !active
 }
 </script>
@@ -39,6 +31,7 @@ const handleClick = () => {
     top: 0px;
     left: 0px;
     right: 0px;
+    box-shadow: 0px 3px 3px var(--base-color);
 }
 
 @media (min-width: 1200px){
