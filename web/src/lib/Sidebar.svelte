@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 import NavList from '$lib/NavList.svelte'
+import Hamburger from '$lib/Hamburger.svelte'
 import { pageList } from "/src/store"
 import resizeObserver from 'svelte-use-resize-observer'
 const handleResize = (e) => {
@@ -19,6 +20,12 @@ const handleClick = () => {
 </script>
 
 <style>
+.menu-button{
+    display: flex;
+    background: transparent;
+    fill: var(--base-contrast-color);
+}
+    
 .sidebar{
     display: flex;
     align-items: center;
@@ -52,6 +59,6 @@ const handleClick = () => {
 
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
     <span>Hugo Sum</span>
-    <button class="menu-button" type="button" on:click={handleClick}>Menu</button>
+    <button class="menu-button" type="button" on:click={handleClick}><Hamburger isActive={active}/></button>
     <NavList pages={$pageList} isActive={active}/>
 </aside>

@@ -98,6 +98,11 @@
     --sectionYpadding: var(--xxl-space);
 }
 
+/* should this be used in reset? */
+svg * { 
+  transform-box: fill-box;
+}
+
 /* Patching language-color */
 .bg-color-svelte { background-color: #ff3e00 !important; }
 .bg-color-purescript { background-color: #fff !important; }
