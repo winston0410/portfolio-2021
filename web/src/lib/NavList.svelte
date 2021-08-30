@@ -27,6 +27,12 @@ nav{
     font-size: var(--md-font);
 }  
 
+@media (min-width: 1200px){
+    .navlist-item{
+      text-align: center;
+    }
+}
+
 @keyframes drop-down{
     0% {opacity: 0;transform:translateY(-10px);}
     100% {opacity: 1;transform:translateY(0px);}

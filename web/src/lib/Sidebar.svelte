@@ -41,6 +41,11 @@ const handleClick = () => {
     box-shadow: 0px 3px 3px var(--base-color);
 }
 
+.sidebar-title{
+    font-family: var(--display-font);
+    font-size: var(--lg-font);
+}
+
 @media (min-width: 1200px){
     .sidebar{
         position: sticky;
@@ -49,6 +54,11 @@ const handleClick = () => {
         flex-direction: column;
         padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
         height: 100vh;
+        justify-content: unset;
+    }
+    
+    .sidebar-title{
+        font-size: var(--xxl-font);
     }
 
     .menu-button{
@@ -58,7 +68,7 @@ const handleClick = () => {
 </style>
 
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
-    <span>Hugo Sum</span>
+    <span class="sidebar-title">Hugo Sum</span>
     <button class="menu-button" type="button" on:click={handleClick}><Hamburger isActive={active}/></button>
     <NavList pages={$pageList} isActive={active}/>
 </aside>

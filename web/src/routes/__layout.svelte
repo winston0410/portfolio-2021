@@ -30,6 +30,14 @@ pageList.set(pages)
         background: var(--base-color);
         font-family: var(--content-font);
     }
+
+    :global(body){
+        --content-font-size: var(--sm-font);
+    }
+
+    :global(body){
+        font-size: var(--content-font-size);
+    }
         
     :global(button) {
         appearance: none;

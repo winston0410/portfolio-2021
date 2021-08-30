@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 import { getProps, getLangColorName } from '/src/helper'
-
+import LangTag from '$lib/LangTag.svelte'
 export const load = getProps({ _projects: '/api/github'});
 
 </script>
@@ -16,7 +16,6 @@ export const load = getProps({ _projects: '/api/github'});
 </svelte:head>
 
 <style>
-        
     .list{
         display: grid;
         grid-row-gap: var(--sm-space);
@@ -48,13 +47,6 @@ export const load = getProps({ _projects: '/api/github'});
         flex-wrap: wrap;
     }
         
-    .language-list-item{
-padding: var(--xs-space);
-margin-right: var(--sm-space);
-margin-bottom: var(--sm-space);
-border-radius: var(--md-radius);
-    font-size: var(--xs-font);
-    }
 </style>
 
 <h1 class="title">Opensource</h1>
@@ -68,9 +60,7 @@ border-radius: var(--md-radius);
         <div>
             <ul class="language-list" role="list">
                     {#each Object.keys(languages) as language }
-                        <li class={`language-list-item bg-color-${getLangColorName(language)}`}>
-                           <span class={`font-color-${getLangColorName(language)}`}>{language}</span>
-                        </li>
+                           <LangTag language={language} />
                     {/each}
             </ul>
         </div>

@@ -55,6 +55,7 @@
     --md-font: calc(var(--md) * var(--font-base-value));
     --lg-font: calc(var(--lg) * var(--font-base-value));
     --xl-font: calc(var(--xl) * var(--font-base-value));
+    --xxl-font: calc(var(--xxl) * var(--font-base-value));
 }
 
 /* color */
