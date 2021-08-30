@@ -16,6 +16,10 @@ pageList.set(pages)
        color: var(--highlight-color);
        text-decoration: none;
     }
+        
+    :global(a:hover) {
+       color: var(--highlight-color-tint1);
+    }
 
     :global(ul) {
        padding: 0px;
@@ -25,6 +29,13 @@ pageList.set(pages)
     :global(body) {
         background: var(--base-color);
         font-family: var(--content-font);
+    }
+        
+    :global(button) {
+        appearance: none;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     :global(h1){
