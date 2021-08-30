@@ -12,13 +12,14 @@
 
 <style>
 nav{
-    display: none;
     width: 100%;
+    animation: drop-down var(--time-2);
 }
     
 @media (min-width: 1200px){
     nav{
         display: block;
+        animation:none;
     }
 }
     
@@ -26,12 +27,23 @@ nav{
     font-size: var(--md-font);
 }  
 
-.active{
-    display: block;
+@keyframes drop-down{
+    0% {opacity: 0;transform:translateY(-10px);}
+    100% {opacity: 1;transform:translateY(0px);}
+}
+
+.inactive{
+    display: none;
+}
+    
+@media (min-width: 1200px){
+    .inactive{
+        display: block;
+    }
 }
 </style>
 
-<nav class={isActive ? "active" : ""}>
+<nav class={isActive ? "" : "inactive"}>
     <ul role="list">
 	{#each pages as { name, url }}
 		<li class="navlist-item">
