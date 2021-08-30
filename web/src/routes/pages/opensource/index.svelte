@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 import { getProps, getLangColorName } from '/src/helper'
-import LangTag from '$lib/LangTag.svelte'
+import LangTagList from '$lib/LangTagList.svelte'
 export const load = getProps({ _projects: '/api/github'});
 
 </script>
@@ -41,12 +41,6 @@ export const load = getProps({ _projects: '/api/github'});
     .list-item-description {
         font-size: var(--sm-font);
     }
-
-    .language-list{
-        display: flex;
-        flex-wrap: wrap;
-    }
-        
 </style>
 
 <h1 class="title">Opensource</h1>
@@ -58,11 +52,7 @@ export const load = getProps({ _projects: '/api/github'});
             <span>{name}</span>
 		</a>
         <div>
-            <ul class="language-list" role="list">
-                    {#each Object.keys(languages) as language }
-                           <LangTag language={language} />
-                    {/each}
-            </ul>
+            <LangTagList languages={languages}/>
         </div>
         <p class="list-item-description">{@html description}</p>
         </li>

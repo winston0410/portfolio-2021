@@ -9,7 +9,7 @@ const getCv = async () => {
                 start_date: "Feb 2021",
                 end_date: "Present",
                 duties: ["Host lectures on React, Redux, UI Testing and modern frontend development workflow.", "Host code reviews for students in both frontend and backend.", "Test backend for existing company projects with Jest", "Develop roster application with Svelte and Golang"],
-                tech_used: ["Javascript", "Typescript", "Svelte", "Dockerfile", "HTML", "CSS", "Golang", "Java"]
+                technologies: { "Javascript": true, "Typescript": true, "Svelte": true, "Dockerfile": true, "HTML": true, "CSS": true, "Go": true, "Java": true, "Nix": true}
             },
             {
                 company_name: "Perfect Medical Group",
@@ -17,7 +17,7 @@ const getCv = async () => {
                 start_date: "Jul 2020",
                 end_date: "Jan 2021",
                 duties: ["Develop static brand site with 11ty and Nunjucks.", "Develop dynamic brand site with React and Next.js."],
-                tech_used: ["Javascript", "Typescript", "Purescript", "HTML", "CSS"]
+                technologies: {"Javascript": true, "Typescript": true, "Purescript": true, "HTML": true, "CSS": true}
             },
             ],
         education: [

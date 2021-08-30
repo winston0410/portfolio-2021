@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
+//  import { getProps } from '/src/helper'
+//  export const load = getProps({ profile: '/api/social'});
 </script>
 
 <script lang="ts">
-    //  TODO: Handle current page and disable link
-    import { page } from '$app/stores';
-    console.log('chekc page', $page)
-  export let pages
-  export let isActive = false
-  console.log('check page', pages, $page.path)
+//  TODO: Handle current page and disable link
+import { page } from '$app/stores';
+export let pages
+export let isActive = false
 </script>
 
 <style>
@@ -64,3 +64,11 @@ nav{
 	{/each}
     </ul>
 </nav>
+
+<!--  <ul list="role">  -->
+	<!--  {#each socialProfiles.value as { url }}  -->
+		<!--  <li class="navlist-item">  -->
+            <!--  <a rel="external" href={url}>test</a>  -->
+        <!--  </li>  -->
+	<!--  {/each}  -->
+<!--  </ul>  -->

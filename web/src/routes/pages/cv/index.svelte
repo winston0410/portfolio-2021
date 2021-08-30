@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 import { getProps } from '/src/helper'
+import LangTagList from '$lib/LangTagList.svelte'
 export const load = getProps({ cv: '/api/cv'});
 </script>
 
@@ -52,15 +53,19 @@ console.log('check cv', cv)
         margin-bottom: var(--lg-space);
     }
 
-    .experience-title{
+    .title{
         font-weight: 700;
     }
 
-    .experience-date, .education-date, .achievement-date{
+    .experience-date,.date{
         font-size: var(--xs-font);
     }
+        
+    .experience-date{
+        margin-bottom: var(--sm-space);
+    }
 
-    .experience-list-item, .achievement-list-item{
+    .list-item{
         margin-bottom: var(--md-space);
     }
 
@@ -78,15 +83,16 @@ console.log('check cv', cv)
     {#if cv.ok}
     <section>
         <h2>Working experience</h2>
-    <ul role="list" class="experience-list">
-            {#each cv.value.working_experience as {company_name: name, title, start_date, end_date, duties}}
-                <li class="experience-list-item">
+    <ul role="list">
+            {#each cv.value.working_experience as {company_name: name, title, start_date, end_date, duties, technologies}}
+                <li class="list-item">
                     <article class="experience">
                     <h3>{name}</h3>
-                    <span class="experience-title">{title}</span>
+                    <span class="title">{title}</span>
                     <div class="experience-date">
                         <span>{start_date} - {end_date}</span>
                     </div>
+                    <LangTagList languages={technologies} />
                     <ul role="list" class="duty-list">
                         {#each duties as duty}
                             <li class="duty-list-item">{duty}</li>
@@ -102,12 +108,12 @@ console.log('check cv', cv)
         <h2>Education</h2>
     <ul role="list">
             {#each cv.value.education as {school_name: name, title, start_date, end_date}}
-                <li>
+                <li class="list-item">
                     <article>
                     <h3>{name}</h3>
                     <span class="title">{title}</span>
                     <div>
-                        <span>{start_date} - {end_date}</span>
+                        <span class="date">{start_date} - {end_date}</span>
                     </div>
                     </article>
                 </li>
@@ -119,11 +125,11 @@ console.log('check cv', cv)
         <h2>Accomplishments</h2>
         <ul role="list">
             {#each cv.value.achievement as {name, date, from}}
-                <li class="accomplistment">
+                <li class="list-item">
                     <article>
                     <h3>{name}</h3>
-                    <span class="achievement-date">{date}</span>
-                    <!--  <span>{from}</span>  -->
+                    <div>From <span class="title">{from}</span></div>
+                    <span class="date">{date}</span>
                     </article>
                 </li>
             {/each}
