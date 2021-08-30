@@ -52,7 +52,7 @@ import { pageList } from "/src/store"
     .title-heading{
     font-size: 80px;
     font-family: var(--display-font);
-    font-weight: normal;
+    font-weight: 700;
     color: var(--highlight);
     }
 

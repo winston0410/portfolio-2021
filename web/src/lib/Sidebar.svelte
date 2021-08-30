@@ -43,6 +43,7 @@ const handleClick = () => {
 
 .sidebar-title{
     font-family: var(--display-font);
+    font-weight: 700;
     font-size: var(--lg-font);
 }
 
