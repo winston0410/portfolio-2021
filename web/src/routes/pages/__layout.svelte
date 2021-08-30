@@ -14,12 +14,22 @@
     }
 
     .inner-container{
-        padding: calc(var(--headerOffset) + var(--sectionYpadding)) var(--md-space) var(--sectionYpadding);
+        --paddingX: var(--md-space);
+    }
+
+    @media (min-width: 1200px){
+        .inner-container{
+          --paddingX: var(--xxl-space);
+        }
+    }
+
+    .inner-container{
+        padding: calc(var(--headerOffset) + var(--sectionYpadding)) var(--paddingX) var(--sectionYpadding);
     }
 
     @media (min-width: 1200px) {
         .inner-container{
-            padding: var(--sectionYpadding) var(--md-space);
+            padding: var(--sectionYpadding) var(--paddingX);
         }
     }
 </style>

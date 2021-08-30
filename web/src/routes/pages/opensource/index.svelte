@@ -1,6 +1,8 @@
 <script context="module" lang="ts">
 import { getProps, getLangColorName } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
+import Title from '$lib/Title.svelte'
+import Heading from '$lib/Heading.svelte'
 export const load = getProps({ _projects: '/api/github'});
 
 </script>
@@ -43,13 +45,13 @@ export const load = getProps({ _projects: '/api/github'});
     }
 </style>
 
-<h1 class="title">Opensource</h1>
+<Title>Opensource</Title>
     <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
 	{#each projects as { name, description, html_url, languages }}
 		<li class="list-item">
         <a class="list-item-link" href={html_url}>
-            <span>{name}</span>
+            <Heading smaller={true}>{name}</Heading>
 		</a>
         <div>
             <LangTagList languages={languages}/>

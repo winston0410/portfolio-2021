@@ -1,30 +1,45 @@
 <script context="module" lang="ts">
-//  import { getProps } from '/src/helper'
-//  export const load = getProps({ profile: '/api/social'});
+import SocialProfileList from '$lib/SocialProfileList.svelte'
 </script>
 
 <script lang="ts">
-//  TODO: Handle current page and disable link
 import { page } from '$app/stores';
+import { socialProfiles } from "/src/store"
 export let pages
 export let isActive = false
 </script>
 
 <style>
 nav{
+    --marginBottom: var(--md-space);
+}
+    
+nav{
     width: 100%;
     animation: drop-down var(--time-2);
+    margin-bottom: var(--marginBottom);
 }
     
 @media (min-width: 1200px){
     nav{
+        --marginBottom: var(--lg-space);
+    }
+    nav{
         display: block;
         animation:none;
+        margin-bottom: var(--marginBottom);
     }
+}
+
+.nav-container{
+  width: 100%;
+  display: flex;
+   flex-direction: column;
 }
     
 .navlist-item{
     font-size: var(--md-font);
+    font-weight: 700;
 }  
 
 @media (min-width: 1200px){
@@ -37,7 +52,7 @@ nav{
     0% {opacity: 0;transform:translateY(-10px);}
     100% {opacity: 1;transform:translateY(0px);}
 }
-
+    
 .inactive{
     display: none;
 }
@@ -49,7 +64,8 @@ nav{
 }
 </style>
 
-<nav class={isActive ? "" : "inactive"}>
+<div class={`nav-container ${isActive ? "" : "inactive"}`}>
+<nav>
     <ul role="list">
 	{#each pages as { name, url }}
 		<li class="navlist-item">
@@ -64,11 +80,5 @@ nav{
 	{/each}
     </ul>
 </nav>
-
-<!--  <ul list="role">  -->
-	<!--  {#each socialProfiles.value as { url }}  -->
-		<!--  <li class="navlist-item">  -->
-            <!--  <a rel="external" href={url}>test</a>  -->
-        <!--  </li>  -->
-	<!--  {/each}  -->
-<!--  </ul>  -->
+<SocialProfileList socialProfiles={$socialProfiles}/>
+</div>

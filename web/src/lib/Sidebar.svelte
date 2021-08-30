@@ -54,7 +54,7 @@ const handleClick = () => {
         flex-direction: column;
         padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
         height: 100vh;
-        justify-content: unset;
+        justify-content: space-between;
     }
     
     .sidebar-title{
@@ -64,11 +64,15 @@ const handleClick = () => {
     .menu-button{
       display: none;
     }
+
 }
+
 </style>
 
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
-    <span class="sidebar-title">Hugo Sum</span>
+    <a href="/" title="Back to homepage">
+        <span class="sidebar-title">Hugo Sum</span>
+    </a>
     <button class="menu-button" type="button" on:click={handleClick}><Hamburger isActive={active}/></button>
     <NavList pages={$pageList} isActive={active}/>
 </aside>

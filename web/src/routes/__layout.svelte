@@ -1,14 +1,15 @@
 <script context="module" lang="ts">
   import { getProps } from "/src/helper"
-  import { pageList } from "/src/store"
-  export const load = getProps({ _pages: '/api/states/nav-bar'});
+  import { pageList, socialProfiles } from "/src/store"
+  export const load = getProps({ _pages: '/api/states/nav-bar', _socialProfiles: '/api/social'});
   import "/src/app.css"
 </script>
 
 <script lang="ts">
-export let _pages
+export let _pages, _socialProfiles
 export const pages = _pages.value
 pageList.set(pages)
+socialProfiles.set(_socialProfiles.value)
 </script>
 
 <style>

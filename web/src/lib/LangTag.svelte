@@ -12,7 +12,7 @@ padding: var(--xs-space);
 margin-right: var(--sm-space);
 margin-bottom: var(--sm-space);
 border-radius: var(--md-radius);
-    font-size: var(--xs-font);
+    font-size: var(--xxs-font);
     }
 </style>
 

@@ -1,12 +1,14 @@
 <script context="module" lang="ts">
 import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
+import Title from '$lib/Title.svelte'
+import Heading from '$lib/Heading.svelte'
+import Subheading from '$lib/Subheading.svelte'
 export const load = getProps({ cv: '/api/cv'});
 </script>
 
 <script lang="ts">
 export let cv
-console.log('check cv', cv)
 </script>
 
 <svelte:head>
@@ -15,40 +17,6 @@ console.log('check cv', cv)
 </svelte:head>
 
 <style>
-    .container {
-        --titleSize: var(--xl-font);
-        --headingSize: var(--lg-font);
-        --headingColor: var(--highlight-color);
-        --headingMarginBottom: var(--md-space);
-        --subheadingSize: var(--md-font);
-        --subheadingColor: var(--highlight-color-tint1);
-        --subheadingMarginBottom: var(--sm-space);
-    }
-        
-@media (min-width: 1200px){
-    .container{
-        --titleSize: var(--xxl-font);
-        --headingSize: var(--xl-font);
-        --subheadingSize: var(--lg-font);
-    }
-}
-
-    h1{
-        font-size: var(--titleSize);
-    }
-        
-    h2{
-        color: var(--headingColor);
-        font-size: var(--headingSize);
-        margin-bottom: var(--headingMarginBottom);
-    }
-
-    h3{
-        color: var(--subheadingColor);
-        font-size: var(--subheadingSize);
-        margin-bottom: var(--subheadingMarginBottom);
-    }
-
     section{
         margin-bottom: var(--lg-space);
     }
@@ -79,15 +47,15 @@ console.log('check cv', cv)
 </style>
 
 <div class="container">
-    <h1>Curriculum Vitae</h1>
+    <Title>Curriculum Vitae</Title>
     {#if cv.ok}
     <section>
-        <h2>Working experience</h2>
+        <Heading>Working experience</Heading>
     <ul role="list">
             {#each cv.value.working_experience as {company_name: name, title, start_date, end_date, duties, technologies}}
                 <li class="list-item">
                     <article class="experience">
-                    <h3>{name}</h3>
+                    <Subheading>{name}</Subheading>
                     <span class="title">{title}</span>
                     <div class="experience-date">
                         <span>{start_date} - {end_date}</span>
@@ -105,7 +73,7 @@ console.log('check cv', cv)
     </section>
     
     <section>
-        <h2>Education</h2>
+        <Heading>Education</Heading>
     <ul role="list">
             {#each cv.value.education as {school_name: name, title, start_date, end_date}}
                 <li class="list-item">
@@ -122,7 +90,7 @@ console.log('check cv', cv)
     </section>
 
     <section>
-        <h2>Accomplishments</h2>
+        <Heading>Accomplishments</Heading>
         <ul role="list">
             {#each cv.value.achievement as {name, date, from}}
                 <li class="list-item">
