@@ -12,4 +12,35 @@ return {
 	export let title;
 </script>
 
-<h1>Cache me if you can...But this is a 404!</h1>
+<style>
+    main{
+        height: 100vh;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0 var(--md-space);
+    }
+
+    span{
+        color: var(--highlight-color);
+    }
+        
+    a{
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    a:hover{
+       color: var(--highlight-color-tint1);
+    }
+</style>
+
+<main>
+<div>
+<h1>Cache me if you can...
+        <p>But this is a <span>404</span>!<p>
+</h1>
+<a class="link" href="/">Back to Home</a>
+</div>
+</main>
