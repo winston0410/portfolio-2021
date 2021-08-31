@@ -9,7 +9,7 @@ const getCv = async () => {
                 start_date: "Feb 2021",
                 end_date: "Present",
                 duties: ["Host lectures on React, Redux, UI Testing and modern frontend development workflow.", "Host code reviews for students in both frontend and backend.", "Test backend for existing company projects with Jest", "Develop roster application with Svelte and Golang"],
-                technologies: { "Javascript": true, "Typescript": true, "Svelte": true, "Dockerfile": true, "HTML": true, "CSS": true, "Go": true, "Java": true, "Nix": true}
+                technologies: { "Javascript": true, "Typescript": true, "Svelte": true, "Dockerfile": true, "HTML": true, "CSS": true, "Go": true, "Java": true, "Nix": true, "SQL": true}
             },
             {
                 company_name: "Perfect Medical Group",

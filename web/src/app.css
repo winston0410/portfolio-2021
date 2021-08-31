@@ -104,6 +104,7 @@ svg * {
 /* Patching language-color */
 .bg-color-svelte { background-color: #ff3e00 !important; }
 .bg-color-purescript { background-color: #fff !important; }
+.bg-color-sql { background-color: #336790 !important; }
 
 /* Specific to the current theme */
 .font-color-javascript{
