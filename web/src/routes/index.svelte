@@ -14,6 +14,7 @@ import { pageList } from "/src/store"
       display: flex;
     justify-content: center;
         align-items: center;
+      padding: 0 var(--md-space);
     }
 
     .navbar{
@@ -53,7 +54,7 @@ import { pageList } from "/src/store"
     }
 
     .title-heading{
-    font-size: 80px;
+    font-size: 58px;
     font-family: var(--display-font);
     font-weight: 700;
     color: var(--highlight);
@@ -61,7 +62,7 @@ import { pageList } from "/src/store"
 
     @media (min-width: 768px){
       .title-heading{
-      font-size: 120px;
+          font-size: 90px;
       }
     }
         
@@ -71,6 +72,9 @@ import { pageList } from "/src/store"
     }
         
     @media (min-width: 1200px){
+          .title-heading{
+              font-size: 120px;
+          }
         .title-subheading{
             font-size: var(--lg-font);
         }
@@ -102,7 +106,7 @@ import { pageList } from "/src/store"
     description={"The personal website for Hugo Sum, a fullstack developer from Hong Kong. Looking for a job in Canada right now."} 
     url={`${env.VITE_DOMAIN_NAME}`} image={"/cover.jpg"}/>
 
-<div class="mainpage">
+<main class="mainpage">
 <div> 
 <div class={"title"}>
 <h1 class={"title-heading"}>Hugo Sum</h1>
@@ -121,4 +125,4 @@ import { pageList } from "/src/store"
     </ul>
 </nav>
 </div>
-</div>
+</main>
