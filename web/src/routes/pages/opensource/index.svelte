@@ -1,15 +1,26 @@
 <script context="module" lang="ts">
-import { getProps, getLangColorName } from '/src/helper'
+import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
-export const load = getProps({ _projects: '/api/github'});
-
+export const load = getProps({ projects: '/api/github'});
+import { onMount } from 'svelte';
 </script>
 
 <script lang="ts">
-  export let _projects;
-  export const { ok, value: projects } = _projects;
+import { isMenuActive } from "/src/store"
+onMount(() => {
+    isMenuActive.set(false)
+})
+interface IProjects {
+    name: string,
+    description: string,
+    html_url: string,
+    languages: {
+        [key:string]: number
+    }
+}
+export let projects: {ok: boolean, value: Array<IProjects>};
 </script>
 
 <svelte:head>
@@ -46,17 +57,21 @@ export const load = getProps({ _projects: '/api/github'});
 </style>
 
 <Title>Opensource</Title>
-    <ul class="list" role="list">
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
-	{#each projects as { name, description, html_url, languages }}
-		<li class="list-item">
-        <a class="list-item-link" href={html_url}>
-            <Heading smaller={true}>{name}</Heading>
-		</a>
-        <div>
-            <LangTagList languages={languages}/>
-        </div>
-        <p class="list-item-description">{@html description}</p>
-        </li>
-	{/each}
+{#if projects.ok}
+<ul class="list" role="list">
+{#each projects.value as { name, description, html_url, languages }}
+    <li class="list-item">
+    <a class="list-item-link" href={html_url}>
+        <Heading smaller={true}>{name}</Heading>
+    </a>
+    <div>
+        <LangTagList languages={languages}/>
+    </div>
+    <p class="list-item-description">{@html description}</p>
+    </li>
+{/each}
 </ul>
+{:else}
+    <div>Something wrong with the server.</div>
+{/if}
