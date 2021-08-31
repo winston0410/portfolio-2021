@@ -1,5 +1,7 @@
 <script context="module" lang="ts">
   import { getProps } from "/src/helper"
+    import MetaData from '$lib/MetaData.svelte'
+import env from '/src/env'
 </script>
 
 <script lang="ts">
@@ -95,10 +97,10 @@ import { pageList } from "/src/store"
     }
 </style>
 
-<svelte:head>
-    <title>Hugo Sum</title>
-    <meta name="description" content="The personal website for Hugo Sum, a fullstack developer from Hong Kong. Looking for job in Canada right now." />
-</svelte:head>
+<MetaData 
+    title={"Portfolio of Hugo Sum"} 
+    description={"The personal website for Hugo Sum, a fullstack developer from Hong Kong. Looking for a job in Canada right now."} 
+    url={`${env.VITE_DOMAIN_NAME}`} image={"/cover.jpg"}/>
 
 <div class="mainpage">
 <div> 

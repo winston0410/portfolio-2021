@@ -3,8 +3,11 @@ import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
+import MetaData from '$lib/MetaData.svelte'
 export const load = getProps({ projects: '/api/github'});
 import { onMount } from 'svelte';
+import env from '/src/env'
+import { page } from '$app/stores';
 </script>
 
 <script lang="ts">
@@ -23,10 +26,8 @@ interface IProjects {
 export let projects: {ok: boolean, value: Array<IProjects>};
 </script>
 
-<svelte:head>
-	<title>Opensource</title>
-    <meta name="description" content="The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong." />
-</svelte:head>
+<MetaData title={"Opensource"} description={"The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong."}
+url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 
 <style>
     .list{

@@ -4,8 +4,11 @@ import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
 import Subheading from '$lib/Subheading.svelte'
+import MetaData from '$lib/MetaData.svelte'
 export const load = getProps({ cv: '/api/cv'});
 import { onMount } from 'svelte';
+import env from '/src/env'
+import { page } from '$app/stores';
 </script>
 
 <script lang="ts">
@@ -16,10 +19,7 @@ onMount(() => {
 export let cv
 </script>
 
-<svelte:head>
-	<title>CV</title>
-    <meta name="description" content="The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong." />
-</svelte:head>
+<MetaData title={"CV"} description={"The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong."} url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 
 <style>
     section{
