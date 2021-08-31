@@ -64,7 +64,7 @@ url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 {#each projects.value as { name, description, html_url, languages }}
     <li class="list-item">
     <a class="list-item-link" href={html_url}>
-        <Heading smaller={true}>{name}</Heading>
+        <Heading size={3}>{name}</Heading>
     </a>
     <div>
         <LangTagList languages={languages}/>

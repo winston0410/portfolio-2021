@@ -1,5 +1,8 @@
 <script lang="ts">
-export let smaller: boolean
+export let color: number = 2
+export let size: number = 2
+export let tag: string = "h2"
+export const className = `heading color-${color} size-${size}`
 </script>
 
 <!--  Code smell here, but this pattern makes using inline-style impossible  -->
@@ -9,7 +12,7 @@ export let smaller: boolean
         --heading-color: var(--highlight-color);
         --heading-margin-b: var(--md-space);
     }
-        
+
 @media (min-width: 1200px){
     .heading{
         --heading-font-size: var(--xl-font);
@@ -21,18 +24,30 @@ export let smaller: boolean
         font-size: var(--heading-font-size);
         margin-bottom: var(--heading-margin-b);
     }
-    
-    .heading.smaller{
+        
+    .color-3{
+        --heading-color: var(--highlight-color-tint1);
+    }
+        
+    .size-3{
         --heading-font-size: var(--md-font);
+        --heading-margin-b: var(--sm-space);
     }
         
 @media (min-width: 1200px){
-    .heading.smaller{
+    .size-3{
         --heading-font-size: var(--lg-font);
     }
 }
 </style>
 
-<h2 class={`heading ${smaller && "smaller"}`}>
+<!--  Limitation for svelte3 right now, no dynamic tag  -->
+{#if tag === "h2"}
+<h2 class={className}>
     <slot />
 </h2>
+{:else if tag === "h3"}
+<h3 class={className}>
+    <slot />
+</h3>
+{/if}

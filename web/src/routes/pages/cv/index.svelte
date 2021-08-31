@@ -3,7 +3,6 @@ import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
-import Subheading from '$lib/Subheading.svelte'
 import MetaData from '$lib/MetaData.svelte'
 export const load = getProps({ cv: '/api/cv'});
 import { onMount } from 'svelte';
@@ -60,7 +59,7 @@ export let cv
             {#each cv.value.working_experience as {company_name: name, title, start_date, end_date, duties, technologies}}
                 <li class="list-item">
                     <article class="experience">
-                    <Subheading>{name}</Subheading>
+                    <Heading tag={"h3"} color={3} size={3}>{name}</Heading>
                     <span class="title">{title}</span>
                     <div class="experience-date">
                         <span>{start_date} - {end_date}</span>
@@ -83,7 +82,7 @@ export let cv
             {#each cv.value.education as {school_name: name, title, start_date, end_date}}
                 <li class="list-item">
                     <article>
-                    <h3>{name}</h3>
+                    <Heading tag={"h3"} color={3} size={3}>{name}</Heading>
                     <span class="title">{title}</span>
                     <div>
                         <span class="date">{start_date} - {end_date}</span>
@@ -100,7 +99,7 @@ export let cv
             {#each cv.value.achievement as {name, date, from}}
                 <li class="list-item">
                     <article>
-                    <h3>{name}</h3>
+                    <Heading tag={"h3"} color={3} size={3}>{name}</Heading>
                     <div>From <span class="title">{from}</span></div>
                     <span class="date">{date}</span>
                     </article>

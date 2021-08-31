@@ -27,16 +27,13 @@ socialProfiles.set(_socialProfiles.value)
        margin: 0px;
     }
 
-    :global(body) {
-        background: var(--base-color);
-        font-family: var(--content-font);
-    }
-
     :global(body){
         --content-font-size: var(--sm-font);
     }
 
     :global(body){
+        background: var(--base-color);
+        font-family: var(--content-font);
         font-size: var(--content-font-size);
     }
         
