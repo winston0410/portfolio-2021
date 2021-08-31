@@ -34,7 +34,7 @@ import { pageList } from "/src/store"
 
     .navbar-item-link-text{
         font-size: var(--sm-font);
-        font-family: 700;
+        font-weight: 700;
     }
 
     @media (min-width: 1200px){
