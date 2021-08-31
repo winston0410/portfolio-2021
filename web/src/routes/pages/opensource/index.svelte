@@ -14,7 +14,7 @@ export const load = getProps({ _projects: '/api/github'});
 
 <svelte:head>
 	<title>Opensource</title>
-    <meta name="description" content="" />
+    <meta name="description" content="The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong." />
 </svelte:head>
 
 <style>

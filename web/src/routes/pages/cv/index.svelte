@@ -13,7 +13,7 @@ export let cv
 
 <svelte:head>
 	<title>CV</title>
-    <meta name="description" content="" />
+    <meta name="description" content="The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong." />
 </svelte:head>
 
 <style>

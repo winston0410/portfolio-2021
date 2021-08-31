@@ -34,6 +34,7 @@ import { pageList } from "/src/store"
 
     .navbar-item-link-text{
         font-size: var(--sm-font);
+        font-family: 700;
     }
 
     @media (min-width: 1200px){
@@ -96,7 +97,7 @@ import { pageList } from "/src/store"
 
 <svelte:head>
     <title>Hugo Sum</title>
-    <meta name="description" content="" />
+    <meta name="description" content="The personal website for Hugo Sum, a fullstack developer from Hong Kong. Looking for job in Canada right now." />
 </svelte:head>
 
 <div class="mainpage">
