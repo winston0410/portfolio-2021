@@ -4,7 +4,7 @@ interface IBarOpts {
     radius: string
 }
 
-export let isActive:boolean = false
+export let isActive:boolean
 export let barOpts: IBarOpts
 
 const defaultBarOpts: IBarOpts = {

@@ -5,9 +5,14 @@ import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
 import Subheading from '$lib/Subheading.svelte'
 export const load = getProps({ cv: '/api/cv'});
+import { onMount } from 'svelte';
 </script>
 
 <script lang="ts">
+import { isMenuActive } from "/src/store"
+onMount(() => {
+    isMenuActive.set(false)
+})
 export let cv
 </script>
 

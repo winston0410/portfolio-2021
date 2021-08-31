@@ -6,7 +6,7 @@ import SocialProfileList from '$lib/SocialProfileList.svelte'
 import { page } from '$app/stores';
 import { socialProfiles } from "/src/store"
 export let pages
-export let isActive = false
+export let isActive:boolean = false
 </script>
 
 <style>

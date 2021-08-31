@@ -1,8 +1,9 @@
 <script context="module" lang="ts">
 import NavList from '$lib/NavList.svelte'
 import Hamburger from '$lib/Hamburger.svelte'
-import { pageList } from "/src/store"
+import { pageList, isMenuActive } from "/src/store"
 import resizeObserver from 'svelte-use-resize-observer'
+
 const handleResize = (e) => {
     const elem = e.detail.entries[0]
     const cr = elem.contentRect
@@ -11,11 +12,10 @@ const handleResize = (e) => {
 </script>
 
 <script lang="ts">
-export let active = false
 let sidebar, height
 
 const handleClick = () => {
-    active = !active
+    isMenuActive.update(v => !v)
 }
 </script>
 
@@ -74,6 +74,6 @@ const handleClick = () => {
     <a href="/" title="Back to homepage">
         <span class="sidebar-title">Hugo Sum</span>
     </a>
-    <button class="menu-button" type="button" on:click={handleClick}><Hamburger isActive={active}/></button>
-    <NavList pages={$pageList} isActive={active}/>
+    <button class="menu-button" type="button" on:click={handleClick}><Hamburger isActive={$isMenuActive}/></button>
+    <NavList pages={$pageList} isActive={$isMenuActive}/>
 </aside>
