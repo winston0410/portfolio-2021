@@ -1,12 +1,18 @@
 import sveltePreprocess from 'svelte-preprocess';
+import { preprocess } from 'svelte/compiler'
 import adapter from '@sveltejs/adapter-static';
+//  import gloryPreprocess from "glory-svelte-preprocess";
 
 const config = {
 	preprocess: [
-		sveltePreprocess({
-            replace: [['process.env.NODE_ENV', 'production']],
-            postcss: true,
-        })
+		{
+			async markup({ content, filename }) {
+				return preprocess(content, [sveltePreprocess()], { filename });
+			}
+		},
+		//  gloryPreprocess({
+            //  lazyLoad: true
+        //  })
 	],
 
 	kit: {
