@@ -11,7 +11,7 @@ const config = {
 			}
 		},
 		//  gloryPreprocess({
-            //  lazyLoad: true
+            //  lazyLoad: false
         //  })
 	],
 
