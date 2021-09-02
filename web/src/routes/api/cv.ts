@@ -10,6 +10,7 @@ const getCv = async () => {
 				end_date: 'Present',
 				duties: [
 					'Host lectures on React, Redux, UI Testing and modern frontend development workflow.',
+					'Host lectures on HTML, CSS, Javascript, React and Java for Generation Singapore',
 					'Host code reviews for students in both frontend and backend.',
 					'Test backend for existing company projects with Jest',
 					'Develop roster application with Svelte and Golang'
