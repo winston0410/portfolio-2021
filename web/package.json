@@ -1,6 +1,6 @@
 {
 	"name": "portfolio-2021",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -42,10 +42,8 @@
 	"type": "module",
 	"dependencies": {
 		"@types/resize-observer-browser": "^0.1.6",
-		"glory": "^2.0.5",
-		"glory-svelte-preprocess": "^0.2.2",
 		"language-colors": "^1.184.0",
 		"modern-css-reset": "^1.4.0",
-		"svelte-use-resize-observer": "github:winston0410/svelte-use-resize-observer"
+		"svelte-use-resize-observer": "^1.0.1"
 	}
 }
