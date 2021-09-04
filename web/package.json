@@ -44,6 +44,6 @@
 		"@types/resize-observer-browser": "^0.1.6",
 		"language-colors": "^1.184.0",
 		"modern-css-reset": "^1.4.0",
-		"svelte-use-resize-observer": "^1.0.1"
+		"svelte-use-resize-observer": "^1.0.2"
 	}
 }
