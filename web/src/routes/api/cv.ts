@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { ICv } from '$lib/typing'
+import type { ICv } from '$lib/typing';
 
 const getCv = async (): Promise<ICv> => {
 	return {
@@ -101,8 +101,12 @@ const getCv = async (): Promise<ICv> => {
 };
 
 export const get: RequestHandler = async (req) => {
-	const data = await getCv();
-	return {
-		body: data
-	};
+	try {
+		const data = await getCv();
+		return {
+			body: data
+		};
+	} catch (e) {
+		console.log(e);
+	}
 };

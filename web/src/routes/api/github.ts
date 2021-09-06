@@ -1,13 +1,12 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { Locals } from '$lib/types';
-import { handleFetchError, catched } from '$lib/fetch'
 import env from '../../env';
 import MarkDownIt from 'markdown-it';
 import emoji from 'markdown-it-emoji';
+import createFetch from 'wrapped-fetch';
 
 const processMarkdown = (text: string): string => {
-    const md = new MarkDownIt()
-    md.use(emoji, []);
+	const md = new MarkDownIt();
+	md.use(emoji, []);
 	return md.renderInline(text);
 };
 
@@ -17,11 +16,11 @@ const fetchOptions = {
 	}
 };
 
-const getGithubApi = async () => {
-	return fetch(
+const getGithubApi = async (f) => {
+	return await f(
 		'https://api.github.com/users/winston0410/repos?sort=updated&per_page=100',
 		fetchOptions
-	).then(handleFetchError).then((res) => res.json())
+	);
 };
 
 interface IGithubRepo {
@@ -35,9 +34,11 @@ interface IGithubRepo {
 }
 
 export const get: RequestHandler<Locals> = async () => {
-    return await catched(async () => {
-		const githubRes = await getGithubApi();
-		const filtered = githubRes
+	try {
+		const f = createFetch();
+
+		const githubRes = await getGithubApi(f);
+		const filtered = githubRes.body
 			.filter(
 				(item: IGithubRepo) => !item.fork && !item.archived && !item.disabled && item.description
 			)
@@ -47,13 +48,13 @@ export const get: RequestHandler<Locals> = async () => {
 			});
 
 		for (const repo of filtered) {
-			repo.languages = await fetch(repo.languages_url, fetchOptions)
-				.then(handleFetchError)
-				.then((res) => res.json())
+			repo.languages = (await f(repo.languages_url, fetchOptions)).body;
 		}
 
 		return {
 			body: filtered
 		};
-    })
+	} catch (e) {
+		console.log(e);
+	}
 };
