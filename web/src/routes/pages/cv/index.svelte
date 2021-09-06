@@ -1,13 +1,23 @@
 <script context="module" lang="ts">
-import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
 import MetaData from '$lib/MetaData.svelte'
-export const load = getProps({ cv: '/api/cv'});
 import { onMount } from 'svelte';
 import env from '/src/env'
 import { page } from '$app/stores';
+import createFetch from 'wrapped-fetch'
+import type {UnwrappedResponse} from "wrapped-fetch"
+import type {ICv} from "$lib/typing"
+
+export const load = async ({fetch}) => {
+    const f = createFetch(fetch)
+    return {
+        props: {
+            cv: await f('/api/cv')
+        }
+    }
+}
 </script>
 
 <script lang="ts">
@@ -15,7 +25,7 @@ import { isMenuActive } from "/src/store"
 onMount(() => {
     isMenuActive.set(false)
 })
-export let cv
+export let cv: UnwrappedResponse<ICv>
 </script>
 
 <MetaData title={"CV"} description={"The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong."} url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
@@ -56,7 +66,7 @@ export let cv
     <section>
         <Heading>Working experience</Heading>
     <ul role="list">
-            {#each cv.value.working_experience as {company_name: name, title, start_date, end_date, duties, technologies}}
+            {#each cv.body.working_experience as {company_name: name, title, start_date, end_date, duties, technologies}}
                 <li class="list-item">
                     <article class="experience">
                     <Heading tag={"h3"} color={3} size={3}>{name}</Heading>
@@ -79,7 +89,7 @@ export let cv
     <section>
         <Heading>Education</Heading>
     <ul role="list">
-            {#each cv.value.education as {school_name: name, title, start_date, end_date}}
+            {#each cv.body.education as {school_name: name, title, start_date, end_date}}
                 <li class="list-item">
                     <article>
                     <Heading tag={"h3"} color={3} size={3}>{name}</Heading>
@@ -96,7 +106,7 @@ export let cv
     <section>
         <Heading>Accomplishments</Heading>
         <ul role="list">
-            {#each cv.value.achievement as {name, date, from}}
+            {#each cv.body.achievement as {name, date, from}}
                 <li class="list-item">
                     <article>
                     <Heading tag={"h3"} color={3} size={3}>{name}</Heading>

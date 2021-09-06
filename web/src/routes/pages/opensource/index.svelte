@@ -1,13 +1,23 @@
 <script context="module" lang="ts">
-import { getProps } from '/src/helper'
 import LangTagList from '$lib/LangTagList.svelte'
 import Title from '$lib/Title.svelte'
 import Heading from '$lib/Heading.svelte'
 import MetaData from '$lib/MetaData.svelte'
-export const load = getProps({ projects: '/api/github'});
 import { onMount } from 'svelte';
 import env from '/src/env'
 import { page } from '$app/stores';
+import createFetch from 'wrapped-fetch'
+import type {UnwrappedResponse} from "wrapped-fetch"
+import type {IProject} from "$lib/typing"
+
+export const load = async ({fetch}) => {
+    const f = createFetch(fetch)
+    return {
+        props: {
+            projects: await f('/api/github')
+        }
+    }
+}
 </script>
 
 <script lang="ts">
@@ -15,15 +25,7 @@ import { isMenuActive } from "/src/store"
 onMount(() => {
     isMenuActive.set(false)
 })
-interface IProjects {
-    name: string,
-    description: string,
-    html_url: string,
-    languages: {
-        [key:string]: number
-    }
-}
-export let projects: {ok: boolean, value: Array<IProjects>};
+export let projects: UnwrappedResponse<Array<IProject>>
 </script>
 
 <MetaData title={"Opensource"} description={"The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong."}
@@ -61,7 +63,7 @@ url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
     <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
 {#if projects.ok}
 <ul class="list" role="list">
-{#each projects.value as { name, description, html_url, languages }}
+{#each projects.body as { name, description, html_url, languages }}
     <li class="list-item">
     <a class="list-item-link" href={html_url}>
         <Heading size={3}>{name}</Heading>

@@ -1,6 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
+import type { ICv } from '$lib/typing'
 
-const getCv = async () => {
+const getCv = async (): Promise<ICv> => {
 	return {
 		working_experience: [
 			{

@@ -1,15 +1,24 @@
 <script context="module" lang="ts">
-  import { getProps } from "/src/helper"
-  import { pageList, socialProfiles } from "/src/store"
-  export const load = getProps({ _pages: '/api/states/nav-bar', _socialProfiles: '/api/social'});
+  import createFetch from "wrapped-fetch"
+  import type {UnwrappedResponse} from "wrapped-fetch"
+  import type {INavItem, ISocialProfile} from "$lib/typing"
   import "/src/app.css"
+  export const load = async ({fetch}) => {
+      const f = createFetch(fetch)
+      return {
+        props: {
+            _pages: await f("/api/states/nav-bar"),
+            _socialProfiles: await f("/api/social")
+        }
+      }
+  }
 </script>
 
 <script lang="ts">
-export let _pages, _socialProfiles
-export const pages = _pages.value
-pageList.set(pages)
-socialProfiles.set(_socialProfiles.value)
+import { pageList, socialProfiles } from "/src/store"
+export let _pages: UnwrappedResponse<Array<INavItem>>, _socialProfiles:UnwrappedResponse<Array<ISocialProfile>>
+pageList.set(_pages.body)
+socialProfiles.set(_socialProfiles.body)
 </script>
 
 <style>
