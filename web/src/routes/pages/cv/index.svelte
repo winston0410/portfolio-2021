@@ -51,7 +51,7 @@ export let cv: UnwrappedResponse<ICv>
         margin-bottom: var(--md-space);
     }
 
-    .duty-list{
+    .duty-list, .profile-list{
         list-style: disc inside;
     }
 
@@ -64,6 +64,11 @@ export let cv: UnwrappedResponse<ICv>
     <Title>Curriculum Vitae</Title>
     <section>
         <Heading>Professional Profile</Heading>
+    <ul class="profile-list" role="list">
+            {#each cv.body.profile as text}
+            <li class="list-item"> {text} </li>
+            {/each}
+    </ul>
     </section>
     {#if cv.ok}
     <section>

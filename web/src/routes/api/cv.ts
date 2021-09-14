@@ -6,7 +6,7 @@ const getCv = async (): Promise<ICv> => {
 		profile: [
 			'Passionate and experienced fullstack developer who have exposed to multiple paradigms and fields, actively seeking for the best solutions in frontend, backend and devops.',
 			'Actively participating in the opensource community, contributed to and initiated dozens projects, received hundreds of stars on GitHub.',
-			'Promising mentoring and leading skills, which have nurtured hundreds into a professional software developer in Hong Kong and Singapore.'
+			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into a professional software developer in Hong Kong and Singapore.'
 		],
 		working_experience: [
 			{
@@ -15,11 +15,11 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Feb 2021',
 				end_date: 'Present',
 				duties: [
-					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing and modern frontend development workflow for more than 100 students in Canatonese.',
-					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English',
+					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing, containers composition with Docker and modern frontend development workflow for more than 100 students in Canatonese.',
+					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English.',
 					'Host code reviews for students in both frontend and backend.',
-					'Create unit test for existing coding platform with Jest',
-					'Develop roster application with Svelte and Golang'
+					'Create unit test for existing coding platform with Jest.',
+					'Develop roster application with Svelte and Golang.'
 				],
 				technologies: {
 					Javascript: true,
@@ -42,8 +42,8 @@ const getCv = async (): Promise<ICv> => {
 				duties: [
 					'Develop static branding sites with 11ty and Nunjucks.',
 					'Develop dynamic branding sites with React and Next.js.',
-					'Optimize the performance of existing websites based on Google Lighthouse.',
-					'Improve the SEO ranking of existing websites with JSON Schema'
+					'Optimize the performance of existing branding websites based on Google Lighthouse.',
+					'Improve the SEO ranking of existing branding websites with JSON Schema.'
 				],
 				technologies: {
 					Javascript: true,
@@ -59,8 +59,8 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
 				duties: [
-					'Develop E-commerce website with Wordpress',
-					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse'
+					'Design and develop an E-commerce website with Wordpress.',
+					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse.'
 				],
 				technologies: { HTML: true, CSS: true, Javascript: true }
 			}
