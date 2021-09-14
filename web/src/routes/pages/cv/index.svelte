@@ -62,6 +62,9 @@ export let cv: UnwrappedResponse<ICv>
 
 <div class="container">
     <Title>Curriculum Vitae</Title>
+    <section>
+        <Heading>Professional Profile</Heading>
+    </section>
     {#if cv.ok}
     <section>
         <Heading>Working experience</Heading>

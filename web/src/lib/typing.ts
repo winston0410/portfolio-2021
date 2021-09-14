@@ -43,6 +43,7 @@ export interface IWorkingExperience {
 }
 
 export interface ICv {
+    profile: Array<string>;
 	working_experience: Array<IWorkingExperience>;
 	education: Array<IEducation>;
 	achievement: Array<IAchievement>;

@@ -3,6 +3,11 @@ import type { ICv } from '$lib/typing';
 
 const getCv = async (): Promise<ICv> => {
 	return {
+		profile: [
+			'Passionate and experienced fullstack developer who have exposed to multiple paradigms and fields, actively seeking for the best solutions in frontend, backend and devops.',
+			'Actively participating in the opensource community, contributed to and initiated dozens projects, received hundreds of stars on GitHub.',
+			'Promising mentoring and leading skills, which have nurtured hundreds into a professional software developer in Hong Kong and Singapore.'
+		],
 		working_experience: [
 			{
 				company_name: 'Tecky Academy',
@@ -10,10 +15,10 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Feb 2021',
 				end_date: 'Present',
 				duties: [
-					'Host lectures on React, Redux, UI Testing and modern frontend development workflow.',
-					'Host lectures on HTML, CSS, Javascript, React and Java for Generation Singapore',
+					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing and modern frontend development workflow for more than 100 students in Canatonese.',
+					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English',
 					'Host code reviews for students in both frontend and backend.',
-					'Test backend for existing company projects with Jest',
+					'Create unit test for existing coding platform with Jest',
 					'Develop roster application with Svelte and Golang'
 				],
 				technologies: {
@@ -35,8 +40,10 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Jul 2020',
 				end_date: 'Jan 2021',
 				duties: [
-					'Develop static brand site with 11ty and Nunjucks.',
-					'Develop dynamic brand site with React and Next.js.'
+					'Develop static branding sites with 11ty and Nunjucks.',
+					'Develop dynamic branding sites with React and Next.js.',
+					'Optimize the performance of existing websites based on Google Lighthouse.',
+					'Improve the SEO ranking of existing websites with JSON Schema'
 				],
 				technologies: {
 					Javascript: true,
@@ -51,7 +58,10 @@ const getCv = async (): Promise<ICv> => {
 				title: 'Founder',
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
-				duties: ['Develop E-commerce website with Wordpress'],
+				duties: [
+					'Develop E-commerce website with Wordpress',
+					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse'
+				],
 				technologies: { HTML: true, CSS: true, Javascript: true }
 			}
 		],
