@@ -3,7 +3,6 @@ import env from '../../env';
 import MarkDownIt from 'markdown-it';
 import emoji from 'markdown-it-emoji';
 import createFetch from 'wrapped-fetch';
-import fetch from 'node-fetch';
 
 const processMarkdown = (text: string): string => {
 	const md = new MarkDownIt();
@@ -36,7 +35,7 @@ interface IGithubRepo {
 
 export const get: RequestHandler<Locals> = async () => {
 	try {
-		const f = createFetch(fetch);
+		const f = createFetch();
 
 		const githubRes = await getGithubApi(f);
 		const filtered = githubRes.body

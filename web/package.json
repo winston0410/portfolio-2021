@@ -44,7 +44,6 @@
 		"@types/resize-observer-browser": "^0.1.6",
 		"language-colors": "^1.184.0",
 		"modern-css-reset": "^1.4.0",
-		"node-fetch": "^3.0.0",
 		"svelte-use-resize-observer": "^1.0.2",
 		"wrapped-fetch": "github:winston0410/wrapped-fetch"
 	}
