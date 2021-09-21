@@ -1,7 +1,7 @@
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocess } from 'svelte/compiler'
-import adapter from '@sveltejs/adapter-vercel'
-//  import adapter from '@sveltejs/adapter-static';
+//  import adapter from '@sveltejs/adapter-vercel'
+import adapter from '@sveltejs/adapter-static';
 //  import gloryPreprocess from "glory-svelte-preprocess";
 
 const config = {
