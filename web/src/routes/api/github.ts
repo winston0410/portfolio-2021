@@ -39,8 +39,7 @@ export const get: RequestHandler = async () => {
 
 		const githubRes = await getGithubApi(fetch);
 		//  const filtered = githubRes.body
-		const filtered = await githubRes
-			.json()
+		const filtered = (await githubRes.json())
 			.filter(
 				(item: IGithubRepo) => !item.fork && !item.archived && !item.disabled && item.description
 			)
