@@ -15,7 +15,7 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Feb 2021',
 				end_date: 'Present',
 				duties: [
-					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing, containers composition with Docker and modern frontend development workflow for more than 100 students in Canatonese.',
+					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing, containers composition with Docker and modern frontend development workflow for more than 100 students in Cantonese.',
 					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English.',
 					'Host code reviews for students in both frontend and backend.',
 					'Create unit test for existing coding platform with Jest.',
