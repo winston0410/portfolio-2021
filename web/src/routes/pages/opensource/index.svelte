@@ -46,14 +46,10 @@ url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
         
     @media (min-width: 1200px){
       .list{
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       }
     }
 
-    .list-item-link {
-        font-size: var(--md-font);
-    }
-        
     .list-item-description {
         font-size: var(--sm-font);
     }
@@ -65,9 +61,9 @@ url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 <ul class="list" role="list">
 {#each projects.body as { name, description, html_url, languages }}
     <li class="list-item">
-    <a class="list-item-link" href={html_url}>
-        <Heading size={3}>{name}</Heading>
-    </a>
+        <Heading size={3}>
+            <a href={html_url}>{name}</a>
+        </Heading>
     <div>
         <LangTagList languages={languages}/>
     </div>
