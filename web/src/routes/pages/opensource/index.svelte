@@ -28,7 +28,7 @@ onMount(() => {
 export let projects: UnwrappedResponse<Array<IProject>>
 </script>
 
-<MetaData title={"Opensource"} description={"The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong."}
+<MetaData title={"Opensource | Hugo Sum"} description={"The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong."}
 url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 
 <style>

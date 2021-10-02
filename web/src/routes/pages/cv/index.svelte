@@ -28,7 +28,7 @@ onMount(() => {
 export let cv: UnwrappedResponse<ICv>
 </script>
 
-<MetaData title={"CV"} description={"The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong."} url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
+<MetaData title={"Curriculum Vitae | Hugo Sum"} description={"The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong."} url={`${env.VITE_DOMAIN_NAME}${$page.path}`} image={"/cover.jpg"}/>
 
 <style>
     section{
