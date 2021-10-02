@@ -1,38 +1,33 @@
 <script lang="ts">
-interface IBarOpts {
-    thickness: string,
-    radius: string
-}
-
+import Bar from '$lib/Bar.svelte';
 export let isActive:boolean
-export let barOpts: IBarOpts
-
-const defaultBarOpts: IBarOpts = {
-    thickness: "7%",
-    radius: "3"
-}
-
-let _barOpts = {
-    ...defaultBarOpts,
-    ...barOpts
-}
-
 </script>
 
+<!--  Use global to get id of the belowing component  -->
+<style>
+    .hamburger :global(*){
+        transform-origin: center;
+    }
+        
+    .active :global(#top-bar){
+        transform: translateY(20px) rotate(45deg);
+    }
+        
+    .active :global(#middle-bar){
+        opacity: 0;
+    }
+
+    .active :global(#bottom-bar){
+        transform: translateY(-20px) rotate(135deg);
+    }
+</style>
+
 <svg viewBox="0 0 70 70" width="28" height="28">
-  <symbol id="bar">
-      <title>Bar</title>
-      <desc>Bar for forming hamburger menu button</desc>
-      <rect width="100%" height={_barOpts.thickness} rx={_barOpts.radius}></rect>
-  </symbol>
   <g class={`hamburger ${isActive ? "active" : "inactive"}`} id="hamburger">
       <title>Hamburger icon</title>
       <desc>The hamburger icon for toggling menu</desc>
-      <use id="bar-1" y="10" xlink:href="#bar" />
-      <use id="bar-2" y="30" xlink:href="#bar" />
-      <use id="bar-3" y="50" xlink:href="#bar" />
-      <!--  <animate xlink:href=".active #bar-1" begin=""/>  -->
-      <!--  <animate xlink:href=".active #bar-2" begin=""/>  -->
-      <!--  <animate xlink:href=".active #bar-3" begin=""/>  -->
+      <Bar opts={{id: "top-bar", y: "10" }} />
+      <Bar opts={{id: "middle-bar", y: "30" }} />
+      <Bar opts={{id: "bottom-bar", y: "50" }} />
   </g>
 </svg>
