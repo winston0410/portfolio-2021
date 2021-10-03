@@ -4,7 +4,7 @@ import Hamburger from '$lib/Hamburger.svelte'
 import { pageList, isMenuActive } from "/src/store"
 import resizeObserver from 'svelte-use-resize-observer'
 
-const handleResize = (e) => {
+const handleResize = (e: CustomEvent<{ entries: Array<ResizeObserverEntry>}>) => {
     const elem = e.detail.entries[0]
     const cr = elem.contentRect
     document.documentElement.style.setProperty('--headerOffset', `${cr.height}px`);
@@ -12,10 +12,8 @@ const handleResize = (e) => {
 </script>
 
 <script lang="ts">
-let sidebar, height
-
 const handleClick = () => {
-    isMenuActive.update(v => !v)
+    isMenuActive.update((v: boolean) => !v)
 }
 </script>
 
@@ -70,6 +68,7 @@ const handleClick = () => {
 
 </style>
 
+<!--  bug for svelte-check, as it doesn't pick up event generated from custom action  -->
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
     <a href="/" title="Back to homepage">
         <span class="sidebar-title">Hugo Sum</span>
