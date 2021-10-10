@@ -25,7 +25,11 @@
       });
       devShell.${system} = (({ pkgs, ... }:
         pkgs.mkShell {
-          buildInputs = with pkgs; [ nodejs ];
+          buildInputs = with pkgs;
+            [
+              # For compatibility with Vercel
+              nodejs-14_x
+            ];
 
           shellHook = "";
         }) { pkgs = nixpkgs.legacyPackages.${system}; });
