@@ -1,20 +1,20 @@
 <script context="module" lang="ts">
-import LangTag from '$lib/LangTag.svelte'
+	import LangTag from '$lib/LangTag.svelte';
 </script>
 
 <script lang="ts">
-export let languages
+	export let languages;
 </script>
 
-<style>
-    .language-list{
-        display: flex;
-        flex-wrap: wrap;
-    }
-</style>
-
 <ul class="language-list" role="list">
-        {#each Object.keys(languages) as language }
-               <LangTag language={language} />
-        {/each}
+	{#each Object.keys(languages) as language}
+		<LangTag {language} />
+	{/each}
 </ul>
+
+<style>
+	.language-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+</style>

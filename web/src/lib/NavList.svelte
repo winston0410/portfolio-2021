@@ -38,9 +38,9 @@
 		margin-bottom: var(--marginBottom);
 	}
 
-    .active nav {
+	.active nav {
 		animation: drop-down var(--time-2);
-    }
+	}
 
 	@media (min-width: 1200px) {
 		nav {
