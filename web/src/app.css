@@ -4,127 +4,142 @@
 @font-face {
 	font-family: 'neoneon';
 	font-weight: 400;
-	src: local('neoneon'), url('/Neoneon.woff2') format('woff2'), url('/Neoneon.ttf') format('truetype');
+	src: local('neoneon'), url('/Neoneon.woff2') format('woff2'),
+		url('/Neoneon.ttf') format('truetype');
 	font-display: swap;
 }
 
-:root{
-    /* 1.2 ratio */
-    --xxs: 0.694;
-    --xs: 0.833;
-    /* 1.4 ratio */
-    --sm: 1;
-    --md: 1.4;
-    --lg: 1.96;
-    --xl: 2.744;
-    --xxl: 3.842;
+:root {
+	/* 1.2 ratio */
+	--xxs: 0.694;
+	--xs: 0.833;
+	/* 1.4 ratio */
+	--sm: 1;
+	--md: 1.4;
+	--lg: 1.96;
+	--xl: 2.744;
+	--xxl: 3.842;
 }
 
 /* container-width */
-:root{
-    --container-width: 2048px;
+:root {
+	--container-width: 2048px;
 }
 
 /* space */
-:root{
-    --space-base-value: calc(var(--font-base-value) / 2);
-    --xs-space: calc(var(--xs) * var(--space-base-value));
-    --sm-space: calc(var(--sm) * var(--space-base-value));
-    --md-space: calc(var(--md) * var(--space-base-value));
-    --lg-space: calc(var(--lg) * var(--space-base-value));
-    --xl-space: calc(var(--xl) * var(--space-base-value));
-    --xxl-space: calc(var(--xxl) * var(--space-base-value));
+:root {
+	--space-base-value: calc(var(--font-base-value) / 2);
+	--xs-space: calc(var(--xs) * var(--space-base-value));
+	--sm-space: calc(var(--sm) * var(--space-base-value));
+	--md-space: calc(var(--md) * var(--space-base-value));
+	--lg-space: calc(var(--lg) * var(--space-base-value));
+	--xl-space: calc(var(--xl) * var(--space-base-value));
+	--xxl-space: calc(var(--xxl) * var(--space-base-value));
 }
 
 /* font-family */
 :root {
-    /* --display-font: neoneon; */
-    --display-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --content-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	/* --display-font: neoneon; */
+	--display-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
+	--content-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 /* font-size */
-:root{
-    --font-base-value: 16px;
-    --xxs-font: calc(var(--xxs) * var(--font-base-value));
-    --xs-font: calc(var(--xs) * var(--font-base-value));
-    --sm-font: calc(var(--sm) * var(--font-base-value));
-    --md-font: calc(var(--md) * var(--font-base-value));
-    --lg-font: calc(var(--lg) * var(--font-base-value));
-    --xl-font: calc(var(--xl) * var(--font-base-value));
-    --xxl-font: calc(var(--xxl) * var(--font-base-value));
+:root {
+	--font-base-value: 16px;
+	--xxs-font: calc(var(--xxs) * var(--font-base-value));
+	--xs-font: calc(var(--xs) * var(--font-base-value));
+	--sm-font: calc(var(--sm) * var(--font-base-value));
+	--md-font: calc(var(--md) * var(--font-base-value));
+	--lg-font: calc(var(--lg) * var(--font-base-value));
+	--xl-font: calc(var(--xl) * var(--font-base-value));
+	--xxl-font: calc(var(--xxl) * var(--font-base-value));
 }
 
 /* color */
-:root{
-    --base-color-shade1: hsla(50, 10%, 10%, 1);
-    --base-color: hsla(50, 10%, 11%, 1);
-    --base-contrast-color: hsla(50, 5%, 90%, 1);
-    --highlight-color: hsla(45, 98%, 50%, 1);
-    --highlight-color-tint1: hsla(45, 98%, 75%, 1);
-    --highlight-color-tint2: hsla(45, 98%, 85%, 1);
+:root {
+	--base-color-shade1: hsla(50, 10%, 10%, 1);
+	--base-color: hsla(50, 10%, 11%, 1);
+	--base-contrast-color: hsla(50, 5%, 90%, 1);
+	--highlight-color: hsla(45, 98%, 50%, 1);
+	--highlight-color-tint1: hsla(45, 98%, 75%, 1);
+	--highlight-color-tint2: hsla(45, 98%, 85%, 1);
 }
 
 /* border-radius */
-:root{
-    --radius-base-value: 5px;
-    --xs-radius: calc(var(--xs) * var(--radius-base-value));
-    --sm-radius: calc(var(--sm) * var(--radius-base-value));
-    --md-radius: calc(var(--md) * var(--radius-base-value));
-    --lg-radius: calc(var(--lg) * var(--radius-base-value));
-    --xl-radius: calc(var(--xl) * var(--radius-base-value));
+:root {
+	--radius-base-value: 5px;
+	--xs-radius: calc(var(--xs) * var(--radius-base-value));
+	--sm-radius: calc(var(--sm) * var(--radius-base-value));
+	--md-radius: calc(var(--md) * var(--radius-base-value));
+	--lg-radius: calc(var(--lg) * var(--radius-base-value));
+	--xl-radius: calc(var(--xl) * var(--radius-base-value));
 }
 
 /* animation delay */
-:root{
-    --time-base-value: 500ms;
-    --time-1: var(--time-base-value);
-    --time-2: calc(2 * var(--time-base-value));
-    --time-3: calc(3 * var(--time-base-value));
-    --time-4: calc(4 * var(--time-base-value));
-    --time-5: calc(5 * var(--time-base-value));
-    --time-6: calc(6 * var(--time-base-value));
-    --time-7: calc(7 * var(--time-base-value));
-    --time-8: calc(8 * var(--time-base-value));
-    --time-9: calc(9 * var(--time-base-value));
+:root {
+	--time-base-value: 500ms;
+	--time-1: var(--time-base-value);
+	--time-2: calc(2 * var(--time-base-value));
+	--time-3: calc(3 * var(--time-base-value));
+	--time-4: calc(4 * var(--time-base-value));
+	--time-5: calc(5 * var(--time-base-value));
+	--time-6: calc(6 * var(--time-base-value));
+	--time-7: calc(7 * var(--time-base-value));
+	--time-8: calc(8 * var(--time-base-value));
+	--time-9: calc(9 * var(--time-base-value));
 }
 
 /* layout related */
-:root{
-    --sidebar: 30%;
-    --main: 70%;
-    --sectionYpadding: var(--xxl-space);
+:root {
+	--sidebar: 30%;
+	--main: 70%;
+	--sectionYpadding: var(--xxl-space);
 }
 
 /* should this be used in reset? */
-svg * { 
-  transform-box: fill-box;
+svg * {
+	transform-box: fill-box;
 }
 
 /* Patching language-color */
-.bg-color-svelte { background-color: #ff3e00 !important; }
-.bg-color-purescript { background-color: #fff !important; }
-.bg-color-sql { background-color: #336790 !important; }
-.bg-color-scss { background-color: #c6538c !important; }
-.bg-color-vue { background-color: #41b883 !important; }
+.bg-color-svelte {
+	background-color: #ff3e00 !important;
+}
+.bg-color-purescript {
+	background-color: #fff !important;
+}
+.bg-color-sql {
+	background-color: #336790 !important;
+}
+.bg-color-scss {
+	background-color: #c6538c !important;
+}
+.bg-color-vue {
+	background-color: #41b883 !important;
+}
 
 /* Specific to the current theme */
-.font-color-javascript{
-    color: #000;
+.font-color-javascript {
+	color: #000;
 }
 
-.font-color-rust{
-    color: #000;
+.font-color-rust {
+	color: #000;
 }
 
-.font-color-purescript{
-    color: #000;
+.font-color-purescript {
+	color: #000;
 }
 
-.font-color-shell{
-    color: #000;
+.font-color-shell {
+	color: #000;
 }
 
-.font-color-dhall{
-    color: #000;
+.font-color-dhall {
+	color: #000;
 }
