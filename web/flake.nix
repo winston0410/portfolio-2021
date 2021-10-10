@@ -28,7 +28,7 @@
           buildInputs = with pkgs;
             [
               # For compatibility with Vercel
-              nodejs-14_x
+              nodejs-16_x
             ];
 
           shellHook = "";
