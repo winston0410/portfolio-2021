@@ -119,6 +119,9 @@ svg * {
 .bg-color-scss {
 	background-color: #c6538c !important;
 }
+.bg-color-sass {
+	background-color: #a53b70 !important;
+}
 .bg-color-vue {
 	background-color: #41b883 !important;
 }

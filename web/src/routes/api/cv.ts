@@ -9,11 +9,29 @@ const getCv = async (): Promise<ICv> => {
 			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into a professional software developer in Hong Kong and Singapore.'
 		],
 		working_experience: [
+            
+			{
+				company_name: 'HydrogenX Lab',
+				title: 'Independent Contractor',
+				start_date: 'Oct 2021',
+				end_date: 'Nov 2021',
+				duties: [
+					'Develop and style web application for Trusted Node with Nuxt.js',
+					'Scaffold, develop and style web application for UltraStable with Nuxt.js',
+				],
+				technologies: {
+					Typescript: true,
+					Vue: true,
+					SCSS: true,
+					SASS: true,
+					CSS: true,
+				}
+			},
 			{
 				company_name: 'Tecky Academy',
 				title: 'Senior Frontend Developer/Instructor',
 				start_date: 'Feb 2021',
-				end_date: 'Present',
+				end_date: 'Nov 2021',
 				duties: [
 					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing, containers composition with Docker and modern frontend development workflow for more than 100 students in Cantonese.',
 					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English.',
