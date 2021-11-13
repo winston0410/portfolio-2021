@@ -16,8 +16,8 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Oct 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Develop and style web application for Trusted Node with Nuxt.js',
-					'Scaffold, develop and style web application for UltraStable with Nuxt.js',
+					'Develop web application for Trusted Node with Nuxt.js',
+					'Scaffold and develop web application for UltraStable with Nuxt.js',
 				],
 				technologies: {
 					Typescript: true,
