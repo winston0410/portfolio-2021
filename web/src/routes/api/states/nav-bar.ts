@@ -2,7 +2,7 @@ import type { EndpointOutput } from '@sveltejs/kit';
 import type { INavItem } from '$lib/typing';
 
 const pages = [
-	{ name: 'opensource', url: '/pages/opensource' },
+	{ name: 'Opensource', url: '/pages/opensource' },
 	{ name: 'My curriculum vitae', url: '/pages/cv' }
 ];
 
