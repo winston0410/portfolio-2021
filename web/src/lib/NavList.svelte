@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { socialProfiles } from '/src/store';
+	import { socialProfiles } from '$lib/store';
 	export let pages;
 	export let isActive: boolean = false;
 </script>

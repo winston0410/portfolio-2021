@@ -1,19 +1,18 @@
 import sveltePreprocess from 'svelte-preprocess';
 import { preprocess } from 'svelte/compiler';
-//  import adapter from '@sveltejs/adapter-vercel'
 import adapter from '@sveltejs/adapter-static';
-//  import gloryPreprocess from "glory-svelte-preprocess";
+import { mdsvex } from 'mdsvex';
 
 const config = {
+	extensions: ['.svelte', '.md', '.svelte.md'],
 	preprocess: [
-		{
-			async markup({ content, filename }) {
-				return preprocess(content, [sveltePreprocess()], { filename });
+		mdsvex({
+			extensions: ['.svelte.md', '.md', '.svelte'],
+			layout: {
+				article: './src/lib/Article.svelte'
 			}
-		}
-		//  gloryPreprocess({
-		//  lazyLoad: true
-		//  })
+		}),
+		sveltePreprocess()
 	],
 
 	kit: {

@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import NavList from '$lib/NavList.svelte';
 	import Hamburger from '$lib/Hamburger.svelte';
-	import { pageList, isMenuActive } from '/src/store';
+	import { pageList, isMenuActive } from '$lib/store';
 	import resizeObserver from 'svelte-use-resize-observer';
 
 	const handleResize = (e: CustomEvent<{ entries: Array<ResizeObserverEntry> }>) => {

@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-	import { pageList, socialProfiles } from '/src/store';
+	import { pageList, socialProfiles } from '$lib/store';
 	export let _pages: UnwrappedResponse<Array<INavItem>>,
 		_socialProfiles: UnwrappedResponse<Array<ISocialProfile>>;
 	pageList.set(_pages.body);

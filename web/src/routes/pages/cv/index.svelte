@@ -21,7 +21,7 @@
 </script>
 
 <script lang="ts">
-	import { isMenuActive } from '/src/store';
+	import { isMenuActive } from '$lib/store';
 	onMount(() => {
 		isMenuActive.set(false);
 	});

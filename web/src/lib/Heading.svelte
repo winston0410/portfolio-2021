@@ -6,7 +6,11 @@
 </script>
 
 <!--  Limitation for svelte3 right now, no dynamic tag  -->
-{#if tag === 'h2'}
+{#if tag === 'h1'}
+	<h1 class={className}>
+		<slot />
+	</h1>
+{:else if tag === 'h2'}
 	<h2 class={className}>
 		<slot />
 	</h2>

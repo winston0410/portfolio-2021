@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import { pageList } from '/src/store';
+	import { pageList } from '$lib/store';
 </script>
 
 <MetaData
