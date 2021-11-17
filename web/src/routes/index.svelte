@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import { getProps } from '/src/helper';
 	import MetaData from '$lib/MetaData.svelte';
-	import env from '/src/env';
+	import env from '$lib/env';
 </script>
 
 <script lang="ts">

@@ -4,7 +4,7 @@
 	import Heading from '$lib/Heading.svelte';
 	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
-	import env from '/src/env';
+	import env from '$lib/env';
 	import { page } from '$app/stores';
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
