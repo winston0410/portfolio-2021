@@ -35,7 +35,7 @@
 		{#each posts as post (post.key)}
 			<li>
 				<article>
-                        <img class="article-cover" alt={`Cover image for ${post.metadata.image}`} src={post.metadata.image} />
+                        <!--  <img class="article-cover" alt={`Cover image for ${post.metadata.image}`} src={post.metadata.image} />  -->
 						<Heading size={3} color={2}>
                             <a sveltekit:prefetch href={post.path}>
                                 {post.metadata.title}

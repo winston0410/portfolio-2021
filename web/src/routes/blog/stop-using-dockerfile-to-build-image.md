@@ -115,3 +115,15 @@ We are going to start off with a very simple Nix Flake template. This is what yo
 ```
 
 `defaultPackage` is the derivation that we can build with `nix build .#`. We are going to build the project and the image there.
+
+To deal with the compilation for this package, we will have a derivation like this:
+
+```nix
+
+```
+
+After that, we are going to define our Docker image with Nix:
+
+```nix
+
+```
