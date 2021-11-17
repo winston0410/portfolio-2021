@@ -1,9 +1,9 @@
 <script context="module" lang="ts">
-	import { getLangColorName } from '/src/helper';
+	import { getLangColorName } from '$lib/helper';
 </script>
 
 <script lang="ts">
-	export let language;
+	export let language: string;
 </script>
 
 <li class={`language-list-item bg-color-${getLangColorName(language)}`}>

@@ -1,8 +1,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import env from '../../env';
+import env from '$lib/env';
 import MarkDownIt from 'markdown-it';
 import emoji from 'markdown-it-emoji';
-//  import createFetch from 'wrapped-fetch';
 
 const processMarkdown = (text: string): string => {
 	const md = new MarkDownIt();
@@ -16,8 +15,8 @@ const fetchOptions = {
 	}
 };
 
-const getGithubApi = async (f) => {
-	return await f(
+const getGithubApi = () => {
+	return fetch(
 		'https://api.github.com/users/winston0410/repos?sort=updated&per_page=100',
 		fetchOptions
 	);
@@ -35,10 +34,15 @@ interface IGithubRepo {
 
 export const get: RequestHandler = async () => {
 	try {
-		//  const f = createFetch();
+		const githubRes = await getGithubApi();
 
-		const githubRes = await getGithubApi(fetch);
-		//  const filtered = githubRes.body
+        if (!githubRes.ok) {
+            return {
+                status: 400,
+                body: null
+            }
+        }
+        
 		const filtered = (await githubRes.json())
 			.filter(
 				(item: IGithubRepo) => !item.fork && !item.archived && !item.disabled && item.description
@@ -49,7 +53,6 @@ export const get: RequestHandler = async () => {
 			});
 
 		for (const repo of filtered) {
-			//  repo.languages = (await f(repo.languages_url, fetchOptions)).body;
 			repo.languages = await fetch(repo.languages_url, fetchOptions).then((res) => res.json());
 		}
 
@@ -58,5 +61,8 @@ export const get: RequestHandler = async () => {
 		};
 	} catch (e) {
 		console.log(e);
+        return {
+            status: 500
+        }
 	}
 };

@@ -1,7 +1,7 @@
 <script context="module" lang="ts">
 	import NavList from '$lib/NavList.svelte';
 	import Hamburger from '$lib/Hamburger.svelte';
-	import { pageList, isMenuActive } from '/src/store';
+	import { pageList, isMenuActive } from '$lib/store';
 	import resizeObserver from 'svelte-use-resize-observer';
 
 	const handleResize = (e: CustomEvent<{ entries: Array<ResizeObserverEntry> }>) => {
@@ -19,7 +19,7 @@
 
 <!--  bug for svelte-check, as it doesn't pick up event generated from custom action  -->
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
-	<a href="/" title="Back to homepage">
+	<a sveltekit:prefetch href="/" title="Back to homepage">
 		<span class="sidebar-title">Hugo Sum</span>
 	</a>
 	<button class="menu-button" type="button" on:click={handleClick}

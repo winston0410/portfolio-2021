@@ -6,7 +6,11 @@
 </script>
 
 <!--  Limitation for svelte3 right now, no dynamic tag  -->
-{#if tag === 'h2'}
+{#if tag === 'h1'}
+	<h1 class={className}>
+		<slot />
+	</h1>
+{:else if tag === 'h2'}
 	<h2 class={className}>
 		<slot />
 	</h2>
@@ -35,9 +39,23 @@
 		font-size: var(--heading-font-size);
 		margin-bottom: var(--heading-margin-b);
 	}
+        
+	.color-1 {
+		--heading-color: var(--base-contrast-color);
+	}
 
 	.color-3 {
 		--heading-color: var(--highlight-color-tint1);
+	}
+        
+	.size-1 {
+		--heading-font-size: var(--xl-font);
+	}
+
+	@media (min-width: 1200px) {
+		.size-1 {
+			--heading-font-size: var(--xxl-font);
+		}
 	}
 
 	.size-3 {

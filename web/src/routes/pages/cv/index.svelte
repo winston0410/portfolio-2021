@@ -1,10 +1,9 @@
 <script context="module" lang="ts">
 	import LangTagList from '$lib/LangTagList.svelte';
-	import Title from '$lib/Title.svelte';
 	import Heading from '$lib/Heading.svelte';
 	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
-	import env from '/src/env';
+	import env from '$lib/env';
 	import { page } from '$app/stores';
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
@@ -21,7 +20,7 @@
 </script>
 
 <script lang="ts">
-	import { isMenuActive } from '/src/store';
+	import { isMenuActive } from '$lib/store';
 	onMount(() => {
 		isMenuActive.set(false);
 	});
@@ -36,7 +35,7 @@
 />
 
 <div class="container">
-	<Title>Curriculum Vitae</Title>
+	<Heading size={1} color={1}>Curriculum Vitae</Heading>
 	<section>
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">

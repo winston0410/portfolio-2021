@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-	import { pageList, socialProfiles } from '/src/store';
+	import { pageList, socialProfiles } from '$lib/store';
 	export let _pages: UnwrappedResponse<Array<INavItem>>,
 		_socialProfiles: UnwrappedResponse<Array<ISocialProfile>>;
 	pageList.set(_pages.body);
@@ -27,15 +27,24 @@
 </div>
 
 <style>
+	:global(h1,h2,h3,h4,h5,h6,li,span,p) {
+        cursor: default;
+	}
+
 	:global(a) {
 		color: var(--highlight-color);
 		text-decoration: none;
+        cursor: pointer;
 	}
+
+    :global(a *){
+        cursor: pointer;
+    }
 
 	:global(a:hover) {
 		color: var(--highlight-color-tint1);
 	}
-
+        
 	:global(ul) {
 		padding: 0px;
 		margin: 0px;
@@ -70,6 +79,7 @@
 	:global(code) {
 		background: var(--highlight-color-tint2);
 		color: #000;
+        padding: 0 var(--xs-space);
 	}
 
 	.main {

@@ -1,11 +1,12 @@
 <script context="module" lang="ts">
 	import SocialProfileList from '$lib/SocialProfileList.svelte';
+    import type { INavItem } from '$lib/typing'
 </script>
 
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { socialProfiles } from '/src/store';
-	export let pages;
+	import { socialProfiles } from '$lib/store';
+	export let pages: Array<INavItem>;
 	export let isActive: boolean = false;
 </script>
 
@@ -17,7 +18,7 @@
 					{#if url === $page.path}
 						<span aria-current="page">{name}</span>
 					{:else}
-						<a href={url}>
+						<a sveltekit:prefetch href={url}>
 							<span>{name}</span>
 						</a>
 					{/if}
@@ -62,7 +63,12 @@
 	.navlist-item {
 		font-size: var(--md-font);
 		font-weight: 700;
+        cursor: pointer;
 	}
+
+    .navlist-item a span{
+        cursor: pointer;
+    }
 
 	@media (min-width: 1200px) {
 		.navlist-item {

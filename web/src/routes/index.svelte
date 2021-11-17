@@ -1,11 +1,11 @@
 <script context="module" lang="ts">
-	import { getProps } from '/src/helper';
+	import { getProps } from '$lib/helper';
 	import MetaData from '$lib/MetaData.svelte';
-	import env from '/src/env';
+	import env from '$lib/env';
 </script>
 
 <script lang="ts">
-	import { pageList } from '/src/store';
+	import { pageList } from '$lib/store';
 </script>
 
 <MetaData
@@ -126,5 +126,9 @@
 
 	.fade-in-order-1 {
 		animation: fade-in-from-left var(--time-6);
+	}
+        
+	.fade-in-order-2 {
+		animation: fade-in-from-left var(--time-9);
 	}
 </style>
