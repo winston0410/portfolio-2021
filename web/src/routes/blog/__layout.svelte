@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import Sidebar from '$lib/Sidebar.svelte';
+	import '$lib/syntax-highlight.css';
 </script>
 
 <div class="container">

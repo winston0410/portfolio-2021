@@ -22,4 +22,7 @@
 </div>
 
 <style>
+    :global(.markdown-article p){
+        margin-bottom: var(--lg-space);
+    }
 </style>
