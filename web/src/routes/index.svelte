@@ -127,4 +127,8 @@
 	.fade-in-order-1 {
 		animation: fade-in-from-left var(--time-6);
 	}
+        
+	.fade-in-order-2 {
+		animation: fade-in-from-left var(--time-9);
+	}
 </style>

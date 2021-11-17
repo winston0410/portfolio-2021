@@ -19,7 +19,7 @@
 
 <!--  bug for svelte-check, as it doesn't pick up event generated from custom action  -->
 <aside use:resizeObserver on:resize={handleResize} class="sidebar">
-	<a href="/" title="Back to homepage">
+	<a sveltekit:prefetch href="/" title="Back to homepage">
 		<span class="sidebar-title">Hugo Sum</span>
 	</a>
 	<button class="menu-button" type="button" on:click={handleClick}

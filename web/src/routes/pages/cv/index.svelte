@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 	import LangTagList from '$lib/LangTagList.svelte';
-	import Title from '$lib/Title.svelte';
 	import Heading from '$lib/Heading.svelte';
 	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
@@ -36,7 +35,7 @@
 />
 
 <div class="container">
-	<Title>Curriculum Vitae</Title>
+	<Heading size={1} color={1}>Curriculum Vitae</Heading>
 	<section>
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">

@@ -39,9 +39,23 @@
 		font-size: var(--heading-font-size);
 		margin-bottom: var(--heading-margin-b);
 	}
+        
+	.color-1 {
+		--heading-color: var(--base-contrast-color);
+	}
 
 	.color-3 {
 		--heading-color: var(--highlight-color-tint1);
+	}
+        
+	.size-1 {
+		--heading-font-size: var(--xl-font);
+	}
+
+	@media (min-width: 1200px) {
+		.size-1 {
+			--heading-font-size: var(--xxl-font);
+		}
 	}
 
 	.size-3 {

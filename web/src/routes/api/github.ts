@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import env from '../../env';
+import env from '$lib/env';
 import MarkDownIt from 'markdown-it';
 import emoji from 'markdown-it-emoji';
 //  import createFetch from 'wrapped-fetch';

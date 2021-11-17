@@ -1,6 +1,5 @@
 <script context="module" lang="ts">
 	import LangTagList from '$lib/LangTagList.svelte';
-	import Title from '$lib/Title.svelte';
 	import Heading from '$lib/Heading.svelte';
 	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
@@ -35,14 +34,14 @@
 	image={'/cover.jpg'}
 />
 
-<Title>Opensource</Title>
+<Heading size={1} color={1}>Opensource</Heading>
 <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
 {#if projects.ok}
 	<ul class="list" role="list">
 		{#each projects.body as { name, description, html_url, languages }}
 			<li class="list-item">
 				<Heading size={3}>
-					<a href={html_url}>{name}</a>
+					<a rel="external" href={html_url}>{name}</a>
 				</Heading>
 				<div>
 					<LangTagList {languages} />
