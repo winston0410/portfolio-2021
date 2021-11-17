@@ -79,6 +79,7 @@
 	:global(code) {
 		background: var(--highlight-color-tint2);
 		color: #000;
+        padding: 0 var(--xs-space);
 	}
 
 	.main {

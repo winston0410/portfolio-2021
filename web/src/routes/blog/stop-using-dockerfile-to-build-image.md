@@ -5,13 +5,25 @@ description: Nix is a better tool to build Dockerfile.
 tags: { nix: true, rust: true }
 ---
 
+Docker is something we all use these days for deployment, as it is easy to deploy with an image and get expected result in production environment, isolated with other applications running in the server.
+
+Despite Docker is great for containerize applications, it **may not be reproducible**. An image will yield identical result, but building an image from a `Dockerfile` could be inconsistent. It requires special care from the developer to achieve this ideal.
+
+Nix is well-known for its ability to build packages in a reproducible way, yet it can actually be used to build Docker image as well.
+
+By using Nix to build Docker image, you can expect your image to be time-proof.
+
 ## What is Nix?
 
-It is difficult to describe Nix as it can do many things now. It was originally designed for building packages in a deterministic and reproducible way. With that properties, it has been developed into a Linux distro, Devops toolkit and many more.
+It is difficult to describe Nix as it can do many things now. It was originally designed for building packages in a **deterministic and reproducible** way. Over the years, it has been developed into a [package manager](https://github.com/NixOS/nixpkgs), [Linux distro](https://nixos.org/), [devops toolkit](https://github.com/NixOS/nixops) and many more.
 
 ## A practical example why Nix is better than Dockerfile
 
 I came across this excellent lightweight alternative to ElasticSearch, [MeiliSearch](https://github.com/meilisearch/MeiliSearch) last month. It is written in Rust, and has a Docker image ready to use.
+
+```sh
+docker run -p 7700:7700 -v "$(pwd)/data.ms:/data.ms" getmeili/meilisearch
+```
 
 Out of curosity, I skimmed the [`Dockerfile`](https://github.com/meilisearch/MeiliSearch/blob/eb91f27b656d2f826e7a9c9343438bd16bbec255/Dockerfile) of the repository.
 
@@ -72,10 +84,33 @@ ENTRYPOINT ["tini", "--"]
 CMD     ./meilisearch
 ```
 
-This image is built with a multi-stage build technique. The instruction for compiling the project is defined first, and then the enviornemnt for running the binary correctly.
+This image is built with a multi-stage build technique. The instruction for compiling the project is defined first, and then the environment for running the binary.
 
 There are a few issues here:
 
 - the logic for building the binary is **procedual**. It **cannot be reused** without copy and paste.
 
-- the logic for building the binary is not automatically **untested**.
+- `apk` is used for installing dependencies. As there is no pinning in `apk`. This image may yield unexpected result overtime, as the latest package is fetched. This is not **reproducible**.
+
+- There **might be bloat** in the image as `alpine` is used as the base instead of `scratch`.
+
+## Build the image with Nix
+
+We are going to start off with a very simple Nix Flake template. This is what you get by running `nix flake init`.
+
+```nix
+# flake.nix
+{
+  description = "A very basic flake";
+
+  outputs = { self, nixpkgs }: {
+
+    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+
+    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+
+  };
+}
+```
+
+`defaultPackage` is the derivation that we can build with `nix build .#`. We are going to build the project and the image there.
