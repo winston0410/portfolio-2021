@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { getLangColorName } from '/src/helper';
+	import { getLangColorName } from '$lib/helper';
 </script>
 
 <script lang="ts">

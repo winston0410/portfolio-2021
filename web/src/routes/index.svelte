@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	import { getProps } from '/src/helper';
+	import { getProps } from '$lib/helper';
 	import MetaData from '$lib/MetaData.svelte';
 	import env from '$lib/env';
 </script>
