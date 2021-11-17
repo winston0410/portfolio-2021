@@ -2,6 +2,7 @@
 layout: article
 title: Stop using Dockerfile to build Docker image, use Nix
 description: Nix is a better tool to build Dockerfile.
+image: /docker.jpg
 tags: { nix: true, rust: true }
 ---
 

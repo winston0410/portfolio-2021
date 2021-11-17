@@ -2,6 +2,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import { preprocess } from 'svelte/compiler';
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
+//  import image from "svelte-image";
 
 const config = {
 	extensions: ['.svelte', '.md', '.svelte.md'],
@@ -12,7 +13,8 @@ const config = {
 				article: './src/lib/Article.svelte'
 			}
 		}),
-		sveltePreprocess()
+		sveltePreprocess(),
+        //  image()
 	],
 
 	kit: {

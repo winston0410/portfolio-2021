@@ -11,6 +11,7 @@
 		description: string;
 		layout: string;
 		title: string;
+        image: string;
 		tags: ITags;
 	};
 
@@ -34,6 +35,7 @@
 		{#each posts as post (post.key)}
 			<li>
 				<article>
+                        <img class="article-cover" alt={`Cover image for ${post.metadata.image}`} src={post.metadata.image} />
 						<Heading size={3} color={2}>
                             <a sveltekit:prefetch href={post.path}>
                                 {post.metadata.title}
@@ -51,10 +53,20 @@
 
 <style>
 	.article-list {
-		display: block;
+		display: grid;
 	}
+
+    .article-cover{
+        margin-bottom: var(--md-space);
+    }
 
 	.article-list li {
 		background: var(--base-color-shade1);
+	}
+
+	@media (min-width: 1200px) {
+        .article-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
 	}
 </style>
