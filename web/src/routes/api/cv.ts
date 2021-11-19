@@ -37,7 +37,7 @@ const getCv = async (): Promise<ICv> => {
 					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English.',
 					'Host code reviews for students in both frontend and backend.',
 					'Create unit test for existing coding platform with Jest.',
-					'Develop roster application with Svelte and Golang.'
+					'Develop roster application with Svelte, Rust and Golang.'
 				],
 				technologies: {
 					Javascript: true,
@@ -47,6 +47,7 @@ const getCv = async (): Promise<ICv> => {
 					HTML: true,
 					CSS: true,
 					Go: true,
+                    Rust: true,
 					Java: true,
 					Nix: true,
 					SQL: true
@@ -80,7 +81,7 @@ const getCv = async (): Promise<ICv> => {
 					'Design and develop an E-commerce website with Wordpress.',
 					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse.'
 				],
-				technologies: { HTML: true, CSS: true, Javascript: true }
+				technologies: { HTML: true, CSS: true, Javascript: true, PHP: true }
 			}
 		],
 		education: [
