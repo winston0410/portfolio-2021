@@ -126,6 +126,10 @@ svg * {
 	background-color: #41b883 !important;
 }
 
+.bg-color-nunjucks {
+	background-color: #3d8137 !important;
+}
+
 /* Specific to the current theme */
 .font-color-javascript {
 	color: #000;

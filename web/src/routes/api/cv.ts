@@ -16,8 +16,8 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Oct 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Develop web application for Trusted Node with Nuxt.js',
-					'Scaffold and develop web application for UltraStable with Nuxt.js',
+					'Develop web application for Trusted Node with <strong>Nuxt.js</strong>',
+					'Scaffold and develop web application for UltraStable with <strong>Nuxt.js</strong>',
 				],
 				technologies: {
 					Typescript: true,
@@ -33,11 +33,11 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Feb 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Host lectures and provide assistence on Typescript, React, Redux, UI Testing, containers composition with Docker and modern frontend development workflow for more than 100 students in Cantonese.',
-					'Host lectures and provide assistence on HTML, CSS, Javascript, React and Java for Generation Singapore in English.',
+					'Host lectures and provide assistence on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
+					'Host lectures and provide assistence on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
 					'Host code reviews for students in both frontend and backend.',
-					'Create unit test for existing coding platform with Jest.',
-					'Develop roster application with Svelte, Rust and Golang.'
+					'Create unit test for existing coding platform with <strong>Jest</strong>.',
+					'Design, develop and deploy a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
 				],
 				technologies: {
 					Javascript: true,
@@ -59,8 +59,8 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Jul 2020',
 				end_date: 'Jan 2021',
 				duties: [
-					'Develop static branding sites with 11ty and Nunjucks.',
-					'Develop dynamic branding sites with React and Next.js.',
+					'Develop static branding sites with <strong>11ty</strong> and <strong>Nunjucks</strong>.',
+					'Develop dynamic branding sites with <strong>React</strong> and <strong>Next.js</strong>.',
 					'Optimize the performance of existing branding websites based on Google Lighthouse.',
 					'Improve the SEO ranking of existing branding websites with JSON Schema.'
 				],
@@ -69,7 +69,8 @@ const getCv = async (): Promise<ICv> => {
 					Typescript: true,
 					Purescript: true,
 					HTML: true,
-					CSS: true
+					CSS: true,
+					Nunjucks: true
 				}
 			},
 			{
@@ -78,7 +79,7 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
 				duties: [
-					'Design and develop an E-commerce website with Wordpress.',
+					'Design and develop an E-commerce website with <strong>Wordpress</strong>.',
 					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse.'
 				],
 				technologies: { HTML: true, CSS: true, Javascript: true, PHP: true }

@@ -59,7 +59,7 @@
 							<LangTagList languages={technologies} />
 							<ul role="list" class="duty-list">
 								{#each duties as duty}
-									<li class="duty-list-item">{duty}</li>
+									<li class="duty-list-item">{@html duty}</li>
 								{/each}
 							</ul>
 						</article>
