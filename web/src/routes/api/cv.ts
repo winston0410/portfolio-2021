@@ -33,11 +33,11 @@ const getCv = async (): Promise<ICv> => {
 				start_date: 'Feb 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Host lectures and provide assistence on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
-					'Host lectures and provide assistence on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
+					'Host lectures and assist debugging on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
+					'Host lectures and assist debugging on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
 					'Host code reviews for students in both frontend and backend.',
-					'Create unit test for existing coding platform with <strong>Jest</strong>.',
-					'Design, develop and deploy a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
+					'Create unit tests for existing coding platform with <strong>Jest.js</strong>.',
+					'Design and develop a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
 				],
 				technologies: {
 					Javascript: true,
