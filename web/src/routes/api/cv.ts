@@ -1,7 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { ICv } from '$lib/typing';
 
-const getCv = async (): Promise<ICv> => {
+const getCv = async () => {
 	return {
 		profile: [
 			'Passionate and experienced fullstack developer who have exposed to multiple paradigms and fields, actively seeking for the best solutions in frontend, backend and devops.',
@@ -130,13 +129,15 @@ const getCv = async (): Promise<ICv> => {
 	};
 };
 
-export const get: RequestHandler = async (req) => {
+export const get: RequestHandler = async () => {
 	try {
 		const data = await getCv();
 		return {
 			body: data
 		};
 	} catch (e) {
-		console.log(e);
+        return {
+            status: 500
+        }
 	}
 };

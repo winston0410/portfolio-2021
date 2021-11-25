@@ -1,7 +1,6 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import type { ISocialProfile } from '$lib/typing';
 
-const getSocialProfile = async (): Promise<Array<ISocialProfile>> => {
+const getSocialProfile = async () => {
 	return [
 		{ url: 'https://github.com/winston0410', icon_url: '/github-brands.svg', name: 'github' },
 		{
@@ -12,7 +11,7 @@ const getSocialProfile = async (): Promise<Array<ISocialProfile>> => {
 	];
 };
 
-export const get: RequestHandler = async (req) => {
+export const get: RequestHandler = async () => {
 	const data = await getSocialProfile();
 	return {
 		body: data
