@@ -5,27 +5,26 @@ const getCv = async () => {
 		profile: [
 			'Passionate and experienced fullstack developer who have exposed to multiple paradigms and fields, actively seeking for the best solutions in frontend, backend and devops.',
 			'Actively participating in the opensource community, contributed to and initiated dozens projects, received hundreds of stars on GitHub.',
-			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into a professional software developer in Hong Kong and Singapore.'
+			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into software developers in Hong Kong and Singapore.'
 		],
 		working_experience: [
-            
-			{
-				company_name: 'HydrogenX Lab',
-				title: 'Independent Contractor',
-				start_date: 'Oct 2021',
-				end_date: 'Nov 2021',
-				duties: [
-					'Develop web application for Trusted Node with <strong>Nuxt.js</strong>',
-					'Scaffold and develop web application for UltraStable with <strong>Nuxt.js</strong>',
-				],
-				technologies: {
-					Typescript: true,
-					Vue: true,
-					SCSS: true,
-					SASS: true,
-					CSS: true,
-				}
-			},
+			//  {
+				//  company_name: 'HydrogenX Lab',
+				//  title: 'Independent Contractor',
+				//  start_date: 'Oct 2021',
+				//  end_date: 'Nov 2021',
+				//  duties: [
+					//  'Develop web application for Trusted Node with <strong>Nuxt.js</strong>',
+					//  'Scaffold and develop web application for UltraStable with <strong>Nuxt.js</strong>',
+				//  ],
+				//  technologies: {
+					//  Typescript: true,
+					//  Vue: true,
+					//  SCSS: true,
+					//  SASS: true,
+					//  CSS: true,
+				//  }
+			//  },
 			{
 				company_name: 'Tecky Academy',
 				title: 'Senior Frontend Developer/Instructor',
@@ -45,6 +44,7 @@ const getCv = async () => {
 					Dockerfile: true,
 					HTML: true,
 					CSS: true,
+					SCSS: true,
 					Go: true,
                     Rust: true,
 					Java: true,
