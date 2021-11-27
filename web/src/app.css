@@ -50,7 +50,7 @@
 
 /* font-size */
 :root {
-	--font-base-value: 16px;
+	--font-base-value: 1rem;
 	--xxs-font: calc(var(--xxs) * var(--font-base-value));
 	--xs-font: calc(var(--xs) * var(--font-base-value));
 	--sm-font: calc(var(--sm) * var(--font-base-value));
