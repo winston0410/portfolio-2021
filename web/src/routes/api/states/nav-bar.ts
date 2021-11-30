@@ -1,13 +1,12 @@
-import type { EndpointOutput } from '@sveltejs/kit';
-import type { INavItem } from '$lib/typing';
+import type { RequestHandler } from '@sveltejs/kit';
 
 const pages = [
 	{ name: 'Opensource', url: '/pages/opensource' },
-	{ name: 'My curriculum vitae', url: '/pages/cv' },
+	{ name: 'Curriculum vitae', url: '/pages/cv' },
 	//  { name: 'Blog', url: '/blog' }
 ];
 
-export async function get(): Promise<EndpointOutput<Array<INavItem>>> {
+export const get: RequestHandler = async () => {
 	return {
 		body: pages
 	};
