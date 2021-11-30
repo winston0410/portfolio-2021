@@ -1,3 +1,8 @@
+export enum ICompetency {
+    Native = "Native",
+    Fluent = "Fluent"
+}
+
 export interface INavItem {
 	name: string;
 	url: string;
@@ -44,9 +49,15 @@ export interface IWorkingExperience {
 	};
 }
 
+export type INaturalLanguage = {
+    name: string
+    level: ICompetency
+};
+
 export interface ICv {
 	profile: Array<string>;
 	working_experience: Array<IWorkingExperience>;
 	education: Array<IEducation>;
 	achievement: Array<IAchievement>;
+	languages: Array<INaturalLanguage>;
 }
