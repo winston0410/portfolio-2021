@@ -99,6 +99,18 @@
 				{/each}
 			</ul>
 		</section>
+        
+		<section>
+			<Heading>Languages</Heading>
+			<ul class="language-list" role="list">
+				{#each cv.body.languages as { name, level }}
+					<li class="list-item">
+                        <Heading tag={'h3'} color={3} size={3}>{name}</Heading>
+                        <span class="competency">{ level }</span>
+					</li>
+				{/each}
+			</ul>
+		</section>
 	{:else}
 		<div>Something wrong with the server.</div>
 	{/if}
@@ -109,7 +121,7 @@
 		margin-bottom: var(--lg-space);
 	}
 
-	.title {
+	.title, .competency{
 		font-weight: 700;
 	}
 
@@ -124,6 +136,7 @@
 
 	.list-item {
 		margin-bottom: var(--md-space);
+        width: fit-content;
 	}
 
 	.duty-list,
@@ -134,4 +147,13 @@
 	.duty-list-item {
 		margin-bottom: var(--sm-space);
 	}
+
+        
+	@media (min-width: 1200px) {
+        .language-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+	}
+
 </style>

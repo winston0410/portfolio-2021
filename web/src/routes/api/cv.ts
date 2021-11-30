@@ -1,4 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
+import {ICompetency} from '$lib/typing'
 
 const getCv = async () => {
 	return {
@@ -124,6 +125,21 @@ const getCv = async () => {
 				name: 'Outstanding performance scholarship',
 				date: '2016',
 				from: 'Education Bureau of HKSAR'
+			}
+		],
+        
+		languages: [
+			{
+				name: 'English',
+                level: ICompetency.Fluent 
+			},
+			{
+				name: 'Cantonese',
+                level: ICompetency.Native
+			},
+			{
+				name: 'Chinese',
+                level: ICompetency.Fluent
 			}
 		]
 	};
