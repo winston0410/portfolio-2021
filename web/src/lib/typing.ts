@@ -13,10 +13,12 @@ export interface IProject {
 	name: string;
 	description: string;
 	html_url: string;
-	languages: {
-		[key: string]: number;
-	};
+	languages: ILanguages;
 }
+
+export type ILanguages = {
+	[key: string]: boolean;
+};
 
 export interface IEducation {
 	school_name: string;

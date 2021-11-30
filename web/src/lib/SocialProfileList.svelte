@@ -1,11 +1,12 @@
 <script context="module" lang="ts">
+    import type { ISocialProfile } from '$lib/typing'
 	//  Using inline svg for easier styling
 	import GithubIcon from '$lib/svg/github.svelte';
 	import LinkedInIcon from '$lib/svg/linkedin.svelte';
 </script>
 
 <script lang="ts">
-	export let socialProfiles;
+	export let socialProfiles: Array<ISocialProfile>;
 </script>
 
 <ul role="list">

@@ -1,9 +1,10 @@
 <script context="module" lang="ts">
+    import type { ILanguages } from '$lib/typing'
 	import LangTag from '$lib/LangTag.svelte';
 </script>
 
 <script lang="ts">
-	export let languages;
+	export let languages: ILanguages;
 </script>
 
 <ul class="language-list" role="list">
