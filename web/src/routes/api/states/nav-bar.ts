@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 
 const pages = [
 	{ name: 'Opensource', url: '/pages/opensource' },
-	{ name: 'Curriculum vitae', url: '/pages/cv' },
+	{ name: 'Resume', url: '/pages/resume' },
 	//  { name: 'Blog', url: '/blog' }
 ];
 

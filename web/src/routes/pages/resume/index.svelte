@@ -28,14 +28,25 @@
 </script>
 
 <MetaData
-	title={'Curriculum Vitae | Hugo Sum'}
-	description={'The Curriculum Vitae for Hugo Sum, a fullstack developer from Hong Kong.'}
+	title={'Resume | Hugo Sum'}
+	description={'The resume for Hugo Sum, a fullstack developer from Hong Kong.'}
 	url={`${env.VITE_DOMAIN_NAME}${$page.path}`}
 	image={'/cover.jpg'}
 />
 
 <div class="container">
-	<Heading size={1} color={1}>Curriculum Vitae</Heading>
+	<Heading size={1} color={1}>Resume</Heading>
+	<section>
+		<Heading>Visa Status</Heading>
+		<ul role="list">
+			{#each cv.body.visa_status as { country, description }}
+				<li class="list-item">
+                    <Heading tag={'h3'} color={3} size={3}>{country}</Heading>
+                    <p>{@html description}</p>
+                </li>
+			{/each}
+		</ul>
+	</section>
 	<section>
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">

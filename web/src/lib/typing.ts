@@ -54,8 +54,14 @@ export type INaturalLanguage = {
     level: ICompetency
 };
 
+export type IVisaStatus = {
+    country: string;
+    description: string
+};
+
 export interface ICv {
 	profile: Array<string>;
+    visa_status: Array<IVisaStatus>;
 	working_experience: Array<IWorkingExperience>;
 	education: Array<IEducation>;
 	achievement: Array<IAchievement>;

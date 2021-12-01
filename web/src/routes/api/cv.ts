@@ -8,6 +8,16 @@ const getCv = async () => {
 			'Actively participating in the opensource community, contributed to and initiated dozens projects, received hundreds of stars on GitHub.',
 			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into software developers in Hong Kong and Singapore.'
 		],
+        visa_status:[
+            {
+                country: "Canada",
+                description: "I can work in Canada <strong>legally without any sponsorship</strong>."
+            },
+            //  {
+                //  country: "United Kingdom",
+                //  descripton: ""
+            //  }
+        ],
 		working_experience: [
 			//  {
 				//  company_name: 'HydrogenX Lab',
@@ -98,24 +108,24 @@ const getCv = async () => {
 				start_date: '2015',
 				end_date: '2017'
 			},
-			{
-				school_name: 'Baptist Lui Ming Choi Secondary School',
-				title: '',
-				start_date: '2009',
-				end_date: '2015'
-			}
+			//  {
+				//  school_name: 'Baptist Lui Ming Choi Secondary School',
+				//  title: '',
+				//  start_date: '2009',
+				//  end_date: '2015'
+			//  }
 		],
 		achievement: [
-			{
-				name: 'HKUST Yeung Wing Yee Entrepreneurs Fund Awardees',
-				date: 'Oct 2019',
-				from: 'HKUST Entrepreneurship Center'
-			},
-			{
-				name: 'HKUST Entrepreneurship Acceleration Fund Awardees',
-				date: 'Apr 2019',
-				from: 'HKUST Entrepreneurship Center'
-			},
+			//  {
+				//  name: 'HKUST Yeung Wing Yee Entrepreneurs Fund Awardees',
+				//  date: 'Oct 2019',
+				//  from: 'HKUST Entrepreneurship Center'
+			//  },
+			//  {
+				//  name: 'HKUST Entrepreneurship Acceleration Fund Awardees',
+				//  date: 'Apr 2019',
+				//  from: 'HKUST Entrepreneurship Center'
+			//  },
 			{
 				name: 'Outstanding performance scholarship',
 				date: '2017',
