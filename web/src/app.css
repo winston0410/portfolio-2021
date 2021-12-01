@@ -1,6 +1,22 @@
 @import 'modern-css-reset';
 @import 'language-colors/language-colors.css';
 
+@media print { 
+	.no-print{
+	  display: none;
+	  visibility: hidden;
+	}
+}
+
+section {
+	page-break-inside: avoid;
+}
+
+/* https://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */
+body {
+	-webkit-print-color-adjust: exact !important;
+}
+
 @font-face {
 	font-family: 'neoneon';
 	font-weight: 400;

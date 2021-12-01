@@ -3,6 +3,7 @@
 	import Hamburger from '$lib/Hamburger.svelte';
 	import { pageList, isMenuActive } from '$lib/store';
 	import resizeObserver from 'svelte-use-resize-observer';
+	import Heading from '$lib/Heading.svelte';
 
 	const handleResize = (e: CustomEvent<{ entries: Array<ResizeObserverEntry> }>) => {
 		const elem = e.detail.entries[0];
@@ -22,10 +23,18 @@
 	<a sveltekit:prefetch href="/" title="Back to homepage">
 		<span class="sidebar-title">Hugo Sum</span>
 	</a>
-	<button class="menu-button" type="button" on:click={handleClick}
+	<button class="menu-button no-print" type="button" on:click={handleClick}
 		><Hamburger isActive={$isMenuActive} /></button
 	>
 	<NavList pages={$pageList} isActive={$isMenuActive} />
+	<div class="no-screen">
+		<ul role="list">
+			<li>
+				<Heading size={3} tag={"h4"}>Email</Heading>
+				<span class="highlighted">hugosum.dev@protonmail.com</span>
+			</li>
+		</ul>
+	</div>
 </aside>
 
 <style>
@@ -63,7 +72,7 @@
 			align-self: start;
 			flex-direction: column;
 			padding-bottom: calc(var(--sm-space) + var(--sectionYpadding));
-			height: 100vh;
+			height: 100vh !important;
 			justify-content: space-between;
 		}
 
@@ -74,5 +83,17 @@
 		.menu-button {
 			display: none;
 		}
+	}
+
+	/* Contact number and email */
+
+	@media screen {
+		.no-screen{
+			display: none;
+		}
+	}
+
+	.highlighted {
+		font-weight: 700;
 	}
 </style>

@@ -10,7 +10,7 @@
 	export let isActive: boolean = false;
 </script>
 
-<div class={`nav-container ${isActive ? 'active' : 'inactive'}`}>
+<div class={`nav-container no-print ${isActive ? 'active' : 'inactive'}`}>
 	<nav>
 		<ul role="list">
 			{#each pages as { name, url }}
@@ -94,6 +94,13 @@
 	@media (min-width: 1200px) {
 		.inactive {
 			display: block;
+		}
+	}
+
+	@media print { 
+		.no-print{
+		display: none;
+		visability: hidden;
 		}
 	}
 </style>

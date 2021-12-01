@@ -18,6 +18,10 @@
 	<h3 class={className}>
 		<slot />
 	</h3>
+{:else if tag === 'h4'}
+	<h4 class={className}>
+		<slot />
+	</h4>
 {/if}
 
 <!--  Code smell here, but this pattern makes using inline-style impossible  -->
