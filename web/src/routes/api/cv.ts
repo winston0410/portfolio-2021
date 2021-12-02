@@ -4,14 +4,17 @@ import {ICompetency} from '$lib/typing'
 const getCv = async () => {
 	return {
 		profile: [
-			'Passionate and experienced fullstack developer who have exposed to multiple paradigms and fields, actively seeking for the best solutions in frontend, backend and devops.',
-			'Actively participating in the opensource community, contributed to and initiated dozens projects, received hundreds of stars on GitHub.',
-			'Promising mentoring and leading skills, which have nurtured hundreds with zero development background into software developers in Hong Kong and Singapore.'
+			'Passionate and experienced frontend developer with over 2 years of experience with <strong>React</strong>, <strong>Vue</strong> and <strong>Svelte</strong>, built dozens of applications with these technologies.',
+			'Competent in backend, created servers with <strong>Javascript/Typescript</strong>, <strong>Java</strong>, <strong>Go</strong> and <strong>Rust</strong>.',
+			'Confident to work with RDBMS, with previous experience on <strong>MySQL</strong> and <strong>PostgreSQL</strong>.',
+			'Proficient with DevOps technologies, built, deployed and managed machines with <strong>Docker</strong> and <strong>Nix</strong>.',
+			'Actively participating in the opensource community, received hundreds of stars on GitHub.',
+			'Promising mentoring and communication skills, nurtured hundreds with zero development background into software developers in Hong Kong and Singapore with Cantonese and English.'
 		],
         visa_status:[
             {
                 country: "Canada",
-                description: "I can work in Canada <strong>legally without any sponsorship</strong>."
+                description: "I can work in Canada <strong>legally without any sponsorship</strong>. I will be in Canada by 6 December 2021."
             },
             //  {
                 //  country: "United Kingdom",

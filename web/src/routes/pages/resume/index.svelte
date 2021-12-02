@@ -51,7 +51,7 @@
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">
 			{#each cv.body.profile as text}
-				<li class="list-item">{text}</li>
+				<li class="list-item">{@html text}</li>
 			{/each}
 		</ul>
 	</section>
