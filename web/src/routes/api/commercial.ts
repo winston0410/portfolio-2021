@@ -17,6 +17,18 @@ export const get: RequestHandler = async () => {
 				involvement: 'Developed the UI and functionality for the staking page with <strong>Vue</strong> and <strong>Nuxt.js</strong>.'
 			},
 			{
+				name: 'Smart Go Academy Matchmaking portal',
+				link: 'https://go.hk2.com',
+                image: "/smartgo.png",
+				languages: {
+					Svelte: true,
+					Typescript: true,
+					CSS: true
+				},
+                description: "An application for Go matchmaking, connected with OGS API.",
+				involvement: 'Design and developed the whole application single-handedly with <strong>Svelte</strong> and <strong>SvelteKit</strong>.'
+			},
+			{
 				name: 'Tecky Code',
 				link: 'https://code.tecky.io',
                 image: "/tecky-code.png",
