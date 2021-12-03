@@ -25,7 +25,7 @@ export interface IProject {
 export type ICommercialProject = {
 	name: string;
 	link: string;
-	languages: Array<string>;
+	languages: ILanguages;
 	description: string;
 	involvement: string;
     image: string;
