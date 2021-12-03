@@ -72,4 +72,15 @@
 			--heading-font-size: var(--lg-font);
 		}
 	}
+        
+	.size-4 {
+		--heading-font-size: var(--sm-font);
+		--heading-margin-b: var(--xs-space);
+	}
+
+	@media (min-width: 1200px) {
+		.size-4 {
+			--heading-font-size: var(--md-font);
+		}
+	}
 </style>

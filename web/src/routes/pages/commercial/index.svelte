@@ -5,19 +5,30 @@
 	import MetaData from '$lib/MetaData.svelte';
 	import env from '$lib/env';
 	import { page } from '$app/stores';
-	import type { IProject } from '$lib/typing';
+	import type { ICommercialProject } from '$lib/typing';
 
-	//  export const load = async ({ fetch }) => {
-		//  const f = createFetch(fetch);
-		//  return {
-			//  props: {
-				//  projects: await f('/api/github')
-			//  }
-		//  };
-	//  };
+	export const load = async ({ fetch }) => {
+        const res = await fetch("/api/commercial")
+        
+        if(!res.ok){
+            return {
+                status: 500
+            }
+        }
+        
+		return {
+			props: {
+				projects: await res.json()
+			}
+		};
+	};
 </script>
 
 <script lang="ts">
+    export let projects: Array<ICommercialProject>;
+
+    console.log('cehck value', projects)
+    
 	onMount(() => {
 		isMenuActive.set(false);
 	});
@@ -32,5 +43,56 @@
 
 <Heading size={1} color={1}>Commercial works</Heading>
 
-<!--  <iframe title={"Perfect Men, a website built with Next.js"}>  -->
-<!--  </iframe>  -->
+<ul class="list" role="list">
+{#each projects as {name, link, involvement, description}}
+    <li>
+    <article>
+            <Heading size={3} color={2}>
+                <a rel="external" href={link}>
+                    {name}
+                </a>
+            </Heading>
+
+            <a rel="external" href={link}>
+                <img src="/cover.jpg" alt={`Cover image for ${name}`}/>
+            </a>
+            <p class="description">{description}</p>
+            
+            <section>
+                <Heading size={4} color={1} tag={"h3"}>
+                    Involvement
+                </Heading>
+                <p>{@html involvement}</p>
+            </section>
+    </article>
+    </li>
+{/each}
+</ul>
+
+<style>
+    .description{
+        margin-bottom: var(--xs-space);
+    }
+    
+	.list {
+		display: grid;
+		grid-row-gap: var(--sm-space);
+		grid-column-gap: var(--sm-space);
+	}
+
+	@media (min-width: 768px) {
+		.list {
+            grid-row-gap: var(--md-space);
+            grid-column-gap: var(--md-space);
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.list {
+            grid-row-gap: var(--lg-space);
+            grid-column-gap: var(--lg-space);
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+	}
+</style>

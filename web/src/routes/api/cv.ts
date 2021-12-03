@@ -45,11 +45,11 @@ const getCv = async () => {
 				start_date: 'Feb 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Host lectures and assist debugging on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
-					'Host lectures and assist debugging on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
-					'Host code reviews for students in both frontend and backend.',
-					'Create unit tests for existing coding platform with <strong>Jest.js</strong>.',
-					'Design and develop a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
+					'Hosted lectures and assisted debugging on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
+					'Hosted lectures and assisted debugging on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
+					'Hosted code reviews for students in both frontend and backend.',
+					'Created unit tests for existing coding platform with <strong>Jest.js</strong>.',
+					'Designed and developed a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
 				],
 				technologies: {
 					Javascript: true,
@@ -72,10 +72,10 @@ const getCv = async () => {
 				start_date: 'Jul 2020',
 				end_date: 'Jan 2021',
 				duties: [
-					'Develop static branding sites with <strong>11ty</strong> and <strong>Nunjucks</strong>.',
-					'Develop dynamic branding sites with <strong>React</strong> and <strong>Next.js</strong>.',
-					'Optimize the performance of existing branding websites based on Google Lighthouse.',
-					'Improve the SEO ranking of existing branding websites with JSON Schema.'
+					'Developed static branding sites with <strong>11ty</strong> and <strong>Nunjucks</strong>.',
+					'Developed dynamic branding sites with <strong>React</strong> and <strong>Next.js</strong>.',
+					'Optimized the performance of existing branding websites based on <strong>Google Lighthouse</strong>.',
+					'Improved the SEO ranking of existing branding websites with <strong>JSON Schema</strong>.'
 				],
 				technologies: {
 					Javascript: true,
@@ -92,8 +92,8 @@ const getCv = async () => {
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
 				duties: [
-					'Design and develop an E-commerce website with <strong>Wordpress</strong>.',
-					'Optimize the SEO ranking and loading performance based on the audit of Google Lighthouse.'
+					'Designed and developed an E-commerce website with <strong>Wordpress</strong>.',
+					'Optimized the SEO ranking and loading performance based on the audit of <strong>Google Lighthouse</strong>.'
 				],
 				technologies: { HTML: true, CSS: true, Javascript: true, PHP: true }
 			}

@@ -21,6 +21,17 @@ export interface IProject {
 	languages: ILanguages;
 }
 
+
+export type ICommercialProject = {
+	name: string;
+	link: string;
+	languages: Array<string>;
+	description: string;
+	involvement: string;
+    image: string;
+};
+
+
 export type ILanguages = {
 	[key: string]: boolean;
 };
