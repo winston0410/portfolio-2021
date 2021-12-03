@@ -54,6 +54,7 @@
                 </a>
             </Heading>
 
+			<!-- TODO https://github.com/sveltejs/kit/issues/241#issuecomment-808834850 -->
             <a class="project-inner-item project-image" rel="external" href={link}>
                 <img src={image} alt={`Cover image for ${name}`}/>
             </a>
