@@ -105,12 +105,12 @@ const getCv = async () => {
 				start_date: '2017',
 				end_date: '2019'
 			},
-			{
-				school_name: 'College of International Education, HKBU',
-				title: "Associate's degree, Business Administration and Management",
-				start_date: '2015',
-				end_date: '2017'
-			},
+			// {
+			// 	school_name: 'College of International Education, HKBU',
+			// 	title: "Associate's degree, Business Administration and Management",
+			// 	start_date: '2015',
+			// 	end_date: '2017'
+			// },
 			//  {
 				//  school_name: 'Baptist Lui Ming Choi Secondary School',
 				//  title: '',
