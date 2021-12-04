@@ -15,9 +15,9 @@ const fetchOptions = {
 	}
 };
 
-const getGithubApi = () => {
+const getGithubApi = (page: number = 1) => {
 	return fetch(
-		'https://api.github.com/users/winston0410/repos?sort=updated&per_page=100',
+		`https://api.github.com/users/winston0410/repos?sort=updated&per_page=99&type=sources&page=${page}`,
 		fetchOptions
 	);
 };
@@ -35,15 +35,21 @@ interface IGithubRepo {
 export const get: RequestHandler = async () => {
 	try {
 		const githubRes = await getGithubApi();
+		const githubRes2 = await getGithubApi(2);
 
-        if (!githubRes.ok) {
+        if (!githubRes.ok || !githubRes2.ok) {
             return {
                 status: 400,
                 body: null
             }
         }
+
+		const body = await githubRes.json()
+		const body2 = await githubRes2.json()
+
+		const combined = [...body, ...body2]
         
-		const filtered = (await githubRes.json())
+		const filtered = (combined)
 			.filter(
 				(item: IGithubRepo) => !item.fork && !item.archived && !item.disabled && item.description
 			)
