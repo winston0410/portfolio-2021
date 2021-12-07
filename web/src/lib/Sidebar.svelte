@@ -28,10 +28,14 @@
 	>
 	<NavList pages={$pageList} isActive={$isMenuActive} />
 	<div class="no-screen">
-		<ul role="list">
+		<ul class="contact-list" role="list">
 			<li>
 				<Heading size={3} tag={"h4"}>Email</Heading>
 				<span class="highlighted">hugosum.dev@protonmail.com</span>
+			</li>
+			<li>
+				<Heading size={3} tag={"h4"}>Telephone(Canada)</Heading>
+				<span class="highlighted">7786890699</span>
 			</li>
 		</ul>
 	</div>
@@ -95,5 +99,9 @@
 
 	.highlighted {
 		font-weight: 700;
+	}
+
+	.contact-list li:not(:last-of-type){
+		margin-bottom: var(--md-space);
 	}
 </style>
