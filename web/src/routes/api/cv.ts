@@ -14,7 +14,7 @@ const getCv = async () => {
         visa_status:[
             {
                 country: "Canada",
-                description: "I can work in Canada <strong>legally without any sponsorship</strong>. I will be in Canada by 6 December 2021."
+                description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
             },
             //  {
                 //  country: "United Kingdom",
