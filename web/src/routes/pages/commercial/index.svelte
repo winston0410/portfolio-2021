@@ -82,7 +82,8 @@
             <a class="project-inner-item project-image" rel="external" title={`${name}`} href={link}>
 				<picture>
 					<source srcset={srcset} type="image/webp">
-					<img src={image} alt={`Cover image for ${name}`}/>
+					<!-- Hardcode here to reflect the aspect ratio -->
+					<img width="337" height="193" src={image} alt={`Cover image for ${name}`}/>
 				</picture>
             </a>
 
