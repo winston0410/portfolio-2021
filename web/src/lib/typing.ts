@@ -31,13 +31,13 @@ export interface ICommercialProject {
     image: string;
 };
 
-export interface ISrcset {
-	webp: string,
-	jpg: string
-}
+// export interface ISrcset {
+// 	webp: string,
+// 	jpg: string
+// }
 
 export interface ICommercialProjectWithSrcset extends ICommercialProject {
-	srcset: ISrcset
+	srcset: string
 }
 
 

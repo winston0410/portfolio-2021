@@ -7,6 +7,13 @@
 	import { page } from '$app/stores';
 	import type { ICommercialProjectWithSrcset } from '$lib/typing';
 	import LangTagList from '$lib/LangTagList.svelte'
+	import smartGoCover from '$static/smartgo.png?w=300;768;1200&format=webp&srcset'
+	import survivalistCover from '$static/survivalist.png?w=300;768;1200&format=webp&srcset'
+	import teckyCodeCover from '$static/tecky-code.png?w=300;768;1200&format=webp&srcset'
+	import trustedNodeCover from '$static/trusted-node.png?w=300;768;1200&format=webp&srcset'
+	import perfectMenCover from '$static/perfect-men.png?w=300;768;1200&format=webp&srcset'
+	import homanCover from '$static/homan.png?w=300;768;1200&format=webp&srcset'
+	import cantoneseCover from '$static/howtostudycantonese.png?w=300;768;1200&format=webp&srcset'
 
 	export const load = async ({ fetch }) => {
         const res = await fetch("/api/commercial")
@@ -19,13 +26,20 @@
 
 		const body = await res.json()
 
+		const srcsetDict = {
+			"/perfect-men.png": perfectMenCover,
+			"/trusted-node.png": trustedNodeCover,
+			"/smartgo.png": smartGoCover,
+			"/tecky-code.png": teckyCodeCover,
+			"/homan.png": homanCover,
+			"/survivalist.png": survivalistCover,
+			"/howtostudycantonese.png": cantoneseCover
+		}
+
 		const transformed = await Promise.all(body.map(async (work) => {
 			return {
 				...work,
-				srcset: {
-					webp: (await import(`../../../../static${work.image}?w=300;768;1200&format=webp&srcset`)).default,
-					jpg: (await import(`../../../../static${work.image}?w=300;768;1200&srcset`)).default,
-				}
+				srcset: srcsetDict[work.image]
 			}
 		}))
 
@@ -67,8 +81,7 @@
 			<!-- TODO https://github.com/sveltejs/kit/issues/241#issuecomment-808834850 -->
             <a class="project-inner-item project-image" rel="external" title={`${name}`} href={link}>
 				<picture>
-					<source srcset={srcset.webp} type="image/webp">
-					<source srcset={srcset.jpg} type="image/jpg">
+					<source srcset={srcset} type="image/webp">
 					<img src={image} alt={`Cover image for ${name}`}/>
 				</picture>
             </a>
