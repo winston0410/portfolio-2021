@@ -114,4 +114,16 @@
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		}
 	}
+
+	@media print {
+		.project-inner-item{
+        	margin-bottom: var(--md-space);
+    	}
+
+		.list {
+            grid-row-gap: var(--lg-space);
+            grid-column-gap: var(--lg-space);
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+	}
 </style>

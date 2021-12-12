@@ -36,6 +36,7 @@
 
 <div class="container">
 	<Heading size={1} color={1}>Resume</Heading>
+	{#if cv.body.visa_status.length > 0}
 	<section>
 		<Heading>Visa Status</Heading>
 		<ul role="list">
@@ -47,6 +48,7 @@
 			{/each}
 		</ul>
 	</section>
+	{/if}
 	<section>
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">
@@ -159,8 +161,15 @@
 		margin-bottom: var(--sm-space);
 	}
 
-        
+	/* min-width 1200px doesnt work for print */
 	@media (min-width: 1200px) {
+        .language-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+	}
+
+	@media print {
         .language-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

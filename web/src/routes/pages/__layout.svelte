@@ -40,4 +40,10 @@
 			padding: var(--sectionYpadding) var(--paddingX);
 		}
 	}
+
+	@media print {
+		.inner-container {
+			padding: var(--paddingX);
+		}
+	}
 </style>

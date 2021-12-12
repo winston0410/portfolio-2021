@@ -12,13 +12,13 @@ const getCv = async () => {
 			'Promising mentoring and communication skills, nurtured hundreds with zero development background into software developers in Hong Kong and Singapore with Cantonese and English.'
 		],
         visa_status:[
-            {
-                country: "Canada",
-                description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
-            },
+            // {
+            //     country: "Canada",
+            //     description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
+            // },
             //  {
-                //  country: "United Kingdom",
-                //  descripton: ""
+            //      country: "United Kingdom",
+            //      descripton: ""
             //  }
         ],
 		working_experience: [
@@ -131,12 +131,7 @@ const getCv = async () => {
 			//  },
 			{
 				name: 'Outstanding performance scholarship',
-				date: '2017',
-				from: 'Education Bureau of HKSAR'
-			},
-			{
-				name: 'Outstanding performance scholarship',
-				date: '2016',
+				date: '2016, 2017',
 				from: 'Education Bureau of HKSAR'
 			}
 		],

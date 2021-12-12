@@ -6,10 +6,13 @@
 	  display: none;
 	  visibility: hidden;
 	}
+
+	@page { size: auto;  margin: 0mm; }
 }
 
-section {
-	page-break-inside: avoid;
+/* Only prevent break between list item */
+li {
+	break-inside: avoid;
 }
 
 /* https://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */

@@ -41,7 +41,7 @@
 		{#each projects.body as { name, description, html_url, languages }}
 			<li class="list-item">
 				<Heading size={3}>
-					<a rel="external" href={html_url}>{name}</a>
+					<a rel="external" title={`Link to repository of ${name}`} href={html_url}>{name}</a>
 				</Heading>
 				<div>
 					<LangTagList {languages} />
@@ -68,6 +68,12 @@
 	}
 
 	@media (min-width: 1200px) {
+		.list {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		}
+	}
+
+	@media print {
 		.list {
 			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		}

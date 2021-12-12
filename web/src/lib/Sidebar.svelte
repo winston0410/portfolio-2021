@@ -33,9 +33,13 @@
 				<Heading size={3} tag={"h4"}>Email</Heading>
 				<span class="highlighted">hugosum.dev@protonmail.com</span>
 			</li>
-			<li>
+			<!-- <li>
 				<Heading size={3} tag={"h4"}>Telephone(Canada)</Heading>
 				<span class="highlighted">7786890699</span>
+			</li> -->
+			<li>
+				<Heading size={3} tag={"h4"}>Telephone</Heading>
+				<span class="highlighted">+44 7522099891</span>
 			</li>
 		</ul>
 	</div>
@@ -86,6 +90,24 @@
 
 		.menu-button {
 			display: none;
+		}
+	}
+
+	@media print {
+		.sidebar {
+			position: relative;
+		}
+
+		.contact-list li{
+			display: flex;
+		}
+
+		.contact-list li span{
+			margin-left: var(--sm-space);
+		}
+
+		.sidebar-title {
+			font-size: var(--xl-font);
 		}
 	}
 
