@@ -5,7 +5,7 @@
 	import MetaData from '$lib/MetaData.svelte';
 	import env from '$lib/env';
 	import { page } from '$app/stores';
-	import type { ICommercialProject } from '$lib/typing';
+	import type { ICommercialProjectWithSrcset } from '$lib/typing';
 	import LangTagList from '$lib/LangTagList.svelte'
 
 	export const load = async ({ fetch }) => {
@@ -16,20 +16,30 @@
                 status: 500
             }
         }
-        
+
+		const body = await res.json()
+
+		const transformed = await Promise.all(body.map(async (work) => {
+			return {
+				...work,
+				srcset: {
+					webp: (await import(`../../../../static${work.image}?w=300;768;1200&format=webp&srcset`)).default,
+					jpg: (await import(`../../../../static${work.image}?w=300;768;1200&srcset`)).default,
+				}
+			}
+		}))
+
 		return {
 			props: {
-				projects: await res.json()
+				projects: transformed
 			}
 		};
 	};
 </script>
 
 <script lang="ts">
-    export let projects: Array<ICommercialProject>;
+    export let projects: Array<ICommercialProjectWithSrcset>;
 
-    console.log('cehck value', projects)
-    
 	onMount(() => {
 		isMenuActive.set(false);
 	});
@@ -45,18 +55,22 @@
 <Heading size={1} color={1}>Commercial works</Heading>
 
 <ul class="list" role="list">
-{#each projects as {name, link, involvement, description, image, languages}}
+{#each projects as {name, link, involvement, description, image, languages, srcset}}
     <li>
     <article>
             <Heading size={3} color={2}>
-                <a rel="external" href={link}>
+                <a rel="external" title={`${name}`} href={link}>
                     {name}
                 </a>
             </Heading>
 
 			<!-- TODO https://github.com/sveltejs/kit/issues/241#issuecomment-808834850 -->
-            <a class="project-inner-item project-image" rel="external" href={link}>
-                <img src={image} alt={`Cover image for ${name}`}/>
+            <a class="project-inner-item project-image" rel="external" title={`${name}`} href={link}>
+				<picture>
+					<source srcset={srcset.webp} type="image/webp">
+					<source srcset={srcset.jpg} type="image/jpg">
+					<img src={image} alt={`Cover image for ${name}`}/>
+				</picture>
             </a>
 
 			<LangTagList {languages}/>

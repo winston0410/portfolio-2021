@@ -22,7 +22,7 @@ export interface IProject {
 }
 
 
-export type ICommercialProject = {
+export interface ICommercialProject {
 	name: string;
 	link: string;
 	languages: ILanguages;
@@ -30,6 +30,15 @@ export type ICommercialProject = {
 	involvement: string;
     image: string;
 };
+
+export interface ISrcset {
+	webp: string,
+	jpg: string
+}
+
+export interface ICommercialProjectWithSrcset extends ICommercialProject {
+	srcset: ISrcset
+}
 
 
 export type ILanguages = {

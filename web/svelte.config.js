@@ -2,7 +2,8 @@ import sveltePreprocess from 'svelte-preprocess';
 import { preprocess } from 'svelte/compiler';
 import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
-//  import image from "svelte-image";
+import viteImage from 'vite-imagetools'
+import path from 'path'
 
 const config = {
 	extensions: ['.svelte', '.md', '.svelte.md'],
@@ -14,13 +15,19 @@ const config = {
 			}
 		}),
 		sveltePreprocess(),
-        //  image()
 	],
-
 	kit: {
 		target: '#svelte',
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		vite: {
+			resolve: {
+				alias: {
+				  $static: path.resolve('static')
+				}
+			},
+			plugins: [viteImage.imagetools({force: true})]
+		}
+	},
 };
 
 export default config;
