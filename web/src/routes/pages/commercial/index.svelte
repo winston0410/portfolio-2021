@@ -148,10 +148,16 @@
         	margin-bottom: var(--md-space);
     	}
 
+		/* Cannot use flexbox correctly in print */
+		/* https://stackoverflow.com/questions/20408033/how-to-get-page-break-inside-avoid-to-work-nicely-with-flex-wrap-wrap */
 		.list {
-            grid-row-gap: var(--lg-space);
-            grid-column-gap: var(--lg-space);
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			display: table;
+		}
+
+		.list li{
+			display: inline-block;
+			max-width: 50%;
+			vertical-align: top;
 		}
 	}
 </style>

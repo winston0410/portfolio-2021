@@ -16,10 +16,10 @@ const getCv = async () => {
             //     country: "Canada",
             //     description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
             // },
-            //  {
-            //      country: "United Kingdom",
-            //      descripton: ""
-            //  }
+             {
+                 country: "United Kingdom",
+                 description: "I can work in United Kingdom <strong>legally without any sponsorship</strong>."
+             }
         ],
 		working_experience: [
 			//  {

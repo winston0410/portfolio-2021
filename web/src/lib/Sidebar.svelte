@@ -27,8 +27,7 @@
 		><Hamburger isActive={$isMenuActive} /></button
 	>
 	<NavList pages={$pageList} isActive={$isMenuActive} />
-	<div class="no-screen">
-		<ul class="contact-list" role="list">
+	<ul class="contact-list no-screen" role="list">
 			<li>
 				<Heading size={3} tag={"h4"}>Email</Heading>
 				<span class="highlighted">hugosum.dev@protonmail.com</span>
@@ -41,8 +40,11 @@
 				<Heading size={3} tag={"h4"}>Telephone</Heading>
 				<span class="highlighted">+44 7522099891</span>
 			</li>
-		</ul>
-	</div>
+			<li>
+				<Heading size={3} tag={"h4"}>Address</Heading>
+				<span class="highlighted">Craigavon, Northern Ireland</span>
+			</li>
+	</ul>
 </aside>
 
 <style>
@@ -98,8 +100,20 @@
 			position: relative;
 		}
 
+		/* .contact-list{ */
+			/* display: flex;
+			flex-wrap: wrap;
+			flex-direction: row; */
+
+			/* display: grid;
+			grid-template-columns: repeat(2, 1fr); */
+			/* column-gap: var(--sm-space);
+			row-gap: var(--md-space); */
+		/* } */
+
 		.contact-list li{
 			display: flex;
+			width: fit-content;
 		}
 
 		.contact-list li span{
@@ -121,9 +135,5 @@
 
 	.highlighted {
 		font-weight: 700;
-	}
-
-	.contact-list li:not(:last-of-type){
-		margin-bottom: var(--md-space);
 	}
 </style>

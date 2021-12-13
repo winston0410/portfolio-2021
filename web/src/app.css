@@ -3,21 +3,34 @@
 
 @media print { 
 	.no-print{
-	  display: none;
-	  visibility: hidden;
+	  display: none !important;
+	  visibility: hidden !important;
 	}
 
-	@page { size: auto;  margin: 0mm; }
-}
+	@page { size: auto;  margin: 0mm; min-height: 100%; }
 
-/* Only prevent break between list item */
-li {
-	break-inside: avoid;
+	/* https://stackoverflow.com/questions/7846346/how-to-avoid-extra-blank-page-at-end-while-printing/7847290 */
+	html, body { height: auto;} 
+
+	body {
+		background-color: red;
+	}
+
+	article, li{
+    	break-before: auto;
+    	break-after: auto;
+    	break-inside: avoid; 
+	}
 }
 
 /* https://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */
 body {
-	-webkit-print-color-adjust: exact !important;
+	color-adjust: exact;
+}
+
+img{
+	width: 100%;
+	height: auto;
 }
 
 @font-face {

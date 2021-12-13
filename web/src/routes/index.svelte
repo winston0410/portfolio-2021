@@ -9,7 +9,7 @@
 
 <MetaData
 	title={'Portfolio of Hugo Sum'}
-	description={'The personal website for Hugo Sum, a fullstack developer from Hong Kong. Looking for a job in Canada right now.'}
+	description={'The personal website for Hugo Sum, a fullstack developer from Hong Kong.'}
 	url={`${env.VITE_DOMAIN_NAME}`}
 	image={'/cover.jpg'}
 />
