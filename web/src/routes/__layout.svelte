@@ -40,13 +40,13 @@
 		mainContainer.style.height = `${heightNeeded}px`
 	}
 
-	const handleAfterPrint = () => {
-		mainContainer.style.height = `100%`
-	}
+	// const handleAfterPrint = () => {
+	// 	mainContainer.style.height = `100%`
+	// }
 
 	onMount(() => {
 		window.addEventListener('beforeprint', handlePrint)
-		window.addEventListener('afterprint', handleAfterPrint)
+		// window.addEventListener('afterprint', handleAfterPrint)
 	})
 </script>
 
