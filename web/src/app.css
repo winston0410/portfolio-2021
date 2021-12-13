@@ -7,15 +7,10 @@
 	  visibility: hidden !important;
 	}
 
-	@page { size: auto;  margin: 0mm; min-height: 100%; }
+	@page { size: auto; padding: 0mm; margin: 0mm; min-height: 100%; }
 
 	/* https://stackoverflow.com/questions/7846346/how-to-avoid-extra-blank-page-at-end-while-printing/7847290 */
-	html, body { height: auto;} 
-
-	body {
-		background-color: red;
-	}
-
+	
 	article, li{
     	break-before: auto;
     	break-after: auto;

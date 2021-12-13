@@ -75,7 +75,19 @@
 
 	@media print {
 		.list {
-			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			display: table;
+		}
+
+		.list li{
+			display: inline-block;
+			width: 47%;
+			max-width: 47%;
+			vertical-align: top;
+			margin-bottom: var(--xl-space);
+		}
+
+		.list li:nth-child(odd){
+			margin-right: 3%;
 		}
 	}
 

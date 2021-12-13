@@ -156,8 +156,12 @@
 
 		.list li{
 			display: inline-block;
-			max-width: 50%;
+			max-width: 48%;
 			vertical-align: top;
+		}
+
+		.list li:nth-child(odd){
+			margin-right: 2%;
 		}
 	}
 </style>

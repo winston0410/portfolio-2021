@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	import { onMount, onDestroy } from 'svelte'
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { INavItem, ISocialProfile } from '$lib/typing';
@@ -12,17 +13,44 @@
 			}
 		};
 	};
+	import { pageList, socialProfiles } from '$lib/store';
 </script>
 
 <script lang="ts">
-	import { pageList, socialProfiles } from '$lib/store';
 	export let _pages: UnwrappedResponse<Array<INavItem>>,
 		_socialProfiles: UnwrappedResponse<Array<ISocialProfile>>;
 	pageList.set(_pages.body);
 	socialProfiles.set(_socialProfiles.body);
+
+	let mainContainer;
+
+	const handlePrint = () => {
+		// not sure about the pixel size for A4, but it is working perfectly right now
+		const a4Size = {
+			1: 1120,
+			2: 1120
+		}
+
+		const dpi = window.devicePixelRatio;
+
+		const pageNeeded = Math.ceil(mainContainer.clientHeight / a4Size[dpi])
+
+		const heightNeeded = a4Size[dpi] * pageNeeded
+
+		mainContainer.style.height = `${heightNeeded}px`
+	}
+
+	const handleAfterPrint = () => {
+		mainContainer.style.height = `100%`
+	}
+
+	onMount(() => {
+		window.addEventListener('beforeprint', handlePrint)
+		window.addEventListener('afterprint', handleAfterPrint)
+	})
 </script>
 
-<div class="main">
+<div class="main" bind:this={mainContainer}>
 	<slot />
 </div>
 
