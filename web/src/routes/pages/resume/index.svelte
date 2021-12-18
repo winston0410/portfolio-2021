@@ -61,11 +61,12 @@
 		<section>
 			<Heading>Working experience</Heading>
 			<ul role="list">
-				{#each cv.body.working_experience as { company_name: name, title, start_date, end_date, duties, technologies }}
+				{#each cv.body.working_experience as { company_name: name, title, start_date, end_date, duties, technologies, location }}
 					<li class="list-item">
 						<article class="experience">
 							<Heading tag={'h3'} color={3} size={3}>{name}</Heading>
 							<span class="title">{title}</span>
+							<p>{location}</p>
 							<div class="experience-date">
 								<span>{start_date} - {end_date}</span>
 							</div>

@@ -42,6 +42,7 @@ const getCv = async () => {
 			{
 				company_name: 'Tecky Academy',
 				title: 'Senior Frontend Developer/Instructor',
+				location: 'Hong Kong',
 				start_date: 'Feb 2021',
 				end_date: 'Nov 2021',
 				duties: [
@@ -69,6 +70,7 @@ const getCv = async () => {
 			{
 				company_name: 'Perfect Medical Group',
 				title: 'Web developer',
+				location: 'Hong Kong',
 				start_date: 'Jul 2020',
 				end_date: 'Jan 2021',
 				duties: [
@@ -89,6 +91,7 @@ const getCv = async () => {
 			{
 				company_name: 'How to study Cantonese Education Company',
 				title: 'Founder',
+				location: 'Hong Kong',
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
 				duties: [
