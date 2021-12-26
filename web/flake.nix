@@ -7,7 +7,12 @@
   };
 
   outputs = { nixpkgs, mkNodePackage, ... }:
-    let system = "x86_64-linux";
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       defaultPackage.${system} = (mkNodePackage.lib.${system}.mkNodePackage {
         pname = "hugo-porfolio";
@@ -25,14 +30,14 @@
       });
       devShell.${system} = (({ pkgs, ... }:
         pkgs.mkShell {
-          buildInputs = with pkgs;
-            [
-              # For compatibility with Vercel
-              nodejs-16_x
-              chromium
-            ];
+          buildInputs = with pkgs; [
+            # For compatibility with Vercel
+            nodejs-16_x
+            google-chrome-dev
+            firefox-bin
+          ];
 
           shellHook = "";
-        }) { pkgs = nixpkgs.legacyPackages.${system}; });
+        }) { inherit pkgs; });
     };
 }
