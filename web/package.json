@@ -3,8 +3,9 @@
 	"version": "0.1.0",
 	"scripts": {
 		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"build:web": "svelte-kit build",
 		"build:pdf": "node --loader ts-node/esm ./pdf.ts",
+        "build": "npm run build:web && npm run build:pdf",
 		"postbuild": "svelte-sitemap --domain https://hugosum.me",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
