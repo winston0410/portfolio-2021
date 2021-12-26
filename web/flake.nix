@@ -39,6 +39,7 @@
             nodejs-16_x
             google-chrome-dev
             firefox-bin
+            pympress
           ];
 
           shellHook = ''
