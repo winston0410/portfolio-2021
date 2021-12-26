@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "fix-playwright-browsers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626747032,
+        "narHash": "sha256-12aQ/I+9UcJ3KoImDZ/76I6xoADbzzk1DBt/F2vP6YM=",
+        "owner": "winston0410",
+        "repo": "nixos-playwright",
+        "rev": "709dea82afd2cb937f2dc3f61bb7dc99a581a08b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "winston0410",
+        "ref": "master",
+        "repo": "nixos-playwright",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1631561581,
@@ -87,6 +104,7 @@
     },
     "root": {
       "inputs": {
+        "fix-playwright-browsers": "fix-playwright-browsers",
         "mkNodePackage": "mkNodePackage",
         "nixpkgs": "nixpkgs_2"
       }

@@ -4,9 +4,13 @@
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
     mkNodePackage = { url = "github:winston0410/mkNodePackage/develop"; };
+    fix-playwright-browsers = {
+      url = "github:winston0410/nixos-playwright/master";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, mkNodePackage, ... }:
+  outputs = { nixpkgs, mkNodePackage, fix-playwright-browsers, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -37,7 +41,9 @@
             firefox-bin
           ];
 
-          shellHook = "";
+          shellHook = ''
+          ${fix-playwright-browsers.outPath}/fix-playwright-browsers
+          '';
         }) { inherit pkgs; });
     };
 }
