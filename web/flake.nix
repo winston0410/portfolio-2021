@@ -29,7 +29,7 @@
             [
               # For compatibility with Vercel
               nodejs-16_x
-              pandoc
+              chromium
             ];
 
           shellHook = "";

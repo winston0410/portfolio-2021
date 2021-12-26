@@ -4,6 +4,7 @@
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
+		"build:pdf": "node --loader ts-node/esm ./pdf.ts",
 		"postbuild": "svelte-sitemap --domain https://hugosum.me",
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
@@ -29,6 +30,7 @@
 		"markdown-it": "^12.2.0",
 		"markdown-it-emoji": "^2.0.0",
 		"mdsvex": "^0.9.8",
+		"playwright": "^1.17.1",
 		"postcss": "^8.3.5",
 		"postcss-calc": "^8.0.0",
 		"postcss-custom-properties": "^11.0.0",
