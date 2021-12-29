@@ -8,6 +8,8 @@
 		const f = createFetch(fetch);
 		return {
 			props: {
+                // NOTE Has to fetch version route once in order to prevent treeshaking
+                version: await f('/api/version'),
 				_pages: await f('/api/states/nav-bar'),
 				_socialProfiles: await f('/api/social')
 			}
