@@ -1,0 +1,128 @@
+{
+  "nodes": {
+    "fix-playwright-browsers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626747032,
+        "narHash": "sha256-12aQ/I+9UcJ3KoImDZ/76I6xoADbzzk1DBt/F2vP6YM=",
+        "owner": "winston0410",
+        "repo": "nixos-playwright",
+        "rev": "709dea82afd2cb937f2dc3f61bb7dc99a581a08b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "winston0410",
+        "ref": "master",
+        "repo": "nixos-playwright",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1631561581,
+        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "mkNodePackage": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "npmlock2nix": "npmlock2nix",
+        "pnpm2nix": "pnpm2nix"
+      },
+      "locked": {
+        "narHash": "sha256-x4JQXimtAbsNFJPXozdaAFnh27atOoCndgiw1vV6Mas=",
+        "path": "/home/hugosum/mkNodePackage",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/hugosum/mkNodePackage",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1633351077,
+        "narHash": "sha256-z38JG4Bb0GtM1aF1pANVdp1dniMP23Yb3HnRoJRy2uU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "14aef06d9b3ad1d07626bdbb16083b83f92dc6c1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1640540585,
+        "narHash": "sha256-cCmknKFjWgam9jq+58wSd0Z4REia8mjBP65kXcL3ki8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ac169ec6371f0d835542db654a65e0f2feb07838",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "npmlock2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1633729941,
+        "narHash": "sha256-v2YPcEWI1Wz8ErivorubgLcDT06H6YzFT7uhp1ymqnE=",
+        "owner": "winston0410",
+        "repo": "npmlock2nix",
+        "rev": "6ade47a330b6919defb45c0eb984a64234aa8468",
+        "type": "github"
+      },
+      "original": {
+        "owner": "winston0410",
+        "ref": "issue113",
+        "repo": "npmlock2nix",
+        "type": "github"
+      }
+    },
+    "pnpm2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1594396611,
+        "narHash": "sha256-UXOUQ+2A89/zaxYhTHiRrRBU5exbUWrg+FoJYMcNwuI=",
+        "owner": "nix-community",
+        "repo": "pnpm2nix",
+        "rev": "f67be0925a91b92f54d99dbdead7a06920b979ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "pnpm2nix",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "fix-playwright-browsers": "fix-playwright-browsers",
+        "mkNodePackage": "mkNodePackage",
+        "nixpkgs": "nixpkgs_2"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

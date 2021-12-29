@@ -5,5 +5,7 @@ node_modules
 /package
 /build
 .env.development
+.env
 .direnv
 /dist
+/result
