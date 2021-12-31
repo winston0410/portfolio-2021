@@ -26,3 +26,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+      
+      - name: Build image and push to Docker Hub and GitHub Container Registry
+        uses: docker/build-push-action@v2
+        with:
+          # relative path to the place where source code with Dockerfile is located
+          context: ./pdf-service
+          # Note: tags has to be all lower-case
+          tags: |
+            winston0410/pdf-service:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
