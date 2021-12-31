@@ -33,6 +33,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./pdf-service
           # Note: tags has to be all lower-case
+          push: true
           tags: |
             winston0410/pdf-service:latest
 
