@@ -11,17 +11,18 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
-    - name: Build the Docker image
-      run: docker build ./pdf-service --file Dockerfile --tag winston0410/pdf-service:$(date +%s)
-      
-    - name: Docker Push
-      run: docker push winston0410/pdf-service
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # setup Docker buld action
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
