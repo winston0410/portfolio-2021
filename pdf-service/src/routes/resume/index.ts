@@ -19,6 +19,7 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
     // FIXME use process.env.FRONTEND_URL later. Estrella not picking up env correctly right now;
     try {
       const websiteDomain = "https://hugosum.me";
+      const executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH
 
       const versionRes = await fetch(websiteDomain + "/api/version");
 
@@ -34,7 +35,11 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
 
       if (generated_at > lastGeneratedAt) {
         const browserType = playwright.chromium;
-        const browser = await browserType.launch();
+        const browser = await browserType.launch({
+            headless: true,
+            executablePath
+        });
+
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto("https://hugosum.me/pages/resume");
@@ -51,6 +56,7 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
         res.code(200).type("application/pdf").send(pdf);
       }
     } catch (error) {
+      console.log("Error!: ", error)
       res.code(500).send({ message: error });
     }
   });

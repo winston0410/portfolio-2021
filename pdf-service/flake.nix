@@ -42,7 +42,10 @@
       defaultPackage.${system} = defaultPackage;
       packages.${system} = {
         default = defaultPackage;
-        image = pkgs.callPackage ./image.nix { package = defaultPackage; };
+        image = pkgs.callPackage ./image.nix {
+          package = defaultPackage;
+          inherit fix-playwright-browsers;
+        };
       };
       devShell.${system} = (({ pkgs, ... }:
         pkgs.mkShell {
