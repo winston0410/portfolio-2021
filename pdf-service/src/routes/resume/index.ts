@@ -19,7 +19,8 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
     // FIXME use process.env.FRONTEND_URL later. Estrella not picking up env correctly right now;
     try {
       const websiteDomain = "https://hugosum.me";
-      const executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH
+      //  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH || playwright.chromium.executablePath()
+      const executablePath = playwright.chromium.executablePath()
 
       const versionRes = await fetch(websiteDomain + "/api/version");
 
