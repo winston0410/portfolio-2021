@@ -6,6 +6,7 @@ import type {
   FastifyReply,
   FastifyRequest,
 } from "fastify";
+import PDFMerger from 'pdf-merger-js';
 
 type IVersion = {
   generated_at: number;
@@ -20,7 +21,7 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
     try {
       const websiteDomain = "https://hugosum.me";
       //  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_PATH || playwright.chromium.executablePath()
-      const executablePath = playwright.chromium.executablePath()
+      const executablePath = playwright.chromium.executablePath();
 
       const versionRes = await fetch(websiteDomain + "/api/version");
 
@@ -37,27 +38,36 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
       if (generated_at > lastGeneratedAt) {
         const browserType = playwright.chromium;
         const browser = await browserType.launch({
-            headless: true,
-            executablePath
+          headless: true,
+          executablePath,
         });
 
         const context = await browser.newContext();
         const page = await context.newPage();
-        await page.goto("https://hugosum.me/pages/resume");
-        const pdf = await page.pdf({ format: "A4" });
+        await page.goto(websiteDomain + "/pages/resume");
+        const resume = await page.pdf({ format: "A4" });
+        await page.goto(websiteDomain + "/pages/commercial");
+        const commercials = await page.pdf({ format: "A4" });
         await browser.close();
 
-        res.code(200).type("application/pdf").send(pdf);
-        
+        const merger = new PDFMerger();
+
+        merger.add(resume)
+        merger.add(commercials)
+
+        const buf = await merger.saveAsBuffer()
+
+        res.code(200).type("application/pdf").send(buf);
+
         // NOTE Write file after sending response to reduce response time
-        await fs.promises.writeFile("/tmp/resume-hugosum.pdf", pdf);
+        await fs.promises.writeFile("/tmp/resume-hugosum.pdf", buf);
         lastGeneratedAt = generated_at;
       } else {
         const pdf = await fs.promises.readFile("/tmp/resume-hugosum.pdf");
         res.code(200).type("application/pdf").send(pdf);
       }
     } catch (error) {
-      console.log("Error!: ", error)
+      console.log("Error!: ", error);
       res.code(500).send({ message: error });
     }
   });
