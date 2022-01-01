@@ -3,16 +3,14 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -27,7 +25,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      
+
+      - name: Get commit short SHA
+        id: get_short_sha
+        run: echo "::set-output name=sha::$(git rev-parse --short HEAD)"
+
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v2
         with:
@@ -38,7 +40,7 @@ jobs:
           push: true
           tags: |
             winston0410/pdf-service:latest
-            winston0410/pdf-service:${GITHUB_SHA::7}
+            winston0410/pdf-service:${{ steps.get_short_sha.outputs.sha }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
