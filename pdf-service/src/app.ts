@@ -6,9 +6,15 @@ import fastify from "fastify";
 //  dir: path.resolve(__dirname, "routes"),
 //  });
 import resumeRoute from "./routes/resume/index";
+import versionRoute from "./routes/version/index";
 
 function createServer() {
   const server = fastify({ logger: { prettyPrint: true } });
+
+  server.register(versionRoute, {
+    prefix: "/version",
+  });
+  
   server.register(resumeRoute, {
     prefix: "/resume",
   });
