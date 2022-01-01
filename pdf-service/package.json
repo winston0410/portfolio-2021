@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "node ./estrella.js -w -r -debug",
     "build": "node ./esbuild.js",
+    "build:docker": "docker build -t localhost/pdf-service -f ./Dockerfile ../.",
     "test": "jest --watchAll"
   },
   "dependencies": {
