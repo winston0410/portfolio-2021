@@ -1,5 +1,6 @@
 @import 'modern-css-reset';
 @import 'language-colors/language-colors.css';
+@import "@fontsource/arimo";
 
 @media print { 
 	.no-print{
@@ -67,12 +68,15 @@ img{
 /* font-family */
 :root {
 	/* --display-font: neoneon; */
-	--display-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-		'Segoe UI Symbol', 'Noto Color Emoji';
-	--content-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-		'Segoe UI Symbol', 'Noto Color Emoji';
+	/* --display-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, */
+		/* 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', */
+		/* 'Segoe UI Symbol', 'Noto Color Emoji'; */
+
+	/* --content-font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, */
+		/* 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', */
+		/* 'Segoe UI Symbol', 'Noto Color Emoji'; */
+	--display-font: "Arimo";
+	--content-font: "Arimo";
 }
 
 /* font-size */

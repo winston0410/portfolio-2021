@@ -23,6 +23,7 @@
 	<a sveltekit:prefetch href="/" title="Back to homepage">
 		<span class="sidebar-title">Hugo Sum</span>
 	</a>
+	<!--  <a class="action-button no-print" href="https://pdf.hugosum.me/resume" title="Get my CV" rel="external"><span>Get my CV</span></a>  -->
 	<button class="menu-button no-print" type="button" on:click={handleClick}
 		><Hamburger isActive={$isMenuActive} /></button
 	>
@@ -136,4 +137,16 @@
 	.highlighted {
 		font-weight: 700;
 	}
+
+    .action-button{
+        color: var(--base-color); 
+        font-weight: 700;
+        padding: var(--sm-space);
+        border-radius: var(--sm-radius);
+        background: var(--highlight-color);
+    }
+
+    .action-button:hover{
+        background: var(--highlight-color-tint1);
+    }
 </style>
