@@ -1,8 +1,10 @@
 FROM mcr.microsoft.com/playwright:v1.17.1
 
-COPY ./. ./.
+COPY package.json package-lock.json ./
 
 RUN npm install
+
+COPY ./. ./.
 
 RUN npm run build
 
