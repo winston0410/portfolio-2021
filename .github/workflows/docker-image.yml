@@ -38,6 +38,7 @@ jobs:
           push: true
           tags: |
             winston0410/pdf-service:latest
+            winston0410/pdf-service:$GITHUB_SHA
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
