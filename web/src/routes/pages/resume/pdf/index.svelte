@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
     import PDFObject from 'pdfobject'
+    import { browser } from '$app/env';
 </script>
 
 <script lang="ts">
@@ -8,14 +9,17 @@
         title,
         fallbackLink: false
     }
+
+    const PDF_URL = "https://pdf.hugosum.me/resume"
     
-    const res = PDFObject.embed("https://pdf.hugosum.me/resume", undefined, opts)
+    const res = browser ? PDFObject.embed(PDF_URL, undefined, opts) : true
 
     if(!res){
-        console.log('browser not supported')
+        window.location.href = PDF_URL
     }
 </script>
 
 <svelte:head>
     <title>{title}</title>
+    <meta name="robots" content="noindex,nofollow" />
 </svelte:head>
