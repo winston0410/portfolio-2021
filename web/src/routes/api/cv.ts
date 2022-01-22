@@ -1,5 +1,5 @@
 import type { RequestHandler } from '@sveltejs/kit';
-import {ICompetency} from '$lib/typing'
+import { ICompetency } from '$lib/typing';
 
 const getCv = async () => {
 	return {
@@ -11,33 +11,51 @@ const getCv = async () => {
 			'Actively participating in the opensource community, received hundreds of stars on GitHub.',
 			'Promising mentoring and communication skills, nurtured hundreds with zero development background into software developers in Hong Kong and Singapore with Cantonese and English.'
 		],
-        visa_status:[
-            // {
-            //     country: "Canada",
-            //     description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
-            // },
-             {
-                 country: "United Kingdom",
-                 description: "I can work in United Kingdom <strong>legally without any sponsorship</strong>."
-             }
-        ],
+		visa_status: [
+			// {
+			//     country: "Canada",
+			//     description: "I can work in Canada <strong>legally without any sponsorship</strong>. I am currently in <strong>Vancouver</strong>."
+			// },
+			{
+				country: 'United Kingdom',
+				description:
+					'I can work in United Kingdom <strong>legally without any sponsorship</strong>.'
+			}
+		],
 		working_experience: [
+			{
+				company_name: 'Nudge Digital',
+				title: 'Software developer',
+				start_date: 'Jan 2022',
+				end_date: 'Current',
+				duties: [
+					'Develop social care service for Council with <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>',
+					'Develop prototype for NHS fault reporting service with <strong>Svelte</strong> and <strong>SvelteKit</strong>'
+				],
+				technologies: {
+					HTML: true,
+					Javascript: true,
+					Typescript: true,
+					SCSS: true,
+                    Svelte: true
+				}
+			},
 			//  {
-				//  company_name: 'HydrogenX Lab',
-				//  title: 'Independent Contractor',
-				//  start_date: 'Oct 2021',
-				//  end_date: 'Nov 2021',
-				//  duties: [
-					//  'Develop web application for Trusted Node with <strong>Nuxt.js</strong>',
-					//  'Scaffold and develop web application for UltraStable with <strong>Nuxt.js</strong>',
-				//  ],
-				//  technologies: {
-					//  Typescript: true,
-					//  Vue: true,
-					//  SCSS: true,
-					//  SASS: true,
-					//  CSS: true,
-				//  }
+			//  company_name: 'HydrogenX Lab',
+			//  title: 'Independent Contractor',
+			//  start_date: 'Oct 2021',
+			//  end_date: 'Nov 2021',
+			//  duties: [
+			//  'Develop web application for Trusted Node with <strong>Nuxt.js</strong>',
+			//  'Scaffold and develop web application for UltraStable with <strong>Nuxt.js</strong>',
+			//  ],
+			//  technologies: {
+			//  Typescript: true,
+			//  Vue: true,
+			//  SCSS: true,
+			//  SASS: true,
+			//  CSS: true,
+			//  }
 			//  },
 			{
 				company_name: 'Tecky Academy',
@@ -61,7 +79,7 @@ const getCv = async () => {
 					CSS: true,
 					SCSS: true,
 					Go: true,
-                    Rust: true,
+					Rust: true,
 					Java: true,
 					Nix: true,
 					SQL: true
@@ -107,7 +125,7 @@ const getCv = async () => {
 				title: 'Bachelor of Business Administration - BBA, Management',
 				start_date: '2017',
 				end_date: '2019'
-			},
+			}
 			// {
 			// 	school_name: 'College of International Education, HKBU',
 			// 	title: "Associate's degree, Business Administration and Management",
@@ -115,22 +133,22 @@ const getCv = async () => {
 			// 	end_date: '2017'
 			// },
 			//  {
-				//  school_name: 'Baptist Lui Ming Choi Secondary School',
-				//  title: '',
-				//  start_date: '2009',
-				//  end_date: '2015'
+			//  school_name: 'Baptist Lui Ming Choi Secondary School',
+			//  title: '',
+			//  start_date: '2009',
+			//  end_date: '2015'
 			//  }
 		],
 		achievement: [
 			//  {
-				//  name: 'HKUST Yeung Wing Yee Entrepreneurs Fund Awardees',
-				//  date: 'Oct 2019',
-				//  from: 'HKUST Entrepreneurship Center'
+			//  name: 'HKUST Yeung Wing Yee Entrepreneurs Fund Awardees',
+			//  date: 'Oct 2019',
+			//  from: 'HKUST Entrepreneurship Center'
 			//  },
 			//  {
-				//  name: 'HKUST Entrepreneurship Acceleration Fund Awardees',
-				//  date: 'Apr 2019',
-				//  from: 'HKUST Entrepreneurship Center'
+			//  name: 'HKUST Entrepreneurship Acceleration Fund Awardees',
+			//  date: 'Apr 2019',
+			//  from: 'HKUST Entrepreneurship Center'
 			//  },
 			{
 				name: 'Outstanding performance scholarship',
@@ -138,19 +156,19 @@ const getCv = async () => {
 				from: 'Education Bureau of HKSAR'
 			}
 		],
-        
+
 		languages: [
 			{
 				name: 'English',
-                level: ICompetency.Fluent 
+				level: ICompetency.Fluent
 			},
 			{
 				name: 'Cantonese',
-                level: ICompetency.Native
+				level: ICompetency.Native
 			},
 			{
 				name: 'Chinese',
-                level: ICompetency.Fluent
+				level: ICompetency.Fluent
 			}
 		]
 	};
@@ -163,8 +181,8 @@ export const get: RequestHandler = async () => {
 			body: data
 		};
 	} catch (e) {
-        return {
-            status: 500
-        }
+		return {
+			status: 500
+		};
 	}
 };
