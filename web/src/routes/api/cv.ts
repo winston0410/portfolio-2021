@@ -26,18 +26,19 @@ const getCv = async () => {
 			{
 				company_name: 'Nudge Digital',
 				title: 'Software developer',
+				location: 'United Kingdom',
 				start_date: 'Jan 2022',
 				end_date: 'Current',
 				duties: [
-					'Develop social care service for Council with <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>',
-					'Develop prototype for NHS fault reporting service with <strong>Svelte</strong> and <strong>SvelteKit</strong>'
+					'Develop social care service for Council with <strong>Javascript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>',
+					'Develop prototype for NHS fault reporting service with <strong>Typescript</strong>, <strong>Svelte</strong> and <strong>SvelteKit</strong>'
 				],
 				technologies: {
 					HTML: true,
 					Javascript: true,
 					Typescript: true,
 					SCSS: true,
-                    Svelte: true
+					Svelte: true
 				}
 			},
 			//  {
