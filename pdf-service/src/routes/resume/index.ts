@@ -42,12 +42,18 @@ const plugin: FastifyPluginCallback = (server, _, next) => {
           executablePath,
         });
 
+        const captureOpts = {
+            format: "A4",
+            scale: 1
+            //  preferCSSPageSize: true
+        };
+
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto(websiteDomain + "/pages/resume");
-        const resume = await page.pdf({ format: "A4" });
+        const resume = await page.pdf(captureOpts);
         await page.goto(websiteDomain + "/pages/commercial");
-        const commercials = await page.pdf({ format: "A4" });
+        const commercials = await page.pdf(captureOpts);
         await browser.close();
 
         const merger = new PDFMerger();
