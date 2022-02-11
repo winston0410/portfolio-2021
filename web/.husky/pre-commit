@@ -1,7 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-GIT_ROOT=$(git rev-parse --show-toplevel);
-WEB_ROOT="$GIT_ROOT/web";
-
-"$WEB_ROOT/node_modules/.bin/lint-staged" --cwd "$WEB_ROOT"
