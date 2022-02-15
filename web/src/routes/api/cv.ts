@@ -31,7 +31,8 @@ const getCv = async () => {
 				end_date: 'Current',
 				duties: [
 					'Develop social care service for local council with <strong>Javascript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>.',
-					'Develop prototype for NHS fault reporting service with <strong>Typescript</strong>, <strong>Svelte</strong> and <strong>SvelteKit</strong>.'
+					'Develop prototype for NHS fault reporting service with <strong>Typescript</strong>, <strong>Svelte</strong> and <strong>SvelteKit</strong>.',
+					'Build and test React component library for local council with <strong>Typescript</strong>, <strong>Storybook</strong>, <strong>Jest</strong>'
 				],
 				technologies: {
 					HTML: true,
