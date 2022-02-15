@@ -62,7 +62,7 @@
 <MetaData
 	title={'Commercial works | Hugo Sum'}
 	description={'The portfolio of commercial projects for Hugo Sum, a fullstack developer from Hong Kong.'}
-	url={`${env.VITE_DOMAIN_NAME}${$page.path}`}
+	url={`${env.VITE_DOMAIN_NAME}${$page.url.pathname}`}
 	image={'/cover.jpg'}
 />
 

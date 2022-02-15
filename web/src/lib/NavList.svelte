@@ -15,7 +15,7 @@
 		<ul role="list">
 			{#each pages as { name, url }}
 				<li class="navlist-item">
-					{#if url === $page.path}
+					{#if url === $page.url.pathname}
 						<span aria-current="page">{name}</span>
 					{:else}
 						<a sveltekit:prefetch href={url}>

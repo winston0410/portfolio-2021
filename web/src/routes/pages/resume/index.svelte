@@ -30,7 +30,7 @@
 <MetaData
 	title={'Resume | Hugo Sum'}
 	description={'The resume for Hugo Sum, a fullstack developer from Hong Kong.'}
-	url={`${env.VITE_DOMAIN_NAME}${$page.path}`}
+	url={`${env.VITE_DOMAIN_NAME}${$page.url.pathname}`}
 	image={'/cover.jpg'}
 />
 
