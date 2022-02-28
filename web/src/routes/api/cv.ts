@@ -32,14 +32,16 @@ const getCv = async () => {
 				duties: [
 					'Develop social care service for local council with <strong>Javascript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>.',
 					'Develop prototype for NHS fault reporting service with <strong>Typescript</strong>, <strong>Svelte</strong> and <strong>SvelteKit</strong>.',
-					'Build and test React component library for local council with <strong>Typescript</strong>, <strong>Storybook</strong>, <strong>Jest</strong> and <strong>GitHub Action</strong>.'
+					'Build and test React component library for local council with <strong>Typescript</strong>, <strong>Storybook</strong>, <strong>Jest</strong> and <strong>GitHub Action</strong>.',
+					'Port a legacy <strong>Ruby on Rails</strong> arrears management application to <strong>Next.js</strong>.'
 				],
 				technologies: {
 					HTML: true,
 					Javascript: true,
 					Typescript: true,
 					SCSS: true,
-					Svelte: true
+					Svelte: true,
+					Ruby: true
 				}
 			},
 			//  {
