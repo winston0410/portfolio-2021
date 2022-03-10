@@ -17,6 +17,9 @@ const config = {
 		sveltePreprocess()
 	],
 	kit: {
+        prerender: {
+            default: true
+        },
 		adapter: adapter(),
 		vite: {
 			build: {
