@@ -27,7 +27,7 @@ export interface ICommercialProject {
 	link: string;
 	languages: ILanguages;
 	description: string;
-	involvement: string;
+	involvements: Array<string>;
     image: string;
 };
 
@@ -67,6 +67,7 @@ export interface IWorkingExperience {
 	technologies: {
 		[key: string]: boolean;
 	};
+    location: string
 }
 
 export type INaturalLanguage = {
