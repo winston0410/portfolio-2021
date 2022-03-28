@@ -4,13 +4,25 @@
 	import Heading from '$lib/Heading.svelte';
 	import type { ICommercialProjectWithSrcset } from '$lib/typing';
 	import LangTagList from '$lib/LangTagList.svelte';
+	//TODO Make Typescript aware of $static and query string
+	// @ts-ignore
 	import smartGoCover from '$static/smartgo.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import survivalistCover from '$static/survivalist.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import teckyCodeCover from '$static/tecky-code.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import trustedNodeCover from '$static/trusted-node.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import perfectMenCover from '$static/perfect-men.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import homanCover from '$static/homan.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
 	import cantoneseCover from '$static/howtostudycantonese.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
+	import hackneySocialCareCover from '$static/hackney-social-care.png?w=300;768;1200&format=webp&srcset';
+	// @ts-ignore
+	import hackneyFinanceCover from '$static/hackney-finance.png?w=300;768;1200&format=webp&srcset';
 
 	export const load = async ({ fetch }) => {
 		const res = await fetch('/api/commercial');
@@ -30,7 +42,9 @@
 			'/tecky-code.png': teckyCodeCover,
 			'/homan.png': homanCover,
 			'/survivalist.png': survivalistCover,
-			'/howtostudycantonese.png': cantoneseCover
+			'/howtostudycantonese.png': cantoneseCover,
+			"/hackney-social-care.png": hackneySocialCareCover,
+			'/hackney-finance.png': hackneyFinanceCover
 		};
 
 		const transformed = await Promise.all(
