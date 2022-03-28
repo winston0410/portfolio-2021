@@ -87,7 +87,7 @@
 	{#each projects as { name, link, involvements, description, image, languages, srcset }}
 		<li>
 			<article>
-				<Heading size={3} color={2}>
+				<Heading size={3} color={2} maxHeight>
 					<a rel="external" title={`${name}`} href={link}>
 						{name}
 					</a>

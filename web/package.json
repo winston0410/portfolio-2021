@@ -41,6 +41,7 @@
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.44.0",
+    "svelte-action-type": "github:winston0410/svelte-action-type",
     "svelte-check": "^2.0.0",
     "svelte-image": "^0.2.9",
     "svelte-preprocess": "^4.7.4",
