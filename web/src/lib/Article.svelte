@@ -16,7 +16,7 @@
 	export let tags;
 </script>
 
-<MetaData {title} {description} {image} url={`https://${$page.host}${$page.url.pathname}`} />
+<MetaData {title} {description} {image} url={`https://${$page.host}${$page.path}`} />
 <div class="markdown-article">
     <!--  <img alt={`Cover image for article ${title}`} src={image} />  -->
 	<Heading size={1} color={1}>{title}</Heading>
