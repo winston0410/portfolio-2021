@@ -1,18 +1,15 @@
 <script context="module" lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte'
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { INavItem, ISocialProfile } from '$lib/typing';
 	import '/src/app.css';
-	import { page } from '$app/stores';
-	import MetaData from '$lib/MetaData.svelte';
-
 	export const load = async ({ fetch }) => {
 		const f = createFetch(fetch);
 		return {
 			props: {
-				// NOTE Has to fetch version route once in order to prevent treeshaking
-				version: await f('/api/version'),
+                // NOTE Has to fetch version route once in order to prevent treeshaking
+                version: await f('/api/version'),
 				_pages: await f('/api/states/nav-bar'),
 				_socialProfiles: await f('/api/social')
 			}
@@ -34,28 +31,26 @@
 		const a4Size = {
 			1: 1120,
 			2: 1120
-		};
+		}
 
 		const dpi = window.devicePixelRatio;
 
-		const pageNeeded = Math.ceil(mainContainer.clientHeight / a4Size[dpi]);
+		const pageNeeded = Math.ceil(mainContainer.clientHeight / a4Size[dpi])
 
-		const heightNeeded = a4Size[dpi] * pageNeeded;
+		const heightNeeded = a4Size[dpi] * pageNeeded
 
-		mainContainer.style.height = `${heightNeeded}px`;
-	};
+		mainContainer.style.height = `${heightNeeded}px`
+	}
+
+	// const handleAfterPrint = () => {
+	// 	mainContainer.style.height = `100%`
+	// }
 
 	onMount(() => {
-		window.addEventListener('beforeprint', handlePrint);
-	});
+		window.addEventListener('beforeprint', handlePrint)
+		// window.addEventListener('afterprint', handleAfterPrint)
+	})
 </script>
-
-<MetaData
-	title={$page.stuff.title}
-	description={$page.stuff.description}
-	url={`${$page.url.protocol}//${$page.url.host}${$page.url.pathname}`}
-	image={$page.stuff.image}
-/>
 
 <div class="main" bind:this={mainContainer}>
 	<slot />
@@ -65,17 +60,17 @@
 	:global(a) {
 		color: var(--highlight-color);
 		text-decoration: none;
-		cursor: pointer;
+        cursor: pointer;
 	}
 
-	:global(a *) {
-		cursor: pointer;
-	}
+    :global(a *){
+        cursor: pointer;
+    }
 
 	:global(a:hover) {
 		color: var(--highlight-color-tint1);
 	}
-
+        
 	:global(ul) {
 		padding: 0px;
 		margin: 0px;
@@ -110,7 +105,7 @@
 	:global(code) {
 		background: var(--highlight-color-tint2);
 		color: #000;
-		padding: 0 var(--xs-space);
+        padding: 0 var(--xs-space);
 	}
 
 	.main {

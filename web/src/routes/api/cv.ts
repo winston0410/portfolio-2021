@@ -4,10 +4,10 @@ import { ICompetency } from '$lib/typing';
 const getCv = async () => {
 	return {
 		profile: [
-			'Passionate and experienced frontend developer with over 2 years of experience with **React**, **Vue** and **Svelte**, built dozens of applications with these technologies.',
-			'Competent in backend, created servers with **Javascript/Typescript**, **Java**, **Go** and **Rust**.',
-			'Confident to work with RDBMS, with previous experience on **MySQL** and **PostgreSQL**.',
-			'Proficient with DevOps technologies, built, deployed and managed machines with **Docker** and **Nix**.',
+			'Passionate and experienced frontend developer with over 2 years of experience with <strong>React</strong>, <strong>Vue</strong> and <strong>Svelte</strong>, built dozens of applications with these technologies.',
+			'Competent in backend, created servers with <strong>Javascript/Typescript</strong>, <strong>Java</strong>, <strong>Go</strong> and <strong>Rust</strong>.',
+			'Confident to work with RDBMS, with previous experience on <strong>MySQL</strong> and <strong>PostgreSQL</strong>.',
+			'Proficient with DevOps technologies, built, deployed and managed machines with <strong>Docker</strong> and <strong>Nix</strong>.',
 			'Actively participating in the opensource community, received hundreds of stars on GitHub.',
 			'Promising mentoring and communication skills, nurtured hundreds with zero development background into software developers in Hong Kong and Singapore with Cantonese and English.'
 		],
@@ -18,7 +18,8 @@ const getCv = async () => {
 			// },
 			{
 				country: 'United Kingdom',
-				description: 'I can work in United Kingdom **legally without any sponsorship**.'
+				description:
+					'I can work in United Kingdom <strong>legally without any sponsorship</strong>.'
 			}
 		],
 		working_experience: [
@@ -29,18 +30,15 @@ const getCv = async () => {
 				start_date: 'Jan 2022',
 				end_date: 'Current',
 				duties: [
-					'Develop social care service for local council with **Javascript**, **React**, **Next.js**, and **AWS Lambda**.',
-					'Develop prototype for NHS fault reporting service with **Typescript**, **Svelte** and **SvelteKit**.',
-					'Build and test React component library for local council with **Typescript**, **Storybook**, **Jest** and **GitHub Action**.',
-					'Port a legacy **Ruby on Rails** arrears management application to **Next.js**.'
+					'Develop social care service for local council with <strong>Javascript</strong>, <strong>React</strong>, <strong>Next.js</strong>, and <strong>AWS Lambda</strong>.',
+					'Develop prototype for NHS fault reporting service with <strong>Typescript</strong>, <strong>Svelte</strong> and <strong>SvelteKit</strong>.'
 				],
 				technologies: {
 					HTML: true,
 					Javascript: true,
 					Typescript: true,
 					SCSS: true,
-					Svelte: true,
-					Ruby: true
+					Svelte: true
 				}
 			},
 			//  {
@@ -67,11 +65,11 @@ const getCv = async () => {
 				start_date: 'Feb 2021',
 				end_date: 'Nov 2021',
 				duties: [
-					'Hosted lectures and assisted debugging on **Typescript**, **React**, **Redux**, UI Testing, containers composition with **Docker** and modern frontend development workflow for more than 100 students in Cantonese.',
-					'Hosted lectures and assisted debugging on **HTML**, **CSS**, **Javascript**, **React** and **Java** for Generation Singapore in English.',
+					'Hosted lectures and assisted debugging on <strong>Typescript</strong>, <strong>React</strong>, <strong>Redux</strong>, UI Testing, containers composition with <strong>Docker</strong> and modern frontend development workflow for more than 100 students in Cantonese.',
+					'Hosted lectures and assisted debugging on <strong>HTML</strong>, <strong>CSS</strong>, <strong>Javascript</strong>, <strong>React</strong> and <strong>Java</strong> for Generation Singapore in English.',
 					'Hosted code reviews for students in both frontend and backend.',
-					'Created unit tests for existing coding platform with **Jest.js**.',
-					'Designed and developed a roster system with **Svelte**, **Rust** and **Nix**.'
+					'Created unit tests for existing coding platform with <strong>Jest.js</strong>.',
+					'Designed and developed a roster system with <strong>Svelte</strong>, <strong>Rust</strong> and <strong>Nix</strong>.'
 				],
 				technologies: {
 					Javascript: true,
@@ -95,10 +93,10 @@ const getCv = async () => {
 				start_date: 'Jul 2020',
 				end_date: 'Jan 2021',
 				duties: [
-					'Developed static branding sites with **11ty** and **Nunjucks**.',
-					'Developed dynamic branding sites with **React** and **Next.js**.',
-					'Optimized the performance of existing branding websites based on **Google Lighthouse**.',
-					'Improved the SEO ranking of existing branding websites with **JSON Schema**.'
+					'Developed static branding sites with <strong>11ty</strong> and <strong>Nunjucks</strong>.',
+					'Developed dynamic branding sites with <strong>React</strong> and <strong>Next.js</strong>.',
+					'Optimized the performance of existing branding websites based on <strong>Google Lighthouse</strong>.',
+					'Improved the SEO ranking of existing branding websites with <strong>JSON Schema</strong>.'
 				],
 				technologies: {
 					Javascript: true,
@@ -116,8 +114,8 @@ const getCv = async () => {
 				start_date: 'Jan 2019',
 				end_date: 'Mar 2020',
 				duties: [
-					'Designed and developed an E-commerce website with **Wordpress**.',
-					'Optimized the SEO ranking and loading performance based on the audit of **Google Lighthouse**.'
+					'Designed and developed an E-commerce website with <strong>Wordpress</strong>.',
+					'Optimized the SEO ranking and loading performance based on the audit of <strong>Google Lighthouse</strong>.'
 				],
 				technologies: { HTML: true, CSS: true, Javascript: true, PHP: true }
 			}
