@@ -4,6 +4,7 @@
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { INavItem, ISocialProfile } from '$lib/typing';
 	import '/src/app.css';
+	import "@fontsource/arimo";
 	export const load = async ({ fetch }) => {
 		const f = createFetch(fetch);
 		return {
@@ -62,11 +63,10 @@
 		scroll-behavior: smooth;
 	}
 
-	/* @media (min-width: 768px) {
-		:global(html){
-			font-size: 18px;
-		}
-	} */
+	:global(strong) {
+		font-weight: 700;
+	}
+
 
 	:global(a) {
 		color: var(--highlight-color);

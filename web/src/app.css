@@ -1,6 +1,5 @@
 @import 'modern-css-reset';
 @import 'language-colors/language-colors.css';
-@import "@fontsource/arimo";
 
 @media print { 
 	.no-print{
