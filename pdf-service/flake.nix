@@ -3,8 +3,7 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    # mkNodePackage = { url = "github:winston0410/mkNodePackage/develop"; };
-    mkNodePackage = { url = "path:/home/hugosum/mkNodePackage"; };
+    mkNodePackage = { url = "github:winston0410/mkNodePackage/develop"; };
     fix-playwright-browsers = {
       url = "github:winston0410/nixos-playwright/master";
       flake = false;
@@ -50,8 +49,6 @@
       devShell.${system} = (({ pkgs, ... }:
         pkgs.mkShell {
           buildInputs = with pkgs; [
-            # For compatibility with Vercel
-            yarn
             nodejs-16_x
             google-chrome-dev
             firefox-bin

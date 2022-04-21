@@ -4,6 +4,7 @@ const pages = [
 	{ name: 'Resume', url: '/pages/resume' },
 	{ name: 'Opensource', url: '/pages/opensource' },
 	{ name: 'Commercial works', url: '/pages/commercial' },
+	//  { name: 'Closed source', url: '/pages/closed-source' },
 	//  { name: 'Blog', url: '/blog' }
 ];
 
