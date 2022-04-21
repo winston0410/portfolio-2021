@@ -5,6 +5,18 @@ export const get: RequestHandler = async () => {
 	try {
 		const body: Array<ICommercialProject> = [
 			{
+				name: 'Hackney Adult Social Care Frontend',
+				link: 'https://social-care-care-packages-staging.hackney.gov.uk',
+                image: "/hackney-social-care.png",
+				languages: {
+					HTML: true,
+					Javascript: true,
+					Scss: true
+				},
+                description: "The frontend for managing social care package in Hackney Council.",
+				involvement: 'Developed the UI and functionality for multiple pages with <strong>React</strong> and <strong>Next.js</strong>. Test, lint and deploy the application with <strong>CircleCI</strong>.'
+			},
+			{
 				name: 'Trusted Node',
 				link: 'https://app.trustednode.io',
                 image: "/trusted-node.png",
