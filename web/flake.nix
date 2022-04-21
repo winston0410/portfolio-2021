@@ -37,7 +37,9 @@
           buildInputs = with pkgs; [
             # For compatibility with Vercel
             nodejs-16_x
-            python311
+            google-chrome-dev
+            firefox-bin
+            pympress
           ];
 
           shellHook = ''

@@ -1,18 +1,18 @@
 <script context="module" lang="ts">
-	export const load = async () => {
-		return {
-			stuff: {
-				title: 'Portfolio | Hugo Sum',
-				description: 'The personal website for Hugo Sum, a fullstack developer from Hong Kong.',
-				image: '/cover.jpg'
-			}
-		};
-	};
+	import MetaData from '$lib/MetaData.svelte';
+	import env from '$lib/env';
 </script>
 
 <script lang="ts">
 	import { pageList } from '$lib/store';
 </script>
+
+<MetaData
+	title={'Portfolio of Hugo Sum'}
+	description={'The personal website for Hugo Sum, a fullstack developer from Hong Kong.'}
+	url={`${env.VITE_DOMAIN_NAME}`}
+	image={'/cover.jpg'}
+/>
 
 <main class="mainpage">
 	<div>
@@ -126,7 +126,7 @@
 	.fade-in-order-1 {
 		animation: fade-in-from-left var(--time-6);
 	}
-
+        
 	.fade-in-order-2 {
 		animation: fade-in-from-left var(--time-9);
 	}

@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
 	import SocialProfileList from '$lib/SocialProfileList.svelte';
-	import type { INavItem } from '$lib/typing';
+    import type { INavItem } from '$lib/typing'
 </script>
 
 <script lang="ts">
@@ -15,7 +15,7 @@
 		<ul role="list">
 			{#each pages as { name, url }}
 				<li class="navlist-item">
-					{#if url === $page.url.pathname}
+					{#if url === $page.path}
 						<span aria-current="page">{name}</span>
 					{:else}
 						<a sveltekit:prefetch href={url}>
@@ -63,12 +63,12 @@
 	.navlist-item {
 		font-size: var(--md-font);
 		font-weight: 700;
-		cursor: pointer;
+        cursor: pointer;
 	}
 
-	.navlist-item a span {
-		cursor: pointer;
-	}
+    .navlist-item a span{
+        cursor: pointer;
+    }
 
 	@media (min-width: 1200px) {
 		.navlist-item {
@@ -97,10 +97,10 @@
 		}
 	}
 
-	@media print {
-		.no-print {
-			display: none;
-			visibility: hidden;
+	@media print { 
+		.no-print{
+		display: none;
+		visability: hidden;
 		}
 	}
 </style>

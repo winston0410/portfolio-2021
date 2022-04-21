@@ -1,16 +1,12 @@
 <script context="module" lang="ts">
 	import Sidebar from '$lib/Sidebar.svelte';
-	import { fly } from 'svelte/transition';
-	import { page } from '$app/stores';
 </script>
 
 <div class="container">
 	<Sidebar />
-	{#key $page}
-		<main class="inner-container" in:fly={{ y: 100, duration: 1000 }}>
-			<slot />
-		</main>
-	{/key}
+	<main class="inner-container">
+		<slot />
+	</main>
 </div>
 
 <style>
