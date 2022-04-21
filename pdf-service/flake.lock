@@ -40,13 +40,18 @@
         "pnpm2nix": "pnpm2nix"
       },
       "locked": {
-        "narHash": "sha256-x4JQXimtAbsNFJPXozdaAFnh27atOoCndgiw1vV6Mas=",
-        "path": "/home/hugosum/mkNodePackage",
-        "type": "path"
+        "lastModified": 1633790997,
+        "narHash": "sha256-1mk4EwNkWtTNpeRivZmJTzB+92g07maeFRVUMnnRh1U=",
+        "owner": "winston0410",
+        "repo": "mkNodePackage",
+        "rev": "a7eca5e027c8b260dca4ece7d8dd187f92420611",
+        "type": "github"
       },
       "original": {
-        "path": "/home/hugosum/mkNodePackage",
-        "type": "path"
+        "owner": "winston0410",
+        "ref": "develop",
+        "repo": "mkNodePackage",
+        "type": "github"
       }
     },
     "nixpkgs": {

@@ -1,19 +1,22 @@
 <script context="module" lang="ts">
 	import LangTagList from '$lib/LangTagList.svelte';
 	import Heading from '$lib/Heading.svelte';
-	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
-	import env from '$lib/env';
-	import { page } from '$app/stores';
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { ICv } from '$lib/typing';
+	import MarkDownIt from 'markdown-it';
 
 	export const load = async ({ fetch }) => {
 		const f = createFetch(fetch);
 		return {
 			props: {
 				cv: await f('/api/cv')
+			},
+			stuff: {
+				title: 'Resume | Hugo Sum',
+				description: 'The resume for Hugo Sum, a fullstack developer from Hong Kong.',
+				image: '/cover.jpg'
 			}
 		};
 	};
@@ -21,39 +24,33 @@
 
 <script lang="ts">
 	import { isMenuActive } from '$lib/store';
+	import MarkdownIt from 'markdown-it';
 	onMount(() => {
 		isMenuActive.set(false);
 	});
 	export let cv: UnwrappedResponse<ICv>;
 </script>
 
-<MetaData
-	title={'Resume | Hugo Sum'}
-	description={'The resume for Hugo Sum, a fullstack developer from Hong Kong.'}
-	url={`${env.VITE_DOMAIN_NAME}${$page.path}`}
-	image={'/cover.jpg'}
-/>
-
 <div class="container">
 	<Heading size={1} color={1}>Resume</Heading>
 	{#if cv.body.visa_status.length > 0}
-	<section>
-		<Heading>Visa Status</Heading>
-		<ul role="list">
-			{#each cv.body.visa_status as { country, description }}
-				<li class="list-item">
-                    <Heading tag={'h3'} color={3} size={3}>{country}</Heading>
-                    <p>{@html description}</p>
-                </li>
-			{/each}
-		</ul>
-	</section>
+		<section>
+			<Heading>Visa Status</Heading>
+			<ul role="list">
+				{#each cv.body.visa_status as { country, description }}
+					<li class="list-item">
+						<Heading tag={'h3'} color={3} size={3}>{country}</Heading>
+						<p>{@html new MarkDownIt().renderInline(description)}</p>
+					</li>
+				{/each}
+			</ul>
+		</section>
 	{/if}
 	<section>
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">
 			{#each cv.body.profile as text}
-				<li class="list-item">{@html text}</li>
+				<li class="list-item">{@html new MarkdownIt().renderInline(text)}</li>
 			{/each}
 		</ul>
 	</section>
@@ -61,7 +58,8 @@
 		<section>
 			<Heading>Working experience</Heading>
 			<ul role="list">
-				{#each cv.body.working_experience as { company_name: name, title, start_date, end_date, duties, technologies, location }}
+				{#each cv.body
+					.working_experience as { company_name: name, title, start_date, end_date, duties, technologies, location }}
 					<li class="list-item">
 						<article class="experience">
 							<Heading tag={'h3'} color={3} size={3}>{name}</Heading>
@@ -73,7 +71,7 @@
 							<LangTagList languages={technologies} />
 							<ul role="list" class="duty-list">
 								{#each duties as duty}
-									<li class="duty-list-item">{@html duty}</li>
+									<li class="duty-list-item">{@html new MarkdownIt().renderInline(duty)}</li>
 								{/each}
 							</ul>
 						</article>
@@ -113,14 +111,14 @@
 				{/each}
 			</ul>
 		</section>
-        
+
 		<section>
 			<Heading>Languages</Heading>
 			<ul class="language-list" role="list">
 				{#each cv.body.languages as { name, level }}
 					<li class="list-item">
-                        <Heading tag={'h3'} color={3} size={3}>{name}</Heading>
-                        <span class="competency">{ level }</span>
+						<Heading tag={'h3'} color={3} size={3}>{name}</Heading>
+						<span class="competency">{level}</span>
 					</li>
 				{/each}
 			</ul>
@@ -135,7 +133,8 @@
 		margin-bottom: var(--lg-space);
 	}
 
-	.title, .competency{
+	.title,
+	.competency {
 		font-weight: 700;
 	}
 
@@ -150,7 +149,7 @@
 
 	.list-item {
 		margin-bottom: var(--md-space);
-        width: fit-content;
+		width: fit-content;
 	}
 
 	.duty-list,
@@ -164,17 +163,16 @@
 
 	/* min-width 1200px doesnt work for print */
 	@media (min-width: 1200px) {
-        .language-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
+		.language-list {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
 	}
 
 	@media print {
-        .language-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
+		.language-list {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		}
 	}
-
 </style>

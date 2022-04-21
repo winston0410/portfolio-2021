@@ -1,10 +1,7 @@
 <script context="module" lang="ts">
 	import LangTagList from '$lib/LangTagList.svelte';
 	import Heading from '$lib/Heading.svelte';
-	import MetaData from '$lib/MetaData.svelte';
 	import { onMount } from 'svelte';
-	import env from '$lib/env';
-	import { page } from '$app/stores';
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { IProject } from '$lib/typing';
@@ -14,6 +11,12 @@
 		return {
 			props: {
 				projects: await f('/api/github')
+			},
+			stuff: {
+				title: 'Opensource | Hugo Sum',
+				description:
+					'The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong.',
+				image: '/cover.jpg'
 			}
 		};
 	};
@@ -26,13 +29,6 @@
 	});
 	export let projects: UnwrappedResponse<Array<IProject>>;
 </script>
-
-<MetaData
-	title={'Opensource | Hugo Sum'}
-	description={'The portfolio of opensource projects for Hugo Sum, a fullstack developer from Hong Kong.'}
-	url={`${env.VITE_DOMAIN_NAME}${$page.path}`}
-	image={'/cover.jpg'}
-/>
 
 <Heading size={1} color={1}>Opensource</Heading>
 <!--  https://docs.github.com/en/rest/reference/repos#list-repository-languages  -->
@@ -78,7 +74,7 @@
 			display: table;
 		}
 
-		.list li{
+		.list li {
 			display: inline-block;
 			width: 47%;
 			max-width: 47%;
@@ -86,7 +82,7 @@
 			margin-bottom: var(--xl-space);
 		}
 
-		.list li:nth-child(odd){
+		.list li:nth-child(odd) {
 			margin-right: 3%;
 		}
 	}

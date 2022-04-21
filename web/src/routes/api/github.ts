@@ -15,7 +15,7 @@ const fetchOptions = {
 	}
 };
 
-const getGithubApi = (page: number = 1) => {
+const getGithubApi = (page = 1) => {
 	return fetch(
 		`https://api.github.com/users/winston0410/repos?sort=updated&per_page=99&type=sources&page=${page}`,
 		fetchOptions
@@ -26,6 +26,7 @@ interface IGithubRepo {
 	name: string;
 	description: string;
 	html_url: string;
+    languages: any;
 	languages_url: string;
 	fork: boolean;
 	archived: boolean;
