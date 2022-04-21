@@ -8,6 +8,7 @@
 	import createFetch from 'wrapped-fetch';
 	import type { UnwrappedResponse } from 'wrapped-fetch';
 	import type { ICv } from '$lib/typing';
+	import MarkDownIt from 'markdown-it';
 
 	export const load = async ({ fetch }) => {
 		const f = createFetch(fetch);
@@ -43,7 +44,7 @@
 			{#each cv.body.visa_status as { country, description }}
 				<li class="list-item">
                     <Heading tag={'h3'} color={3} size={3}>{country}</Heading>
-                    <p>{@html description}</p>
+                    <p>{@html new MarkDownIt().renderInline(description)}</p>
                 </li>
 			{/each}
 		</ul>
@@ -53,7 +54,7 @@
 		<Heading>Professional Profile</Heading>
 		<ul class="profile-list" role="list">
 			{#each cv.body.profile as text}
-				<li class="list-item">{@html text}</li>
+				<li class="list-item">{@html new MarkDownIt().renderInline(text)}</li>
 			{/each}
 		</ul>
 	</section>
@@ -73,7 +74,7 @@
 							<LangTagList languages={technologies} />
 							<ul role="list" class="duty-list">
 								{#each duties as duty}
-									<li class="duty-list-item">{@html duty}</li>
+									<li class="duty-list-item">{@html new MarkDownIt().renderInline(duty)}</li>
 								{/each}
 							</ul>
 						</article>

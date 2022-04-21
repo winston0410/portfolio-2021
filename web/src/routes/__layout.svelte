@@ -57,6 +57,17 @@
 </div>
 
 <style>
+	:global(html) {
+		font-size: 16px;
+		scroll-behavior: smooth;
+	}
+
+	/* @media (min-width: 768px) {
+		:global(html){
+			font-size: 18px;
+		}
+	} */
+
 	:global(a) {
 		color: var(--highlight-color);
 		text-decoration: none;

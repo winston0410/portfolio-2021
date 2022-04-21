@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import type { ICommercialProjectWithSrcset } from '$lib/typing';
 	import LangTagList from '$lib/LangTagList.svelte'
+	import MarkdownIt from 'markdown-it';	
 	//TODO Make Typescript aware of $static and query string
 	// @ts-ignore
 	import smartGoCover from '$static/smartgo.png?w=300;768;1200&format=webp&srcset';
@@ -80,7 +81,7 @@
 <Heading size={1} color={1}>Commercial works</Heading>
 
 <ul class="list" role="list">
-{#each projects as {name, link, involvement, description, image, languages, srcset}}
+{#each projects as {name, link, involvements, description, image, languages, srcset}}
     <li>
     <article>
             <Heading size={3} color={2}>
@@ -106,7 +107,11 @@
                 <Heading size={4} color={1} tag={"h3"}>
                     Involvement
                 </Heading>
-                <p>{@html involvement}</p>
+				<ul class="involvement-list">
+					{#each involvements as involvement}
+						<li>{@html new MarkdownIt().renderInline(involvement)}</li>
+					{/each}
+				</ul>
             </section>
     </article>
     </li>
@@ -175,4 +180,9 @@
 			margin-right: 2%;
 		}
 	}
+
+	.involvement-list {
+        list-style: disc;
+        padding-left: 1rem;
+    }
 </style>

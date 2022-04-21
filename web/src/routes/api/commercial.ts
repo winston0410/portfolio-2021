@@ -14,7 +14,10 @@ export const get: RequestHandler = async () => {
 					Scss: true
 				},
                 description: "The frontend for managing social care package in Hackney Council.",
-				involvement: 'Developed the UI and functionality for multiple pages with <strong>React</strong> and <strong>Next.js</strong>. Test, lint and deploy the application with <strong>CircleCI</strong>.'
+				involvements: [
+					'Developed UI for multiple pages with **React** and **Next.js**.',
+					'Set up CICD pipeline with **CircleCI** for testing, linting and deploying the application.'
+				]
 			},
 			{
 				name: 'Trusted Node',
@@ -26,7 +29,7 @@ export const get: RequestHandler = async () => {
 					Sass: true
 				},
                 description: "An application for staking and swapping TNODE.",
-				involvement: 'Developed the UI and functionality for the staking page with <strong>Vue</strong> and <strong>Nuxt.js</strong>.'
+				involvements: ['Developed UI for the staking page with **Vue** and **Nuxt.js**.']
 			},
 			{
 				name: 'Smart Go Academy Matchmaking portal',
@@ -38,7 +41,9 @@ export const get: RequestHandler = async () => {
 					CSS: true
 				},
                 description: "An application for Go matchmaking, connected with OGS API.",
-				involvement: 'Design and developed the whole application single-handedly with <strong>Svelte</strong> and <strong>SvelteKit</strong>.'
+				involvements: [
+					'Designed and developed the whole application single-handedly from scratch with **Svelte** and **SvelteKit**.'
+				]
 			},
 			{
 				name: 'Tecky Code',
@@ -49,8 +54,11 @@ export const get: RequestHandler = async () => {
 					HTML: true,
 					Scss: true
 				},
-                description: "A coding platform for learning codeing online.",
-				involvement: 'Developed unit tests for service layer in its <strong>Node.js</strong> backend and integrated its <strong>React</strong> frontend with backend.'
+				description: 'A coding platform for learning codeing online.',
+				involvements: [
+					'Developed unit tests for service layer in its **Node.js** REST API',
+					'Integrated the **React** frontend with the backend.'
+				]
 			},
 			{
 				name: 'Perfect Men',
@@ -61,8 +69,10 @@ export const get: RequestHandler = async () => {
 					HTML: true,
 					CSS: true
 				},
-                description: "A branding website for Perfect Men.",
-				involvement: 'Developed the whole website single-handedly with <strong>React</strong> and <strong>Next.js</strong> based on the design of UI designer.'
+				description: 'A branding website for Perfect Men.',
+				involvements: [
+					'Developed the whole website single-handedly with **React** and **Next.js** based on the design of UI designer.'
+				]
 			},
 			{
 				name: 'Ho Man',
@@ -74,7 +84,9 @@ export const get: RequestHandler = async () => {
 					CSS: true,
 					Javascript: true
 				},
-				involvement: 'Developed the whole website single-handedly with <strong>11.ty</strong> based on the design of UI designer.'
+				involvements: [
+					'Developed the whole website single-handedly with **11.ty** based on the design of UI designer.'
+				]
 			},
 			{
 				name: 'Survivalist HK',
@@ -87,7 +99,9 @@ export const get: RequestHandler = async () => {
 					CSS: true,
 					Javascript: true
 				},
-				involvement: 'Designed, developed and deployed the application single-handedly with <strong>Wordpress</strong>.'
+				involvements: [
+					'Designed, developed and deployed the application single-handedly with **Wordpress**.'
+				]
 			},
 			{
 				name: 'How to study Cantonese',
@@ -100,7 +114,9 @@ export const get: RequestHandler = async () => {
 					Javascript: true
 				},
                 description: "An E-commerce website that sells Cantonese storybooks.",
-				involvement: 'Designed, developed and deployed the application single-handedly from scratch with <strong>Wordpress</strong>.'
+				involvements: [
+					'Designed, developed and deployed the application single-handedly from scratch with **Wordpress**.'
+				]
 			},
 		];
 
