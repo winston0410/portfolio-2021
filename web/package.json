@@ -39,7 +39,7 @@
     "postcss-load-config": "^3.1.0",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.44.0",
+    "svelte": "^3.34.0",
     "svelte-action-type": "github:winston0410/svelte-action-type",
     "svelte-check": "^2.0.0",
     "svelte-image": "^0.2.9",
