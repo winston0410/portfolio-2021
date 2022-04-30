@@ -28,7 +28,7 @@ const getCv = async () => {
 				title: 'Software developer',
 				location: 'United Kingdom',
 				start_date: 'Jan 2022',
-				end_date: 'Current',
+				end_date: 'May 2022',
 				duties: [
 					'Develop social care service for local council with **Javascript**, **React**, **Next.js**, and **AWS Lambda**.',
 					'Develop prototype for NHS fault reporting service with **Typescript**, **Svelte** and **SvelteKit**.',
