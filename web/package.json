@@ -9,9 +9,14 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --write --plugin-search-dir=. ."
+		"format": "prettier --write --plugin-search-dir=. .",
+		"cap": "cap"
 	},
 	"devDependencies": {
+		"@capacitor/android": "^3.5.1",
+		"@capacitor/cli": "^3.5.1",
+		"@capacitor/core": "^3.5.1",
+		"@capacitor/ios": "^3.5.1",
 		"@sveltejs/adapter-static": "next",
 		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/app-utils": "next",

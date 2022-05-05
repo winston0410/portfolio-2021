@@ -1,0 +1,6 @@
+{
+	"appId": "com.hugosum.me",
+	"appName": "portfolio-2021",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
