@@ -24,6 +24,21 @@ const getCv = async () => {
 		],
 		working_experience: [
 			{
+				company_name: 'Leva Clinic',
+				title: 'Software developer',
+				location: 'United Kingdom',
+				start_date: 'May 2022',
+				end_date: 'Current',
+				duties: [
+					'Develop serverless microservices with **Typescript**, **Serverless**, and **AWS Lambda**.',
+				],
+				technologies: {
+					Javascript: true,
+					Typescript: true,
+					SQL: true
+				}
+			},
+			{
 				company_name: 'Nudge Digital',
 				title: 'Software developer',
 				location: 'United Kingdom',
